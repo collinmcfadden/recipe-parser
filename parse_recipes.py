@@ -113,14 +113,14 @@ class Recipe:
 			# Add step to the list
 			if curr_type == "STEP":
 				self.instructions_flat.append({
-					"text": "<p>{}<\p>".format(curr_content),
+					"text": "<p>{}</p>".format(curr_content),
 					"type": "instruction",
 					"image_url": ""
 				})
 
 			# Adding text to the summary
 			if prev_type == "TEXT" and (curr_type != "INGREDIENT" and curr_type != "STEP"):
-				self.summary = self.summary + "<p>{}<\p>".format(prev_content)
+				self.summary = self.summary + "<p>{}</p>".format(prev_content)
 
 			# Setting the values for the next run through the loop
 			prev_type, prev_content = curr_type, curr_content 
