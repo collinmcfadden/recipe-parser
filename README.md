@@ -1,4 +1,4 @@
-# repice-parser
+# recipe-parser
 converting the recipe book text to JSON format.
 
 
