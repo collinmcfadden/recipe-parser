@@ -48,6 +48,7 @@ Any chunks of text containing additional recipe details can be left in the same 
 
 
 Phase 2 Style Guide - 
+Add a fourth @ before the recipe title when you have applied the formatting
 Goals
 * Make recipe ingredient values parseable
 * Re-read the recipe steps to catch spelling/formatting errors
@@ -69,13 +70,24 @@ Ex.
 
 
 Amount
+# if there is a comma present, split line on “,” and only look at first (zero-ith) substring, else use whole line
+If there is a unit (parentheses are present), just grab the substring before the ( and use the strip method to remove whitespace on the ends (this will allow for situations where the amount is not a number - Ex: Few (drops) hot sauce
+Else: use regex to read the the numbers/ unicode fractions at the front of the line
+* Regex expression for these fractions https://regexr.com/3p8nd
+* Regex search method https://docs.python.org/3/library/re.html#re.search
+Empty string if none found
+
+
 Whole values: 1 (cup)
 Compound Fractions: 1 ½ (cups)
 Fractions: ½ (cup)
 Not present: salt and pepper
 
 
-Unit
+Unit 
+## NOTE: if comma present in line, split line on “,” and only look at first (zero-ith) substring (because additional recipe details may have parentheses)
+
+
 Surrounded by parentheses: 1 (cup)
 
 
@@ -99,10 +111,10 @@ Units that are different when Amount is <= 1
 Ingredient Name
 Ideally listed so that it doesn’t have any commas.  This will not be possible in all cases, such as 
 * 1 red, yellow, and green apple, cut into wedges
-
-
+In this case, the person uploading the recipe will need to manually update the value
 Extra Details
-Try to rewrite an extra details to be after the ingredient name. Can have additional commas/parentheses, but omit them if they aren’t adding value
+Rewrite extra details to be after the ingredient name. Can have additional commas/parentheses, but omit them if they aren’t adding value
+Find first comma, if not found, return empty string. else , return second half of line
 
 
 Common cases:
@@ -119,18 +131,32 @@ New
 * 3 (lb) sweet potatoes, cooked or 2 (17 oz cans) drained 
 
 
+Corner cases to just use your best judgement on
+When the recipe has suggests two different ingredients, the second could be recorded as a note or beside the original. The difference in the end is that the note is a lighter gray https://demo.wprecipemaker.com/chic-recipe-template/
 
 
-________________
-                
+I think the first would be more clear than the second
+* 1 (stick) butter or oleo, melted        
+* 1 (stick) butter, or oleo, melted        
 
 
+But these cases of alternative ingredients are messy in other recipes, so don’t over think it too much. All in all, we want the info visible clearly on the page, even if it doesn’t properly conform to the variable names that are holding the details. 
 
 
+* 1 (large bottle/can) pineapple juice, or 1 can concentrate (mixed according to directions)
+
+
+### Shane: What’s the best way to represent little chef’s notes on the ingredients? E.g:
+* 1 (8 oz package) cream cheese (I use ⅓ less fat, don’t use fat free)
+* Bacon (I  use the pre-cooked)
+I’ve been adding commas to separate them like so:
+* 1 (8 oz package) cream cheese, (I use ⅓ less fat, don’t use fat free)
+* Bacon, (I  use the pre-cooked)
+Let me know if there’s a more preferred way
 -APPETIZERS AND BEVERAGES-
 
 
-@@@
+@@@@
 PERFECT LEMONADE         
 Angie Brunkhorst
 
@@ -144,40 +170,40 @@ Angie Brunkhorst
 2. Pour into a pitcher. Add the lemon juice. Add about 4 cups of water, more or less to the desired strength. Refrigerate 30-40 minutes. Serve over ice.
 
 
-@@@
+@@@@
 EASY PUNCH         
 Karalynn and Kris Brunkhorst
 
 
-* 1 large can red Hawaiian Punch or 1 can concentrate         
-* 1 liter of ginger ale or 7-Up         
+* 1 (large can) red Hawaiian Punch or 1 can concentrate         
+* 1 (liter) ginger ale or 7-Up         
 * Ice ring, made with Hawaiian Punch (optional)
-* 1 large bottle/can pineapple juice or 1 can concentrate (mixed according to directions)
+* 1 (large bottle/can) pineapple juice, or 1 can concentrate (mixed according to directions)
 
 
 1. Mix all ingredients, adding pop just before serving. Serves 35 cups. Add more or less of ingredients to suit your tastes.
 
 
-@@@
+@@@@
 PUNCH         
 Ann and Phil Brunkhorst
 
 
-* 2 large (packages) cherry Jello         
+* 2 (large packages) cherry Jello         
 * 4 (cups) water, boiling         
 * 4 (cups) sugar         
 * 9 (cups) cold water         
 * 2 (cups) lemon juice
 * 2 (46 oz cans) pineapple juice
-* 1 oz almond extract
-* 2 large bottles ginger ale
+* 1 (oz) almond extract
+* 2 (large bottles) ginger ale
 
 
 1. Dissolve Jello in water. Add the remaining ingredients, except for ginger ale. Freeze. (I use 2 ice cream buckets). 
 2. Take out of the freezer approximately 5 hours before serving. Add ginger ale. Also very good made with apricot, raspberry or a mixture of red Jellos.
 
 
-@@@
+@@@@
 HOT CHOCOLATE        
 Mary Jo McFadden
 
@@ -189,19 +215,19 @@ This Hot Chocolate Recipe was prepared and served by Mary Jo McFadden when she e
 * 1 (cup) cocoa        
 * 1 (cup) water, boiling
 * 1 qt. heavy cream
-* 4 qt. milk, scalding hot
+* 4 (quart) milk, scalding hot
 
 
 1. Mix sugar and cocoa, stir to a smooth paste with the boiling water. Heat over the direct flame and then cook in a double boiler for about 30 minutes, or until a thick paste is formed. Chill. 
 2. Whip cream. Fold in cocoa paste, scald milk in double boiler or pan, add vanilla and salt. When serving hot chocolate, put chocolate mixture in a bowl and hot milk in a pitcher. Put a large spoonful of chocolate mixture in cup: add hot milk. Be sure milk is scalding hot; otherwise beverage will be lukewarm because of the cold paste that is added. I put sugar with my whipping cream when I whip it and some vanilla too.
 
 
-@@@
+@@@@
 DANDELION WINE        
 Ann Fabric   
                                                                                                                                         
-* 4 gallons dandelion flowers        
-* 4 gallons water, boiling        
+* 4 (gallons) dandelion flowers        
+* 4 (gallons) water, boiling        
 * 4 (lb) honey        
 * 4 lemons, sliced        
 * 4 oranges, sliced
@@ -211,24 +237,14 @@ Ann Fabric
 
 
 1. Remove any stems from the flowers. Put the flowers in a large, warm crock and pour the boiling water over them. Let stand for a week. 
-2. Strain, squeezing all the juice out of the flowers; then discard. Add the slices of lemon, orange and the cloves; stir well. Add the yeast which has been softened in the warm water. Let stand, covered for another 2 weeks. 
+2. Strain, squeezing all the juice out of the flowers; then discard. Add the slices of lemon, orange, and the cloves; stir well. Add the yeast which has been softened in the warm water. Let stand, covered for another 2 weeks. 
 3. Strain again and pour into wine bottles. Let the bottles stand uncorked for 5 days. Cork or cap bottles. Let wine develop for at least 2 months.
 
 
-This recipe was a  recipe of Grandma Anna Brunkhorst, submitted by granddaughter, Ann Fabric, daughter of Della Wintakger.
+This recipe was a  recipe of Grandma Anna Brunkhorst, submitted by granddaughter, Ann Fabric, daughter of Della Wintakger.Note received by Vivian Shane, daughter of Della and sister to Ann: I used to stay during high school years with Grandma Brunkhorst in her home in Lamont, Iowa. This was only on nights when I had special practice. At our evening meal, Grandma served me a small glass of her homemade dandelion wine. Since I was a teenager and had not drank wine I was very frustrated as to whether I should drink it or not. Finally, I rationalized Anna was my mother's mother so she wouldn't serve me anything I shouldn't have. I drank the wine!
 
 
-Note received by Vivian Shane, daughter of Della and sister to Ann: I used to 
-stay during high school years with Grandma Brunkhorst in her home in
-Lamont, Iowa. This was only on nights when I had special practice. At our
-evening meal, Grandma served me a small glass of her homemade dandelion 
-wine. Since I was a teenager and had not drank wine I was very frustrated as 
-to whether I should drink it or not. Finally, I rationalized Anna was my 
-mother's mother so she wouldn't serve me anything I shouldn't have. I drank 
-the wine!
-
-
-@@@
+@@@@
 COFFEE SOUP         
 Patricia Brunkhorst Maas
 
@@ -244,7 +260,7 @@ Patricia Brunkhorst Maas
 This recipe was submitted by Patricia Brunkhorst Maas in memory of her dad, Joe Brunkhorst, who had this coffee every day.
 
 
-@@@
+@@@@
 RED STRIPED JUICE        
 Donna Brunkhorst Litman
 
@@ -253,16 +269,17 @@ Donna Brunkhorst Litman
 * ¾ (cup) water        
 * ½ (cup) orange juice        
 * ½ (cup) Grand Marnier        
-* 2 bottles fruity red wine (Merlot or Shiraz)
+* 2 (bottles) fruity red wine (Merlot or Shiraz)
 * 2 oranges, sliced thin
 * 2 lemons, sliced thin
 * 2 apples, cubed small
 
 
-1. Heat sugar and water in a saucepan, stirring until sugar melts. Cool. Mix simple syrup, Grand Marnier, red wine and fruit. Chill overnight.
+1. Heat sugar and water in a saucepan, stirring until sugar melts. Cool. 
+2. Mix simple syrup, Grand Marnier, red wine and fruit. Chill overnight.
 
 
-@@@
+@@@@
 WHITE STRIPED JUICE        
 Donna Brunkhorst Litman
 
@@ -270,19 +287,19 @@ Donna Brunkhorst Litman
 * ½ (cup) sugar         
 * ¾ (cup) water        
 * ½ (cup) Peach Schnapps        
-* 2 bottles white wine (not Chardonnay)        
+* 2 (bottles) white wine (not Chardonnay)        
 * 2 oranges, sliced thin
 * 1 lemon, sliced thin
 * 1 apple, cubed small
-* 1 bottle champagne
+* 1 (bottle) champagne
 
 
 1. Heat sugar and water in a saucepan, stirring until sugar melts. Cool. 
-2. Mix simple syrup, Schnapps, wine and fruit. Chill overnight. 
+2. Mix simple syrup, Schnapps, wine, and fruit. Chill overnight. 
 3. To serve: Fill glass halfway with wine over ice. Add fruit and top with champagne.
 
 
-@@@
+@@@@
 CREAM FILLED DATES        
 Karen Eichmann
 
@@ -290,51 +307,55 @@ Karen Eichmann
 * Pitted dates        
 * Cream cheese        
 * Pecan halves
-* Bacon (I use the pre-cooked)
+* Bacon, (I  use the pre-cooked)
 
 
-1. Fill pitted date with cream cheese and pecan half. Wrap with a small piece of bacon. Secure with a toothpick. Broil until bacon is crisp.
+1. Fill pitted date with cream cheese and pecan half. 
+2. Wrap with a small piece of bacon. Secure with a toothpick. 
+3. Broil until bacon is crisp.
 
 
-@@@
+@@@@
 CHEESECAKE PHYLLO CUPS
 
 
-* 4 oz reduced fat cream cheese         
+* 4 (oz) reduced fat cream cheese         
 * ½ (cup) reduced fat sour cream         
 * 2 (tbsp) sugar or sugar substitute         
 * 1 (tsp) vanilla         
 * 2 (packages) frozen miniature phyllo shells, thawed
-* 1 can mandarin oranges, drained
+* 1 (can) mandarin oranges, drained
 * 1 kiwi fruit, peeled, sliced, cut into quarters
 
 
-1. Combine all the ingredients except fruit. Pipe or spoon filling into phyllo shells. Top each with fruit. Refrigerate until serving time. (I've substituted sliced strawberries for one of the fruit to add color.)
+1. Combine all the ingredients except fruit. 
+2. Pipe or spoon filling into phyllo shells. 
+3. Top each with fruit. Refrigerate until serving time. (I've substituted sliced strawberries for one of the fruits to add color.)
 
 
-@@@
+@@@@
 CHOCOLATE CHIP CHEESE BALL        
 Amanda Brunkhorst
                                                                                    
-* 1 (8 oz) pkg. cream cheese (I use ⅓ less fat, don't use fat free)        
+* 1 (8 oz package) cream cheese, (I use ⅓ less fat, don't use fat free)        
 * ½ (cup) butter, softened           
 * ¼ (tsp) vanilla        
 * ¾ (cup) powdered sugar
 * 2 (tbsp) brown sugar
-* ¾ (cup) mini chocolate chips (more chips for rolling in)
+* ¾ (cup) mini chocolate chips, more chips for rolling in
 
 
 1. Mix together and refrigerate until you can form into a ball, about 2 hours. I just use a spatula and mound it on a plate and use a spoon to press chocolate chips on the outside. Serve with graham sticks. Enjoy!
 
 
-@@@
+@@@@
 CHEESE-WHEEL APPETIZER        
 Ann and Phil Brunkhorst
 
 
 * 3 (cups) cheddar cheese, shredded
 * 1 (cup) Swiss cheese, shredded        
-* 1 (8 oz) pkg. cream cheese, softened         
+* 1 (8 oz package) cream cheese, softened         
 * ¼ (cup) onion, finely chopped        
 * ½ (cup) mayonnaise
 * ¼ (cup) green pepper, finely chopped
@@ -343,39 +364,43 @@ Ann and Phil Brunkhorst
 * Assorted crackers
 
 
-1. In a large bowl, combine all of the ingredients except the apples and the crackers; mix well. Line the bottom of a 9-inch round cake pan with waxed paper. Press cheese mixture firmly into pan. Cover and refrigerate several hours or until firm. To serve, arrange the apple slices on top and at the base of the cheese wheel. Serve with assorted crackers. Makes 5 sups of spread.
+1. In a large bowl, combine all of the ingredients except the apples and the crackers; mix well. 
+2. Line the bottom of a 9-inch round cake pan with waxed paper. Press cheese mixture firmly into pan. Cover and refrigerate several hours or until firm. 
+3. To serve, arrange the apple slices on top and at the base of the cheese wheel. Serve with assorted crackers. Makes 5 cups of spread.
 
 
-@@@
+@@@@
 DRIED BEEF CHEESE BALL
 
 
 * 3 (packages) dried beef        
-* 3 (8 oz packages) cream cheese        
+* 3 (8 oz packages) cream cheese, softened        
 * 1 (tbsp) onion, minced        
 * 2 (tbsp) Worcestershire sauce
 * 1 (tbsp) Accent seasoning
-* Few drops Tabasco sauce
+* Few (drops) Tabasco sauce
 
 
-1. Soften cream cheese. In a blender, chop dried beef and set aside a small amount to roll ball in. Combine dried beef, onion, Worcestershire sauce, Accent and Tabasco sauce. Mix well with softened cream cheese. Form into a ball; then roll in leftover dried beef.
+1. In a blender, chop dried beef and set aside a small amount to roll ball in. 
+2. Combine dried beef, onion, Worcestershire sauce, Accent and Tabasco sauce. Mix well with softened cream cheese. 
+3. Form into a ball; then roll in leftover dried beef.
 
 
-@@@
+@@@@
 CUCUMBER SANDWICHES
 
 
 * Cucumbers        
 * Cocktail rye bread        
 * Dill weed
-* 8 oz cream cheese
-* 1 pkg. Hidden Valley Ranch dressing
+* 8 (oz) cream cheese
+* 1 (package) Hidden Valley Ranch dressing
 
 
 1. Mix together cream cheese and Hidden Valley Ranch dressing. Spread cream cheese mixture on bread. Top with a slice of cucumber. Sprinkle with dill weed. Refrigerate.
 
 
-@@@
+@@@@
 SAVORY RYE SNACKS        
 Ann and Phil Brunkhorst
 
@@ -386,34 +411,36 @@ Ann and Phil Brunkhorst
 * 1 (cup) cheddar cheese, shredded
 * 1 (4 oz can) mushroom stems and pieces
 * ½ (cup) ripe olives, chopped
-* 1 loaf cocktail rye bread
+* 1 (loaf) cocktail rye bread
 
 
-1. In a bowl, combine the first 6 ingredients. Spread on bread slices and place on an ungreased baking sheet. Bake at 350° for 8-10 minutes or until bubbly.
+1. In a bowl, combine the first 6 ingredients. 
+2. Spread on bread slices and place on an ungreased baking sheet. 
+3. Bake at 350° for 8-10 minutes or until bubbly.
 
 
-@@@
+@@@@
 HIDDEN VALLEY RANCH SAUSAGE STARS        
 Ann and Phil Brunkhorst
 
 
-* 1 (lb) pork sausage, cooked, crumbled        
+* 1 (lb) pork sausage, cooked and crumbled        
 * 1½ (cup) sharp cheddar cheese, grated        
 * 1½ (cup) Monterey Jack cheese        
 * 1 (cup) Hidden Valley Original Ranch salad dressing, prepared        
 * 1 (2¼ oz can) sliced black olives 
 * ½ (cup) sweet red pepper, chopped
-* 1 pkg. wonton wrappers
+* 1 (package) wonton wrappers
 * Vegetable oil
 
 
 1. Preheat the oven to 350°. Blot sausage dry with paper towels and combine with cheeses, salad dressing, olives and red pepper. 
-2. Lightly grease muffin tin and  press 1 wrapper in each cup. Brush with oil. Bake for 5 minutes until golden. 
+2. Lightly grease muffin tin and press 1 wrapper in each cup. Brush with oil. Bake for 5 minutes until golden. 
 3. Remove from tins, place on baking sheet. Fill with sausage mixture. Makes 4-5 dozen.
 
 
 VARIATION: CHICKEN:
-* 1½ (lb) chicken breast, cooked, chopped        
+* 1½ (lb) chicken breast, cooked and chopped        
 * 1 (cup) Ranch dressing         
 * 1/4 (tsp) salt and pepper         
 * 2 (tbsp) chili seasoning
@@ -421,10 +448,10 @@ VARIATION: CHICKEN:
 * 2 (cups) Monterey Jack cheese, shredded
 
 
-Mix ingredients and spoon into wonton cups. Bake for 10 minutes at 350°.
+1. Mix ingredients and spoon into wonton cups. Bake for 10 minutes at 350°.
 
 
-@@@
+@@@@
 WALKING TACOS        
 Jazimen Brunkhorst
 
@@ -434,110 +461,108 @@ Jazimen Brunkhorst
 * Tomatoes   
 * Cheese        
 * Lettuce        
-* Salsa (if desired)
-* Sour cream (if desired)
-* Onion (if desired)
+* Salsa, if desired
+* Sour cream, if desired
+* Onion, if desired
 
 
 1. Gently crush chips. Cut the bag of chips open lengthwise. Add desired ingredients starting with meat. Add plastic fork. Enjoy!
 
 
-@@@
+@@@@
 RED LOBSTER PIZZA        
 Ann and Phil Brunkhorst
 
 
-(Can be used as an appetizer or for a main dish)
-
-
-* 1 flour tortilla (per pizza) 
+* 1 flour tortilla per pizza
 * Roasted garlic butter spread
 * 2 (tbsp) Parmesan cheese, grated
-* 4 oz Roma tomatoes, diced ⅜-inch, drained
+* 4 (oz) Roma tomatoes, diced ⅜-inch and drained
 * 2 (tbsp) fresh basil, chopped
-* 2 oz lobster or shrimp, cut into ½ to ¾-inch chunks
+* 2 (oz) lobster or shrimp, cut into ½ to ¾-inch chunks
 * ½ (cup) Italian six-cheese blend
 
 
-1. Brush topside of tortilla with garlic butter. Sprinkle 2 (tbsp) Parmesan cheese over the garlic butter. Add drained, diced tomatoes; sprinkle evenly over Parmesan cheese. Add basil. 
-2. Sprinkle seafood over top. Sprinkle the Italian cheese blend evenly over the top of tomatoes. Refrigerate until ready to bake. 
-3. Brush pizza pan lightly with vegetable oil. Bake at 450 for 4-5 minutes or until cheese is melted. Slice into 8 slices.
+1. Brush top side of tortilla with garlic butter. Sprinkle 2 (tbsp) Parmesan cheese over the garlic butter. 
+2. Add drained, diced tomatoes; sprinkle evenly over Parmesan cheese. Add basil. 
+3. Sprinkle seafood over top. Sprinkle the Italian cheese blend evenly over the top of tomatoes. Refrigerate until ready to bake. 
+4. Brush pizza pan lightly with vegetable oil. Bake at 450° for 4-5 minutes or until cheese is melted. Slice into 8 slices. Can be used as an appetizer or for a main dish.
 
 
-Optional: May squeeze lemon juice over the top for more flavor.
-Note: Make sure tomatoes and lobster meat are well drained before putting onto pizza. Otherwise crust will be soggy.
+Optional: May squeeze lemon juice over the top for more flavor. Note: Make sure tomatoes and lobster meat are well drained before putting onto pizza. Otherwise crust will be soggy.
 
 
-@@@
+@@@@
 VEGGIE PIZZA        
 Ann and Phil Brunkhorst
 
 
 * 2 (packages) crescent rolls
-* 2 (8 oz packages). cream cheese
-* 1 pkg. Hidden Valley Ranch Party mix
+* 2 (8 oz packages) cream cheese
+* 1 (package) Hidden Valley Ranch Party mix
 * Onions, peppers, celery, cauliflower, carrots, broccoli, etc., chopped
 * 1-1½ (cup) cheddar cheese
 
 
-1. Roll out the crescent rolls on a greased pizza pan. Bake at 400' for 5-10 minutes or until golden brown. 
+1. Roll out the crescent rolls on a greased pizza pan. Bake at 400° for 5-10 minutes or until golden brown. 
 2. Mix cream cheese, Hidden Valley Ranch and a small amount of milk together. Spread on the cooled crust. Add all of the chopped vegetables on top. Sprinkle with cheddar cheese and dill weed if desired. Refrigerate.
 
 
-@@@
+@@@@
 SEAFOOD ROLL-UPS
 
 
-* 1 (8 oz) pkg. cream cheese
-* 1 (8 oz) carton sour cream
-* 1 pkg. imitation crab flakes
+* 1 (8 oz package) cream cheese
+* 1 (8 oz carton) sour cream
+* 1 (package) imitation crab flakes
 * 1 (cup) cheddar cheese, shredded 
 * 1 (tsp) garlic 
 * 8-10 soft taco shells
 
 
-1. Mix cream cheese, sour cream and garlic powder. Add cheese and crab.
-2. Spread approximately ⅓ (cup) mixture on taco shells to cover entire shell. Roll up,place in pan with waxed paper in between each roll. 
-3. Refrigerate overnight for best flavor. Cut into serving size pieces . Serve with cocktail sauce, if desired. 
+1. Mix cream cheese, sour cream, and garlic powder. Add cheese and crab.
+2. Spread approximately ⅓ cup mixture on taco shells to cover entire shell. Roll up. Place in pan with waxed paper in between each roll. Refrigerate overnight for best flavor. 
+3. Cut into serving size pieces . Serve with cocktail sauce, if desired. 
 
 
 
 
-@@@
+@@@@
 TACO ROLL-UPS        
 Katie Weigel
 
 
-* 1 (8 oz) pkg. cream cheese
-* 1 (8 oz) carton sour cream
-* 1 pkg. taco seasoning
-* 1 small can diced black olives         
+* 1 (8 oz package) cream cheese
+* 1 (8 oz carton) sour cream
+* 1(package) taco seasoning
+* 1 (small can) diced black olives         
 * 1 (cup) cheddar cheese, shredded         
 * 8-10 soft taco shells
 
 
 1. Mix cream cheese, sour cream and taco seasoning. Add olives, chilies and cheese; mix well.
-2. Spread roughly ¼ to ⅓ cup. mixture on each soft shell or enough for layer of spread to cover shell. Roll up. Place on pan with waxed paper between each roll. Refrigerate to cool, best if chilled overnight. 
-3. When ready to serve, cut each roll into ¾ to 1-inch slice, or desired width. Can serve with salsa and additional cheese, if desired. Optional are the green chilies.
+2. Spread roughly ¼ to ⅓ cup mixture on each soft shell or enough for layer of spread to cover shell. Roll up. Place on pan with waxed paper between each roll. Refrigerate to cool, best if chilled overnight. 
+3. When ready to serve, cut each roll into ¾ to 1-inch slices, or desired width. Can serve with salsa and additional cheese, if desired. Optional are the green chilies.
 
 
-@@@
+@@@@
 B.B.Q. CHICKEN WINGS        
 Marlene Goetschel
 
 
-* 2 dozen chicken wings, cut off tips in half at the joint
-* 5 oz Kikkomen soy sauce
+* 2 (dozen) chicken wings, cut off tips in half at the joint
+* 5 (oz) Kikkoman soy sauce
 * 1 (tsp) dry mustard
 * 4 (tbsp) brown sugar 
 * ½ (tsp) garlic powder
 
 
-1. Mix together all ingredients except chicken wings. Dip chicken wings in sauce and place in a 9x13-inch glass cake pan. Pour remaining marinade over and marinate overnight in refrigerator. (I've made them without marinating them overnight and they were just as good.)
-2. Bake slow, 300 degrees for approximately 2 hours or until dark. These can be made ahead of time and frozen. If frozen, reheat at 325 for 20-30 minutes or in microwave.
+1. Mix together all ingredients except chicken wings. Dip chicken wings in sauce and place in a 9x13-inch glass cake pan. 
+2. Pour remaining marinade over and marinate overnight in refrigerator. (I've made them without marinating them overnight and they were just as good.)
+3. Bake slow, 300 degrees for approximately 2 hours or until dark. These can be made ahead of time and frozen. If frozen, reheat at 325° for 20-30 minutes or in microwave.
 
 
-@@@
+@@@@
 RANCH CHICKEN BITES        
 Ann and Phil Brunkhorst
 
@@ -551,23 +576,22 @@ Ann and Phil Brunkhorst
 2. Place on a greased baking sheet. Bake, uncovered, at 350° for 18-20 minutes or until juices run clear. Yield: 4 servings. Serve with additional salad dressing.
 
 
-I submitted this recipe to Taste of Home. It is published in the Taste of Home's
-5-Ingredient Cookbook.
+I submitted this recipe to Taste of Home. It is published in the Taste of Home's 5-Ingredient Cookbook.
 
 
-@@@
+@@@@
 COCKTAIL SAUSAGES        
 Katie Weigel
 
 
-* 3 (1 lb packages) bite size cocktail sausages
-* 1 (18 oz) bottle BBQ sauce
+* 3 (1 lb packages) bite-size cocktail sausages
+* 1 (18 oz bottle) BBQ sauce
 
 
 1. Put cocktail sausages and BBQ sauce in a crockpot on low until hot and ready to serve.
 
 
-@@@
+@@@@
 MINIATURE SMOKIE LINKS
 Stefanie Brunkhorst
 
@@ -577,17 +601,18 @@ Stefanie Brunkhorst
 * Bacon
 
 
-1. Wrap bacon around the smokie links with enough bacon to go around links. Seal with toothpick and cover with brown sugar. Bake for 30-45 minutes at 350°.
+1. Wrap bacon around the smokie links with enough bacon to go around links. 
+2. Seal with toothpick and cover with brown sugar. Bake for 30-45 minutes at 350°.
 
 
-@@@
+@@@@
 CREAMY BAKED BEEF
 Alyce McFadden
 
 
-* 1 (8 oz) pkg. cream cheese
+* 1 (8 oz package) cream cheese
 * 1 (tbsp) milk
-* 3 oz chipped beef 
+* 3 (oz) chipped beef 
 * ½ (cup) sour cream
 * 1 (tbsp) instant minced onion         
 * ¼ (tsp) garlic powder         
@@ -599,74 +624,77 @@ Alyce McFadden
 2. Spread in a small baking dish. Sprinkle with melted butter. Bake at 350° until warm. Serve with crackers, chips or rye bread.
 
 
-@@@
+@@@@
 HOT RYE ROUNDS         
 Karen Eichmann
 
 
 * 1 (lb) ground beef         
-* 1 (lb) pork sausage (I use 2 Jimmy Dean Original Sausage, both 12 oz)         
+* 1 (lb) pork sausage, (I use 2 12 oz packages of Jimmy Dean Original Sausage)         
 * 1 (lb) Velveeta
 * ½ (tsp) dried oregano
 * ½ (tsp) garlic powder
-* 2 loaves party rye bread
+* 2 (loaves) party rye bread
 
 
 1. Brown together and stir the ground beef and pork sausage. Drain off all drippings. Stir in cheese and melt. Add oregano and garlic powder.
 2. Spread on individual party rye bread while warm. Put on cookie sheets, freeze, and then bag. To serve, heat under broiler until bubbly. Makes 48. These can go from freezer to broiler any time there is a party.
 
 
-@@@
+@@@@
 STAY SOFT CARAMEL DIP         
 Alicia Brunkhorst
 
 
-* 1 (16 oz) pkg. caramels         
-* 1 stick oleo
-* 1 can sweetened condensed milk
+* 1 (16 oz package) caramels         
+* 1 (stick) oleo
+* 1 (can) sweetened condensed milk
 
 
 1. Melt together. Will refrigerate and still remain soft. Great with apple slices.
-@@@
-HOT CORN DIP        
+
+
+@@@@
+HOT CORN DIP
 Donna Brunkhorst Litman
 
 
-* 1 can corn (drained)        
-* 2 cans diced green chilies        
+* 1 (can) corn, drained        
+* 2 (cans) diced green chilies        
 * ½ (cup) red or green pepper, chopped        
 * 1 (cup) Monterey Jack cheese, shredded 
-* 2 (tbsp) jalapenos (or to taste, chopped)
+* 2 (tbsp) jalapenos (or to taste), chopped
 * 1 (cup) mayonnaise
 * Dash of adobo seasoning
 * Cilantro
 * Black olives
 
 
-1. Mix all ingredients. Microwave until bubbling. Garnish with sliced black olives and cilantro.
+1. Mix all ingredients. Microwave until bubbling. 
+2. Garnish with sliced black olives and cilantro.
 
 
-@@@
+@@@@
 DELICIOUS FRUIT DIP        
 Ann and Phil Brunkhorst
 
 
 * 1 (12 oz can) frozen orange juice         
-* 1 box instant vanilla pudding
-* 1 (16 oz) carton sour cream
+* 1 (box) instant vanilla pudding
+* 1 (16 oz carton) sour cream
 
 
 1. Blend frozen orange juice concentrate with instant pudding. Fold in sour cream and chill. 
 2. Serve with melon, strawberries, grapes, kiwi and other desired fruit. Keeps up to 1 week in the refrigerator.
 
 
-@@@
+@@@@
 DRIED BEEF OR CORNED BEEF DIP
 Ann and Philip Brunkhorst
 
 
 * 2 (8 oz packages) cream cheese        
-* 3 (2 ½ oz packages) corned beef or dried beef (Carl Buddig's)        
+* 3 (2 ½ oz packages) corned beef or dried beef, (Carl Buddig's)        
 * 2 (tbsp) onion, minced
 * ½ (cup) mayonnaise
 * A little garlic powder
@@ -676,7 +704,7 @@ Ann and Philip Brunkhorst
 2. Cream mayonnaise and cream cheese together, adding remaining ingredients. Chill in a meat-lined bowl. Great on crackers!
 
 
-@@@
+@@@@
 FRUIT DIP
 Monica Piersall
 
@@ -684,19 +712,19 @@ Monica Piersall
 * 1 (8 oz) carton Cool Whip
 * 1 (6 oz) carton strawberry chocolate yogurt
 * 1 (8 oz) carton sour cream 
-* 1 small box instant white chocolate pudding
+* 1 (small box) instant white chocolate pudding
 
 
 1. Mix all together. Make a day ahead. Can use low fat.
 
 
-@@@
+@@@@
 LINDA'S LEMON FRUIT DIP        
 Angie Brunkhorst   
 
 
-* 1 (16 oz) carton sour cream        
-* 1 pkg. instant vanilla or lemon pudding mix        
+* 1 (16 oz carton) sour cream        
+* 1 (package) instant vanilla or lemon pudding mix        
 * ¼ (cup) milk
 * 4 (tsp) lemon juice
 * 1 (tsp) lemon peel, grated
@@ -705,48 +733,50 @@ Angie Brunkhorst
 1. Mix well and serve with assorted fresh fruit. Yields: 2 cups.
 
 
-@@@
+@@@@
 MOUSE DIP
 Alyce Woltzen McFadden
 
 
-* 1 (8 oz) pkg. cream cheese         
-* 1 can Ro-Tel tomatoes with chilies
-* 1 tube Jimmy Dean sausage
+* 1 (8 oz package) cream cheese         
+* 1 (can) Ro-Tel tomatoes with chilies
+* 1 (tube) Jimmy Dean sausage
 
 
-1. Fry the sausage; add cheese and tomatoes. Heat until all cheese is melted. Keep warm in a little crock pot. Serve with corn chips or crackers.
+1. Fry the sausage; add cheese and tomatoes. Heat until all cheese is melted. 
+2. Keep warm in a little crock pot. Serve with corn chips or crackers.
 
 
-@@@
+@@@@
 PUMPKIN FLUFF DIP
 Jazimen Brunkhorst
 
 
-* 1 (16 oz) carton Cool Whip (thawed)
-* 1 (5 oz) pkg. instant vanilla pudding
+* 1 (16 oz) carton Cool Whip, thawed
+* 1 (5 oz package) instant vanilla pudding
 * 1 (15 oz can) solid-packed pumpkin
 * 1 (tsp) pumpkin pie spice
 
 
-1. In a large bowl, mix together instant vanilla pudding mix, pumpkin and pumpkin pie spice. Fold in the thawed frozen whipped topping. Store in the refrigerator until serving.
+1. In a large bowl, mix together instant vanilla pudding mix, pumpkin and pumpkin pie spice.
+2. Fold in the thawed frozen whipped topping. Store in the refrigerator until serving.
 
 
 This is a very creamy and yummy pumpkin dip that is served with graham crackers or ginger cookies.
 
 
-@@@
+@@@@
 SAUSAGE DIP
 Karen Eichmann
 
 
-* 1 pkg. any flavor Jimmy Dean's sausage
-* 1 pkg. chopped spinach (thawed, drained)
-* 1 (8 oz) pkg. cream cheese
-* 1 (8 oz) carton sour cream
+* 1 (package) any flavor Jimmy Dean's sausage
+* 1 (package) chopped spinach, thawed and drained
+* 1 (8 oz package) cream cheese
+* 1 (8 oz carton) sour cream
 * ½ (cup) green onions, chopped
-* 1 can Ro-Tel tomatoes (drained)
-* 2 (cups) cheddar cheese (shredded, may want to use more) 
+* 1 (can) Ro-Tel tomatoes, drained
+* 2 (cups) cheddar cheese, shredded (may want to use more) 
 * ½ (tsp) garlic salt
 
 
@@ -755,7 +785,7 @@ Karen Eichmann
 1. Brown sausage. Add softened cream cheese and stir to melt. Add other ingredients and continue on low temperature until warm. Serve with crackers, etc.
 
 
-@@@
+@@@@
 STRAWBERRY DIP        
 Kathy Klotz
 
@@ -769,14 +799,14 @@ Kathy Klotz
 1. Combine all ingredients and beat with an electric mixer until creamy. Serve with fresh strawberries. Great to bring to parties with fresh strawberries.
 
 
-@@@
+@@@@
 CHEESE TACO DIP        
 Katie Weigel
 
 
-* 1 box Velveeta cheese        
-* 1 jar salsa        
-* 1-2 (lb) hamburger (cooked)
+* 1 (box) Velveeta cheese        
+* 1 (jar) salsa        
+* 1-2 (lb) hamburger, cooked
 * 1-2 (tsp) taco seasoning
 
 
@@ -785,35 +815,35 @@ Katie Weigel
 1. Put all ingredients in a crock pot until warm. Use the amount of hamburger and taco seasoning as you would like for extra spice. Serve with tortilla chips.
 
 
-@@@
+@@@@
 HOT TACO DIP
 Marlene Goetschel
 
 
 * 2 (8 oz packages) cream cheese
-* 1 can beanless chili
+* 1 (can) beanless chili
 * 3 (cups) cheddar cheese, shredded
-* Tomatoes (diced, optional)         
-* Olives (diced, optional)         
+* Tomatoes, diced (optional)         
+* Olives, diced (optional)         
 
 
 1. Heat until cheese melts and serve with corn chips.
 
 
-@@@
+@@@@
 TACO DIP
 Katie Brunkhorst
 
 
-* 1 (8 oz) pkg. cream cheese
-* 1 (16 oz) carton sour cream
-* 1 env. taco seasoning Lettuce, shredded
+* 1 (8 oz package) cream cheese
+* 1 (16 oz carton) sour cream
+* 1 (packet) taco seasoning Lettuce, shredded
 * Cheddar cheese, shredded
 * Onions, chopped         
 * Tomatoes, chopped         
 * Lettuce, shredded         
 * Black or green olives         
-* Peppers (chopped, optional)         
+* Peppers, chopped (optional)         
 * Taco or corn chips        
 
 
@@ -821,32 +851,31 @@ Katie Brunkhorst
 2. Spread on a serving plate and layer with remaining ingredients, topping off with shredded cheese.
 
 
-@@@
+@@@@
 SPINACH DIP        
 Pam Morales
 
 
-* 1 (10 oz) pkg. frozen spinach (thawed, liquid drained)        
-* 1 (8 oz) pkg. Monterey Jack cheese, shredded        
-* 1 (8 oz) pkg. Philadelphia cream cheese
-* 2 (tbsp) jalapenos (optional)
-* 2 tomatoes (cubed, or I would use a can of chopped tomatoes, drained, if I didn't have any tomatoes)
+* 1 (10 oz package) frozen spinach, thawed and liquid drained        
+* 1 (8 oz package) Monterey Jack cheese, shredded        
+* 1 (8 oz package) Philadelphia cream cheese
+* 2 (tbsp) jalapenos, (optional)
+* 2 tomatoes, cubed (or I would use a can of chopped tomatoes, drained, if I didn't have any tomatoes)
 
 
 1. Mix and cook at 350° for 20 minutes.
 
 
-This recipe is a favorite hot dip recipe that we would have when we would visit
-one of Patty's friends.
+This recipe is a favorite hot dip recipe that we would have when we would visit one of Patty's friends.
 
 
-@@@
+@@@@
 HOT WING DIP
 Donna Brunkhorst Litman
 
 
-* 1 large can chicken or 1-2 breasts (cut up)        
-* 1 (8 oz) pkg. cream cheese        
+* 1 (large can) chicken, or 1-2 breasts, cut up        
+* 1 (8 oz package) cream cheese        
 * ¼-½ (cup) Tabasco sauce
 *  Blue cheese dressing
 * 1 (cup) cheese, shredded
@@ -854,11 +883,11 @@ Donna Brunkhorst Litman
 
 
 1. Spread cream cheese into pie plate. In a separate small bowl, mix chicken with a shake of seasoning and Tabasco sauce, to taste; spread over cream cheese.
-2. Pour blue cheese dressing on top, to taste, approximately ¼ (cup) Sprinkle with cheese.
+2. Pour blue cheese dressing on top, to taste, approximately ¼ cup. Sprinkle with cheese.
 3. Microwave until the cheese is melted.
 
 
-@@@
+@@@@
 FRESH SALSA        
 Kris Brunkhorst
 
@@ -869,81 +898,85 @@ Kris Brunkhorst
 * ½ red pepper        
 * ½ yellow pepper
 * 1 (tsp) garlic salt
-* 1 can Ro-Tel tomatoes/chilies (milder/mild chopped)
+* 1 (can) Ro-Tel tomatoes/chilies, milder/mild chopped
 
 
-1. Chop all vegetables and put in a bowl. Add garlic salt and Ro-Tel tomatoes and chilies. Mix and refrigerate. Serve with Tostitos.
-
-
-
+1. Chop all vegetables and put in a bowl. Add garlic salt, Ro-Tel tomatoes, and chilies. Mix and refrigerate. Serve with Tostitos.
 
 
 
 
 
-@@@
+
+
+
+@@@@
 SUN DRIED TOMATO SPREAD
 Pam (Brunkhorst) French
 
 
-* 4 oz feta cheese        
-* 1 (8 oz) pkg. cream cheese (room temperature)        
-* 6 (tbsp) sun dried tomatoes (packed in oil, chopped)
+* 4 (oz) feta cheese        
+* 1 (8 oz package) cream cheese, room temperature        
+* 6 (tbsp) sun dried tomatoes packed in oil, chopped
 * 2 (tbsp) fresh basil, chopped
 
 
 1. Mix all together. Best if you make it several hours early so flavors can blend. Serve with pita chips or crackers.
 
 
-@@@
+@@@@
 FRUIT SALSA WITH CINNAMON CHIPS 
 Kathy Klotz
 
 
 CINNAMON CHIPS:
-* 4 (7-inch) flour tortillas (I usually make more, they keep well)
-* 1 (tbsp) sugar and ½ (tbsp) ground cinnamon (or your own cinnamon and sugar mixture)         
+* 4 (7-inch) flour tortillas, (I usually make more, they keep well)
+* 1 (tbsp) sugar
+* ½ (tbsp) ground cinnamon, (or your own cinnamon and sugar mixture)         
 
 
 SALSA:
 * 2 medium Granny Smith apples 
-* 1½ (cup) strawberries (chopped, I used quick frozen)
+* 1½ (cup) strawberries, chopped (I used quick frozen)
 * 2 kiwi fruit (peeled, chopped)
 * 1 small orange
-* 2 (tbsp) brown sugar (packed)
-* 2 (tbsp) orange marmalade, apricot preserves or apple jelly         
+* 2 (tbsp) brown sugar, packed
+* 2 (tbsp) orange marmalade, apricot preserves, or apple jelly         
 
 
 CINNAMON CHIPS
 1. Preheat the oven to 400° degrees. For cinnamon chips, lightly spray tortillas with water or Pam spray. Combine sugar and cinnamon in flour/sugar shaker; sprinkle over tortillas. Cut each tortilla into 8 wedges; place in a single layer on round baking stone.
 2. Bake for 8-10 minutes or until lightly browned and crisp. Remove to cooling rack; cool completely.
+
+
 SALSA
-1. For salsa, peel, core, and slice apples. Cut apples into quarters; chop with a food chopper. Slice or dice strawberries and chop kiwi. Place fruit in a 1-qt. bowl. Zest orange and juice until you have about 2 (tbsp) of juice. Add orange zest, orange juice, brown sugar and jelly to the fruit mixture; mix gently.
-2. Refrigerate until ready to serve. Serve with cinnamon chips.
+1. For salsa, peel, core, and slice apples. Cut apples into quarters; chop with a food chopper. Slice or dice strawberries and chop kiwi. Place fruit in a 1-quart bowl.
+2. Zest orange and juice until you have about 2 (tbsp) of juice. Add orange zest, orange juice, brown sugar and jelly to the fruit mixture; mix gently.
+3. Refrigerate until ready to serve. Serve with cinnamon chips.
 
 
 
 
-@@@
+@@@@
 CRANBERRY-CARAMELIZED ONION CHEESE SPREAD
 Pam (Brunkhorst) French
 
 
-* 1 (8 oz) pkg. cream cheese (room temperature)        
-* 4 oz blue cheese (crumbled)        
+* 1 (8 oz package) cream cheese, room temperature
+* 4 (oz) blue cheese, crumbled        
 * 1 (cup) cheddar cheese, shredded        
 * 2 (tsp) vegetable oil        
 * 1 medium onion, chopped
-* 1 (tsp) + ¼ (cup) Sugar
+* 1 (tsp) + ¼ (cup) sugar
 * 1 (cup) cranberries
-* ¼ (cup) Butter
+* ¼ (cup) butter
 * 1 (tbsp) balsamic vinegar
 * ¼ (cup) walnuts, chopped
 
 
 1. Combine cream cheese and blue cheese until smooth and creamy; add cheddar cheese. Spread in a shallow serving bowl. Cover and chill for 1 hour.
-2. Heat oil in a large skillet over medium heat. Add onion; cook and stir 4-5 minutes until tender. Reduce heat, stir in 1 (tsp) sugar; cook for 10 minutes. Remove onion from pan.
-3. In the same pan, combine cranberries, ¼ (cup) sugar and water. Cover and cook for 5 minutes until berries pop and sauce thickens. Stir occasionally. Stir in vinegar and onions. Cool.
+2. Heat oil in a large skillet over medium heat. Add onion; cook and stir 4-5 minutes until tender. Reduce heat, stir in 1 tsp sugar; cook for 10 minutes. Remove onion from pan.
+3. In the same pan, combine cranberries, ¼ cup sugar and water. Cover and cook for 5 minutes until berries pop and sauce thickens. Stir occasionally. Stir in vinegar and onions. Cool.
 4. Put cranberry/onion mixture on top of cheese mixture. Sprinkle with chopped walnuts. Serve at room temperature. Serve with crackers.
 
 
@@ -1063,7 +1096,7 @@ Ann and Phil Brunkhorst
 
 BREAD
 * 1 (1 lb) loaf frozen bread dough (white or wheat, thawed)
-* 1 (8 oz) pkg. cream cheese
+* 1 (8 oz package) cream cheese
 * 1 egg (beaten)
 * 1 (tsp) vanilla
 * ½ (cup) granulated sugar
@@ -1246,7 +1279,7 @@ ZUCCHINI BREAD
 * 2 (cups) sugar
 * 1 (cup) oil
 * 1 (tsp) vanilla
-* 1 (8 oz) pkg. cream cheese (softened)
+* 1 (8 oz package) cream cheese (softened)
 * 2 (cups) flour
 * 1 (tsp) soda
 * 1 (tsp) baking powder
@@ -1303,7 +1336,7 @@ CINNAMON ROLL-UPS
 Katie Weigel
 
 
-* 1 (8 oz) pkg. cream cheese
+* 1 (8 oz package) cream cheese
 * ½ (cup) sugar
 * 1 egg yolk
 * 1 (tsp) vanilla
@@ -1415,7 +1448,7 @@ In Memory of Jennifer Brunkhorst
 
 
 * 2 (packages) frozen dinner rolls
-* 1 (3 oz) pkg. butterscotch pudding (cooked type)
+* 1 (3 oz package) butterscotch pudding (cooked type)
 * ½ (cup) margarine
 * ½ (cup) milk
 * ¾ (cup) brown sugar
@@ -1624,7 +1657,7 @@ STRAWBERRY BUTTER
 
 * ½ (cup) butter (softened, no substitute!)
 * ⅓ (cup) powdered sugar
-* 1 (10 oz) pkg. frozen sweetened sliced strawberries (thawed, drained)
+* 1 (10 oz package) frozen sweetened sliced strawberries (thawed, drained)
 
 
 1. Cream butter until light and fluffy. Gradually add confectioners' (powdered) sugar. Slowly add strawberries to the creamed mixture. Beat well.
@@ -1638,7 +1671,7 @@ FRUIT CUP
 Alicia Brunkhorst
 
 
-* 1 (3 oz) pkg. lemon Jello
+* 1 (3 oz package) lemon Jello
 * 1 (cup) water (hot)
 * 1 (6 oz can) frozen orange juice
 * 1 (20 oz can) pineapple chunks with        juice (can use crushed or tidbits)
@@ -1738,7 +1771,7 @@ Marlene Goetschel
 
 
 * 1 pkg. Knorr leek soup
-* 1 (10 oz) pkg. chopped broccoli/spinach (well drained)
+* 1 (10 oz package) chopped broccoli/spinach (well drained)
 * 1½ (cup) cheddar cheese, shredded
 * ½ (cup) ham
 * ¼ (tsp) pepper
@@ -1761,7 +1794,7 @@ Stefanie Brunkhorst
 * ⅔ (cup) onion, chopped
 * 1-2 (cups) milk
 * 4 (cups) cheddar cheese, shredded
-* 1 (2 lb) pkg. hash browns
+* 1 (2 lb package) hash browns
 * 2½ (cup) meat (chopped ham, bacon or sausage)
 * ⅔ (cup) green pepper, chopped
 
@@ -2090,7 +2123,7 @@ Monica Piersall
 * 6 (tbsp) butter or oleo
 * 1 (cup) sugar
 * ⅓ (cup) milk
-* 1 (6 oz) pkg. chocolate chips
+* 1 (6 oz package) chocolate chips
 
 
 1. Mix together cake mix, pie filling, almond extract and beaten eggs.
@@ -2119,7 +2152,7 @@ CAKE
 
 
 FROSTING
-* 1 (3 oz) pkg. cream cheese
+* 1 (3 oz package) cream cheese
 * ¼ (cup) butter (melted)
 * 2 (tsp) milk
 * Dash of salt 
@@ -2347,7 +2380,7 @@ Alicia Brunkhorst
 
 
 * 1 (lb) powdered sugar
-* 1 (3½ oz) pkg. instant pistachio pudding
+* 1 (3½ oz package) instant pistachio pudding
 * ¼ (cup) margarine or butter (softened)
 * ⅓ (cup) Half-and-Half
 
@@ -2499,7 +2532,7 @@ John McFadden
 * 1 small jar marshmallow créme
 * ½ stick butter
 * 1 (tsp) vanilla
-* 1 (12 oz) pkg. milk chocolate chips
+* 1 (12 oz package) milk chocolate chips
 * 1 (cup) nuts (optional)
 
 
@@ -2553,11 +2586,11 @@ ROCKY ROAD CANDY
 Valerie Herrig
 
 
-* 1 (12 oz) pkg. chocolate chips
-* 1 (11 oz) pkg. butterscotch chips
+* 1 (12 oz package) chocolate chips
+* 1 (11 oz package) butterscotch chips
 * 1 (cup) creamy peanut butter
 * 10 oz Spanish peanuts
-* 1 (10½ oz) pkg. mini marshmallows
+* 1 (10½ oz package) mini marshmallows
 
 
 1. Melt chocolate chips, butterscotch chips and peanut butter on medium low heat. 
@@ -2590,7 +2623,7 @@ MINTS
 Ann and Phil Brunkhorst Family
 
 
-* 1 (8 oz) pkg. cream cheese
+* 1 (8 oz package) cream cheese
 * 2 (lb) powdered sugar
 * Flavorings and colors of choice
 
@@ -2608,7 +2641,7 @@ Angie Brunkhorst
 
 
 * 1 pkg. Oreo's (crushed fine)
-* 1 (8 oz) pkg. cream cheese (room temperature)
+* 1 (8 oz package) cream cheese (room temperature)
 * Chocolate almond bark
 * White almond bark
 
@@ -2628,8 +2661,8 @@ Angie Brunkhorst
 
 * 1 pkg. chocolate almond bark
 * 1 pkg. white almond bark
-* 1 (12 oz) pkg. milk chocolate chips
-* 1 (12 oz) pkg. semisweet chocolate chips
+* 1 (12 oz package) milk chocolate chips
+* 1 (12 oz package) semisweet chocolate chips
 * 2+ (lb) Spanish peanuts
 
 
@@ -2662,7 +2695,7 @@ Ann and Phil Brunkhorst
 * 8 qts. plain popcorn
 * 1 (cup) butter or margarine
 * ½ (cup) light corn syrup
-* 1 (9 oz) pkg. red hot candies
+* 1 (9 oz package) red hot candies
 
 
 1. Combine butter, corn syrup and candies; bring to a boil over medium heat, stirring constantly. Boil for 5 minutes, stirring occasionally.
@@ -2692,7 +2725,7 @@ PUPPY CHOW
 Katie and Mark Weigel
 
 
-* 1 (6 oz) pkg. chocolate chips
+* 1 (6 oz package) chocolate chips
 * ½ (cup) creamy peanut butter
 * 8 (cups) Crispix
 * 2 (cups) powdered sugar
@@ -2716,7 +2749,7 @@ Lora Brunkhorst
 * 1 (tsp) vanilla
 
 
-1. Combine all ingredients in a 2-qt. saucepan. Heat over the stove and bring to a "softball stage" (238°- 240°) or approximately 3 minutes after it starts to boil. Stir constantly!
+1. Combine all ingredients in a 2-quart. saucepan. Heat over the stove and bring to a "softball stage" (238°- 240°) or approximately 3 minutes after it starts to boil. Stir constantly!
 2. Remove from heat and stir mixture until it thickens, becomes creamy and cloudy, and pecans stay suspended in mixture. The sides of the pan will "talk to you" or sound gritty. Then quickly spoon out mixture on buttered waxed paper and let cool.
 3. Make pralines as small or as large as you desire. Approximately 30 depending on size. To roast pecans, place on a sheet pan at 275° for 20-25 minutes until slightly brown and fragrant.
 4. To make flavored pralines, add ½ (cup) chocolate chips or ½ (cup) peanut butter to ingredients. Be careful not to burn mixture!
@@ -2826,7 +2859,7 @@ Angie (Angela) Brunkhorst
 * 1 (tsp) soda
 * 1 (tsp) salt
 * 2½ (cup) flour
-* 1 (12 oz) pkg. chocolate chips
+* 1 (12 oz package) chocolate chips
 * 1 (cup) nuts (chopped, optional)
 
 
@@ -3057,7 +3090,7 @@ Ann and Philip Brunkhorst
 
 PASTRY
 * 1 (cup) butter or margarine
-* 1 (8 oz) pkg. cream cheese
+* 1 (8 oz package) cream cheese
 * ½ (tsp) salt
 * 2½ (cup) flour
 
@@ -3155,7 +3188,7 @@ Ann and Phil Brunkhorst
 
 CRUST
 * ½ (cup) butter (no substitutes, softened)
-* 1 (3 oz) pkg. cream cheese (softened)
+* 1 (3 oz package) cream cheese (softened)
 * 1 (cup) all-purpose flour
 
 
@@ -3499,7 +3532,7 @@ Monica Piersall
 * 4 eggs
 
 
-1. Melt butter and cocoa in a 2-qt. pan; remove from heat.
+1. Melt butter and cocoa in a 2-quart pan; remove from heat.
 2. Add sugar, flour, vanilla and eggs, 1 at a time.
 3. Spray or grease a 9x13-inch pan and pour brownies into a pan.
 4. Bake at 350° for 20 minutes or longer if you want cake-like.
@@ -3545,7 +3578,7 @@ CARAMEL LAYER CHOCOLATE SQUARES
 Jill Piersall
 
 
-* 1 (14 oz) pkg. light caramels (about 50)
+* 1 (14 oz package) light caramels (about 50)
 * ⅓ (cup) evaporated milk
 * 1 pkg. German chocolate cake mix
 * ¾ (cup) butter (melted) 
@@ -3643,7 +3676,7 @@ COOKIE DOUGH
 
 
 FILLING
-* 1 (12 oz) pkg. chocolate chips
+* 1 (12 oz package) chocolate chips
 * 15 oz sweetened condensed milk
 * 2 (tbsp) butter
 * ½ (tsp) salt
@@ -3671,7 +3704,7 @@ Jill Piersall
 * 1 (cup) butter or margarine (softened)
 * 2 (cups) all-purpose flour
 * ½ (cup) light brown sugar ¼ (tsp) salt
-* 1 (12 oz) pkg. Nestle Toll House semisweet chocolate morsels (divided)
+* 1 (12 oz package) Nestle Toll House semisweet chocolate morsels (divided)
 * 1 (14 oz can) Nestle Carnation sweetened condensed milk 
 * ½ (cup) nuts (chopped, optional) 
 * ⅓ (cup) seedless raspberry jam
@@ -3700,7 +3733,7 @@ Donna Brunkhorst Litman
 1 egg
 2 (cups) flour
 2 (tbsp) butter
-1 (6 oz) pkg. butterscotch chips
+1 (6 oz package) butterscotch chips
 1½-2½ (cup) assorted candies*
 ½ (cup) corn syrup
 
@@ -3772,8 +3805,8 @@ Angie Brunkhorst
 * 1 (tsp) vanilla
 * 2 (tsp) baking soda
 * 4½ (cup) oatmeal
-* 1 (12 oz) pkg. chocolate chips
-* 1 (12 oz) pkg. M&M's
+* 1 (12 oz package) chocolate chips
+* 1 (12 oz package) M&M's
 
 
 1. Mix ingredients in order given in a large mixing bowl. Press into a greased 10x15-inch jelly roll pan.
@@ -3828,7 +3861,7 @@ BARS
 
 FROSTING
 * 1¾ (cup) powdered sugar
-* 1 (3 oz) pkg. cream cheese
+* 1 (3 oz package) cream cheese
 * ⅓ (cup) margarine
 * 1 (tbsp) milk
 
@@ -3857,7 +3890,7 @@ Pam (Brunkhorst) French
 * 1 (15 oz can) pumpkin
 * 1 egg
 * 2 (tsp) vanilla
-* 1 (12 oz) pkg. white chocolate chips (divided)
+* 1 (12 oz package) white chocolate chips (divided)
 * ⅔ (cup) macadamia nuts, chopped
 
 
@@ -4012,7 +4045,7 @@ Alyce Woltzen McFadden
 
 
 * 1 loaf French bread (torn into pieces)
-* 1 qt. milk
+* 1 (quart) milk
 * 3 eggs
 * 3 (tbsp) butter (melted)
 * 2 (cups) sugar
@@ -4026,7 +4059,7 @@ Alyce Woltzen McFadden
 
         BREAD
 1. Spread bread pieces evenly in a greased 9x13-inch pan. Sprinkle with cinnamon and raisins.
-2. Combine ½ qt. milk, 3 eggs, 3 (tbsp) butter, 2 (cups) sugar and vanilla. Pour over bread and bake for 1 hour at 350°.
+2. Combine ½ quart milk, 3 eggs, 3 (tbsp) butter, 2 (cups) sugar and vanilla. Pour over bread and bake for 1 hour at 350°.
 
 
 BUTTER SAUCE TOPPING
@@ -4044,7 +4077,7 @@ Angie Brunkhorst
 * ½ (cup) water
 * 2 (cups) Cool Whip
 * 1 (9 oz can) crushed pineapple (drained)
-* 1 (3 oz) pkg. cherry Jello
+* 1 (3 oz package) cherry Jello
 
 
 1. Bring sugar, water, pineapple and Jello to a boil and simmer for 10 minutes, stirring occasionally. Chill until set. (About 2 hours-looks rubbery.)
@@ -4140,7 +4173,7 @@ CRUST
 
 
 FILLING
-* 1 (8 oz) pkg. cream cheese
+* 1 (8 oz package) cream cheese
 * 1 (cup) powdered sugar
 * ⅓ (cup) crunchy peanut butter
 * 2 (cups) Cool Whip
@@ -4180,7 +4213,7 @@ Alicia Brunkhorst
 
 
 * 1 (9-inch) pie shell (baked) or pie shell of your choice
-* 1 (8 oz) pkg. cream cheese
+* 1 (8 oz package) cream cheese
 * ½ (cup) milk
 * 1 (cup) sour cream
 * 1 pkg. instant vanilla pudding 
@@ -4278,7 +4311,7 @@ FILLING
 
 GLAZE:
 * ½ (cup) whipping cream
-* 1 (6 oz) pkg. semisweet chocolate chips
+* 1 (6 oz package) semisweet chocolate chips
 
 
         CRUST AND FILLING
@@ -4357,7 +4390,7 @@ CREAM PUFF DESSERT
 
 
 TOPPING
-* 1 (8 oz) pkg. cream cheese
+* 1 (8 oz package) cream cheese
 * 2½ (cup) cold milk
 * 2 (small packages) instant vanilla pudding
 * 1 (8 oz) carton Cool Whip
@@ -4427,7 +4460,7 @@ Alicia Brunkhorst
 
 
 * 1 tube refrigerated sugar cookie dough
-* 1 (8 oz) pkg. cream cheese
+* 1 (8 oz package) cream cheese
 * ½ (tsp) vanilla
 * 1 (8 oz) carton Cool Whip
 * ⅓ (cup) sugar
@@ -4446,7 +4479,7 @@ Ann and Philip Brunkhorst
 
 
 * 1 (8 oz) tube refrigerated crescent roll dough
-* 1 (8 oz) pkg. cream cheese (softened)
+* 1 (8 oz package) cream cheese (softened)
 * ½ (cup) sugar
 * ½ (tsp) almond extract
 * 1 (21 oz can) peach pie filling
@@ -4506,7 +4539,7 @@ Katie and Mark Weigel
 
 
 FOR CHOCOLATE
-1. Omit 1 qt. cream. Melt 6 (1 oz) squares of chocolate in a double boiler.
+1. Omit 1 quart cream. Melt 6 (1 oz) squares of chocolate in a double boiler.
 2. Blend in ½ (cup) additional sugar. Slowly stir in 1 (cup) boiling water. Add to the cooked base.
 
 
@@ -4540,7 +4573,7 @@ CRUST
 
 FILLING
 * 2 (8 oz) cartons Cool Whip (divided)        
-* 1 (8 oz) pkg. cream cheese
+* 1 (8 oz package) cream cheese
 * 2 small boxes instant pudding
 * 3 (cups) milk
 
@@ -4562,7 +4595,7 @@ QUICK DESSERT
 In memory of Berniece and Chris Schumacher by George and Rosaline Schumacher
 
 
-* 1 (4 serving size) pkg. instant vanilla pudding and pie filling*
+* 1 (4 serving size package) instant vanilla pudding and pie filling*
 * 1 (20 oz can) crushed pineapple*
 * 1 (cup) prepared whipped topping
 
@@ -4579,7 +4612,7 @@ OREO COOKIE TORTE
 
 * 1 small pkg. Oreo cookies (any flavor, crush, reserving ¼-⅓ (cup) crumbs for topping)
 * ⅓ (cup) margarine (melted)
-* 1 (8 oz) pkg. cream cheese
+* 1 (8 oz package) cream cheese
 * 1 (cup) powdered sugar
 * 1 (8 oz) carton Cool Whip
 * 2 (small packages) instant chocolate or vanilla pudding
@@ -4619,12 +4652,12 @@ Katie and Mark Weigel
 * 2 (cups) pretzels
 * ½ (cup) margarine or butter
 * 3 (tbsp) sugar
-* 1 (8 oz) pkg. cream cheese
+* 1 (8 oz package) cream cheese
 * 1 (cup) sugar
 * 2 (cups) Cool Whip
-* 1 (6 oz) pkg. raspberry or strawberry Jello
+* 1 (6 oz package) raspberry or strawberry Jello
 * 2 (cups) water (boiling)
-* 1 (10 oz) pkg. frozen raspberries or strawberries
+* 1 (10 oz package) frozen raspberries or strawberries
 
 
 1. Mix pretzels, margarine and sugar together. Press in a 9x13-inch pan and bake at 400° for 10 minutes.
@@ -4696,7 +4729,7 @@ Diane and Luke Brunkhorst
 * 2 sticks margarine
 * 2 (cups) flour
 * 1 (cup) pecans, chopped
-* 1 (8 oz) pkg. cream cheese (softened)
+* 1 (8 oz package) cream cheese (softened)
 * 3 (cups) powdered sugar
 * 1 large carton whipped topping
 * 2 (cups) sugar
@@ -4719,7 +4752,7 @@ In memory of Bernice and Chris Schumacher by George and Rosaline Schumacher
 
 * 1 (cup) miniature marshmallows
 * 2 (10 oz packages) frozen sliced strawberries
-* 1 (3 oz) pkg. strawberry Jello
+* 1 (3 oz package) strawberry Jello
 * 2¼ (cup) flour
 * 1½ (cup) sugar
 * ½ (cup) shortening
@@ -4738,771 +4771,339 @@ In memory of Bernice and Chris Schumacher by George and Rosaline Schumacher
 -MAIN DISHES AND MEATS-
 
 
-@@@
+@@@@
 CHEESE-STUFFED SHELLS
 Pat Schumacher and family
 
 
-
-
-
-
-1 (lb) bulk Italian sausage
-1 large onion, chopped
-1 (10 oz) pkg. frozen chopped spinach (thawed, well drained)
-1 (8 oz) pkg. cream cheese (softened)
-1 egg (beaten)
-8 oz cheddar cheese, shredded
+SHELLS:
+* 1 (lb) bulk Italian sausage
+* 1 large onion, chopped
+* 1 (10 oz package) frozen chopped spinach, thawed, well drained
+* 1 (8 oz package) cream cheese, softened
+* 1 egg, beaten
+* 8 (oz) cheddar cheese, shredded
+* 1 (cup) cottage cheese
+* ¼ (cup) Parmesan cheese, grated 
+* ¼ (tsp) salt
+* ¼ (tsp) pepper
+* ⅛  (tsp) ground cinnamon, optional 
+* 20 jumbo shell noodles, cooked, drained
 
 
 SAUCE:
-1 (29 oz can) tomato sauce
-1 (tbsp) dried minced onion
-1 ½ (tsp) dried basil
-1 1 /2 (tsp) parsley flakes
-2 garlic cloves, minced
+* 1 (29 oz can) tomato sauce
+* 1 (tbsp) dried minced onion
+* 1 ½ (tsp) dried basil
+* 1 ½ (tsp) parsley flakes
+* 2 garlic cloves, minced
+* 1 (tsp) sugar
+* 1 (tsp) dried oregano
+* ½ (tsp) salt
+* ¼ (tsp) pepper 
 
 
+1. In a skillet, brown sausage and onion; drain. Transfer to a large bowl. 
+2. Stir in spinach, cream cheese and egg. Add 1 (cup) mozzarella, cheddar, cottage cheese, Parmesan, salt, pepper and cinnamon if desired; mix well. Stuff shells and arrange in a greased 13x9x2-inch baking dish. 
+3. Combine sauce ingredients; mix well. Spoon over shells. 
+4. Cover and bake at 350° for 40 minutes. Uncover; sprinkle with remaining mozzarella. Return to oven for 5 minutes or until cheese is melted. Yield: 8-10 servings.
 
 
-
-
-1 (cup) cottage cheese
-¼ (cup) Parmesan cheese, grated ¼(tsp) salt
-¼ (tsp) pepper
-1 /8 (tsp) ground cinnamon (optional)
-20 jumbo shell noodles (cooked,
-drained)
-
-
-
-
-1 (tsp) sugar
-1 (tsp) dried oregano
-1 /2 (tsp) salt
-¼ (tsp) pepper 
-        M
-E
-
-
-
-
-In a skillet, brown sausage and onion; drain. Transfer to a large bowl. Stir in
-spinach, cream cheese and egg. Add 1 (cup) mozzarella, cheddar, cottage cheese, Parmesan, salt, pepper and cinnamon if desired; mix well. Stuff shells and arrange in a greased 13x9x2-inch baking dish. Combine sauce ingredients; mix well. Spoon over shells. Cover and bake at 350° for 40 minutes. Uncover; sprinkle with remaining mozzarella. Return to oven for 5 minutes or until cheese is melted. Yield: 8-10 servings.
-
-
-Ann Brunkhorst (IF.)
+@@@@
 MACARONI CHEESE DELUXE
+Ann Brunkhorst (IF.)
 
 
-1 (7 oz) pkg. elbow macaroni         ¾(tsp) salt
-2 (cups) small curd cream style cottage         Dash of pepper
-cheese         8 oz sharp processed American
-1 (cup) sour cream         cheese, shredded
-1 egg (slightly beaten)
+* 1 (7 oz package) elbow macaroni         
+* 2 (cups) small curd cream style cottage cheese         
+* 1 (cup) sour cream         
+* 1 egg, slightly beaten
+* ¾ (tsp) salt
+* Dash of pepper
+* 8 oz sharp processed American cheese, shredded
 
 
-Cook macaroni according to directions on box; drain well. Combine cottage cheese, sour cream, egg, salt and pepper. Add shredded cheese, mixing well. Stir in cooked macaroni. Turn into a 9x9-inch baking dish. Sprinkle with paprika; bake in a 350° oven for 45 minutes. Makes 6-8 servings.
--135-
+1. Cook macaroni according to directions on box; drain well. 
+2. Combine cottage cheese, sour cream, egg, salt and pepper. Add shredded cheese, mixing well. Stir in cooked macaroni. 
+3. Turn into a 9x9-inch baking dish. Sprinkle with paprika; bake in a 350° oven for 45 minutes. Makes 6-8 servings.
 
 
+@@@@
+MAKEOVER CHICKEN 'N' BROCCOLI BRAID
+Kathy Klotz
 
 
-A
-T
-$
-
-
-M
-A
-1
-N
-
-
-D
-1
-$
-H
-E
-
-
-
-
-
-
+* 2 (cups) chicken breast, cooked, cubed
+* 1 (cup) fresh broccoli, chopped
+* 4 (oz) reduced fat cheddar cheese, shredded
+* ½ (cup) sweet red pepper, chopped
+* 2 (tsp) dill weed
+* 2 garlic cloves, minced
+* ¼ (tsp) salt
+* ¼ (cup) reduced fat mayonnaise 
+* ¼ (cup) reduced fat plain yogurt
+* 2 (tubes) refrigerated reduced fat crescent rolls
+* 1 egg white, lightly beaten
+* 1 (tbsp) slivered almonds
 
 
 
 
-
-
-MAKEOVER CHICKEN 'N'        Kathy Klotz
-BROCCOLI BRAID
-
-
-2 (cups) chicken breast (cooked, cubed)        ¼ (tsp) salt
-
-
-
-
-1 (cup) fresh broccoli, chopped
-4 oz reduced fat cheddar cheese
-(shredded)
-½ (cup) sweet red pepper, chopped
-2 (tsp) dill weed
-2 garlic cloves, minced
-
-
-
-
-¼ (cup) reduced fat mayonnaise 
-¼ (cup) reduced fat plain yogurt
-2 tubes refrigerated reduced fat
-crescent rolls
-1 egg white (lightly beaten)
-1 (tbsp) slivered almonds
-
-
-
-
-
-
-In a large bowl, combine the first 7 ingredients. Stir in mayonnaise and yogurt. Unroll both tubes of crescent rolls onto an ungreased baking sheet; press together, forming a 15x12-inch rectangle. Seal seams and perforations. Spoon filling lengthwise down the center third of dough. On each long side, cut dough
-3 inches toward the center at 1½ ?inch intervals, forming strips. Bring         1 strip from each side over filling; pinch ends to seal. Repeat. Pinch ends of loaf to seal. Brush with egg white; sprinkle with almonds. Bake 15 minutes or until crust is golden brown and filling is heated through.
+1. Preheat oven to 350°. 
+2. In a large bowl, combine the first 7 ingredients. Stir in mayonnaise and yogurt. 
+3. Unroll both tubes of crescent rolls onto an ungreased baking sheet; press together, forming a 15x12-inch rectangle. Seal seams and perforations. 
+4. Spoon filling lengthwise down the center third of dough. On each long side, cut dough 3 inches toward the center at 1 ½ -inch intervals, forming strips. Bring 1 strip from each side over filling; pinch ends to seal. Repeat. Pinch ends of loaf to seal. 
+5. Brush with egg white; sprinkle with almonds. Bake for 15 minutes or until the crust is golden brown and filling is heated through.
 
 
 Great for Bridal Showers.
 
 
-BEEF OR CHICKEN ENCHILADAS        Bob Brunkhorst
+@@@@
+BEEF OR CHICKEN ENCHILADAS        
+Bob Brunkhorst
 
 
+* 1 ½ (lb) hamburger, browned, drained or 4 chicken breasts (cut into chunks)
+* 1 (large jar) chunky salsa
+* 1 (can) cream of chicken soup
+* 1 (package) large soft shell tacos/tortillas
+* 2 (cups) shredded cheese
+* 1 small can sliced black olives 
+* ½ (tsp) paprika
+* Any type peppers, optional, diced
 
 
 
 
-1½ (lb) hamburger (browned, drained) 
-        or 4 chicken breasts (cut into
-chunks)
-1 large jar chunky salsa
-1 can cream of chicken soup
 
 
+1. Mix salsa with drained and browned hamburger; simmer for 10 minutes, set aside. Spray a 9x12-inch cake pan with nonstick coating. 
+2. Fill shells with meat mix, place seam side down in pan and repeat with rest. Spread on soup mix, black olives, cheese and paprika in that order. Bake for 30 minutes at 350° . Cool slightly before serving.
 
 
+@@@@
+CHICKEN AND RICE CASSEROLE        
+Amanda Brunkhorst
 
 
-1 pkg. large soft shell tacos/tortillas
-1 large bag shredded cheese or 2 (cups)
-1 small can sliced black olives ½ (tsp) paprika
-Any type peppers (optional, diced)
+* 3-4 chicken breasts        
+* 2 cans cream of mushroom soup        
+* 1 (8 oz) carton sour cream
+* 1 (package) dried beef, shredded into pieces
+* Bacon
+* Rice
 
 
+1. Layer the chicken breasts with the bacon wrapped around each piece. Mix all other ingredients and pour over the bacon wrapped chicken. Bake at 400° for 45 minutes. Cook rice separately.
 
 
-
-
-Mix salsa with drained and browned hamburger; simmer for         10 minutes, set aside. Spray a 9x12-inch cake pan with nonstick coating. Fill shells with meat mix, place seam side down in pan and repeat with rest. Spread on soup mix, black olives, cheese and paprika in that order. Bake 30 minutes at 350° . Cool slightly before serving.
-
-
-
-
-
-
-
-
--136-
-
-
-
-
-
-
-
-
-CHICKEN AND RICE CASSEROLE        Amanda Brunkhorst
-
-
-3-4 chicken breasts        1 pkg. dried beef (shredded into
-2 cans cream of mushroom soup        pieces)
-1 (8 oz) carton sour cream        Bacon
-Rice
-
-
-Layer the chicken breasts with the bacon wrapped around each piece. Mix all other ingredients and pour over the bacon wrapped chicken. Bake at 400° Wfor 45 minutes. Cook rice separately.
-
-
-CREAMY CHICKEN AND CHILE        Patricia Brockman
-ENCHILADAS
-
-
-1 (lb) uncooked chicken breasts (cut        1 pkg. flour tortillas
-   into strips)        2 (10 oz cans) green chile enchilada
-1 (8 oz) pkg. cream cheese        sauce
-1 (4.5 oz can) chopped green chilies        ¾ (cup) cheddar cheese
-A
-Heat oven to 400'. Lightly grease a glass baking dish. In a         10-inch nonstick skillet, cook chicken over medium-high heat, stirring occasionally until no longer pink in center. Add cream cheese and chilies; reduce heat to medium. Cook
-and stir until blended and cream cheese is melted.        A
-
-
-Spoon chicken filling onto tortillas; roll up and place seam side down in baking dish. Pour enchilada sauce over the top; sprinkle with cheddar cheese. Bake 15-20 minutes. Makes 12 enchiladas.
-$
-H E
-
-
-
-
-Bernice and Chris Schumacher farmed the first year of their marriage at 
-        LaMontte, IA before moving to their farm north of Lamont in 1936.
-
-
-
-
-
-
-
-
-
-
--137-
-
-
-
-
-
-
-
-
-
-
-
-
-CHICKEN DIVAN
-
-
-2 (10 oz packages) frozen broccoli ¼ (cup) butter
-⅓ (cup) flour
-1I8(tsp) ground nutmeg
-1 (cup) light cream
-
-
-
-
-
-
-
-
+@@@@
+CREAMY CHICKEN AND CHILE ENCHILADAS
 Patricia Brockman
 
 
-1 (cup) chicken broth
-⅓ (cup) Swiss cheese, shredded
-1 (lb) chicken (cooked)
-¼ (cup) Parmesan cheese, grated
+* 1 (lb) uncooked chicken breasts, cut        into strips
+* 1 (8 oz package) cream cheese
+* 1 (4.5 oz can) chopped green chilies
+* 1 pkg. flour tortillas
+* 2 (10 oz cans) green chile enchilada sauce
+* ¾ (cup) cheddar cheese
+
+
+1. Heat oven to 400'. Lightly grease a glass baking dish. In a 10-inch nonstick skillet, cook chicken over medium-high heat, stirring occasionally until no longer pink in center. 
+2. Add cream cheese and chilies; reduce heat to medium. Cook and stir until blended and cream cheese is melted. 
+3. Spoon chicken filling onto tortillas; roll up and place seam side down in baking dish. Pour enchilada sauce over the top; sprinkle with cheddar cheese. Bake 15-20 minutes. Makes 12 enchiladas.
+
+
+@@@@
+CHICKEN DIVAN
+Patricia Brockman
+
+
+* 2 (10 oz packages) frozen broccoli
+* ¼ (cup) butter
+* ⅓ (cup) flour
+* ⅛ (tsp) ground nutmeg
+* 1 (cup) light cream
+* 1 (cup) chicken broth
+* ⅓ (cup) Swiss cheese, shredded
+* 1 (lb) chicken, cooked
+* ¼ (cup) Parmesan cheese, grated
 
 
 
 
-
-
-Cook vegetable according to package directions; drain. Arrange crosswise in a 12x7½ x2-inch baking pan. For sauce, in a saucepan melt butter; stir in flour, nutmeg ⅛ (tsp) pepper. Add cream and broth all at once. Cook and stir until bubbly; continue cooking 1-2 minutes more. Add Swiss cheese; stir until melted. Pour half of the sauce over broccoli. Top with chicken. Pour remaining sauce over all. Sprinkle Parmesan atop. Bake in a 350° oven for 20 minutes or until heated through. Serves 6.
-
-
-
+1. Cook vegetables according to package directions; drain. Arrange crosswise in a 12x7½ x2-inch baking pan. 
+2. For sauce, in a saucepan melt butter; stir in flour, nutmeg ⅛ (tsp) pepper. Add cream and broth all at once. Cook and stir until bubbly; continue cooking 1-2 minutes more. Add Swiss cheese; stir until melted. 
+3. Pour half of the sauce over broccoli. Top with chicken. Pour remaining sauce over all. Sprinkle Parmesan atop. Bake in a 350° oven for 20 minutes or until heated through. Serves 6.
 
 
 
 
-
+@@@@
 CHICKEN LASAGNA
-
-
-1 (8 oz) pkg. lasagna noodles ½ (cup) onion, chopped
-½ (cup) green pepper, chopped
-3 (tbsp) butter
-1 (10¾ oz can) cream of mushroom 
-        soup
-⅓ (cup) milk
-
-
-
-
-
-
-
-
-
-
 Kathy Klotz
 
 
-6 oz mushrooms (sliced) 112 (tsp) basil
-1½ (cup) creamed cottage cheese
-2 (cups) American cheese, shredded
-3 (cups) chicken (cooked, diced) ½ (cup) Parmesan cheese
+* 1 (8 oz package) lasagna noodles 
+* ½ (cup) onion, chopped
+* ½ (cup) green pepper, chopped
+* 3 (tbsp) butter
+* 1 (10 ¾ oz can) cream of mushroom soup
+* ⅓ (cup) milk
+* 6 (oz) mushrooms, sliced
+* ½ (tsp) basil
+* 1 ½ (cup) creamed cottage cheese
+* 2 (cups) American cheese, shredded
+* 3 (cups) chicken, cooked, diced
+* ½ (cup) Parmesan cheese
 
 
 
 
 
 
-Prepare lasagna noodles according to package directions.  In a medium saucepan, saut‚ onion and green pepper in butter until tender. Stir in soup, milk, mushrooms and basil. In a 9x13-inch baking dish, place half of each of the following: noodles, cottage cheese, American cheese, chicken, sauce and Parmesan cheese; repeat layers. Bake, uncovered, at 350° for 45 minutes.
+1. Prepare lasagna noodles according to package directions.  In a medium saucepan, saute onion and green pepper in butter until tender. Stir in soup, milk, mushrooms and basil. 
+2. In a 9x13-inch baking dish, place half of each of the following: noodles, cottage cheese, American cheese, chicken, sauce and Parmesan cheese; repeat layers. 
+3. Bake, uncovered, at 350° for 45 minutes.
 
 
 Nice change from traditional lasagna.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
--138-
-
-
-
-
--
--
-
-
-
-
-
-
+@@@@
 CHICKEN PARMESAN
-
-
-½ (cup) Stouffers Turkey Stuffing mix
-3 (tbsp) Parmesan cheese
-1 (tbsp) parsley
-1 (tsp) curry
-1 (tbsp) Italian seasoning
-
-
-
-
-
-
-
-
 Luke and Diane Brunkhorst
 
 
-3 (tbsp) butter
-4 chicken breast halves
-1 jar spaghetti sauce Spaghetti noodles
+* ½ (cup) Stouffers Turkey Stuffing mix
+* 3 (tbsp) Parmesan cheese
+* 1 (tbsp) parsley
+* 1 (tsp) curry
+* 1 (tbsp) Italian seasoning
+* 3 (tbsp) butter
+* 4 chicken breast halves
+* 1 jar spaghetti sauce 
+* Spaghetti noodles
 
 
 
 
+1. Preheat the oven to 350°. 
+2. Crush stuffing mix and then mix with cheese, parsley, curry and Italian seasoning. In a dish, melt butter in the microwave. Dip chicken in butter and then dip chicken in stuffing mixture on both sides and place in the dish.
+3. Bake for 20 minutes, turn and bake for 20 more minutes. I usually throw the leftover mix on top after I flip. Make sure to remember and make the spaghetti sauce and noodles on the stove top in the last 20 minutes of the chicken baking.
 
 
-Preheat oven to 350° . Crush stuffing mix and then mix with cheese, parsley, curry and Italian seasoning. In a dish, melt butter in microwave. Dip chicken in butter and then dip chicken in stuffing mixture on both sides and place in dish. Bake 20 minutes, turn and bake 20 more minutes. I usually throw the leftover mix on top after I flip. Make sure to remember and make the spaghetti sauce and noodles on the stove top in the last 20 minutes of the chicken baking.
-
-
-
-
-
-
-
-
+@@@@
 EASY CHICKEN POT PIE
-
-
-1 (15 oz) pkg. Pillsbury refrigerated 
-        pie crusts
-⅓ (cup) butter or margarine 
-⅓ (cup) onion, chopped 
-⅓ (cup) all-purpose flour 
-½ (tsp) salt
-
-
-
-
-
-
-
-
 Kathy Klotz
 
 
-¼ (tsp) pepper
-1½ (cup) chicken broth ⅔ (cup) milk
-2½-3 (cups) chicken or turkey (cooked, 
-        shredded)
-2 (cups) frozen mixed vegetables (thawed)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-M
-E
-A
-T
-S
-
-
-M
-A
-1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/-þ
-
-
-
-
-Heat oven to 425. Prepare pie crusts as directed on package for 2-crust pie 
-using a 9-inch pie pan. Melt margarine in medium saucepan over medium heat. 
-Add onion; cook 2 minutes or until tender. Add flour, salt and pepper; stir until 
-well blended. Gradually stir in broth and milk, cooking and stirring until bubbly 
-and thickened. Add chicken and mixed vegetables; mix well. Remove from 
-heat.
-Spoon chicken mixture into crust-lined pan. Top with second crust; seal edges 
-and flute. Cut slits in several places in top crust. Bake at 425 for 30-40 minutes 
-or until crust is golden brown. Let stand 5 minutes before serving. Makes 6 
-servings.
+* 1 (15 oz package) Pillsbury refrigerated pie crusts
+* ⅓ (cup) butter or margarine 
+* ⅓ (cup) onion, chopped 
+* ⅓ (cup) all-purpose flour 
+* ½ (tsp) salt
+* ¼ (tsp) pepper
+* 1½ (cup) chicken broth 
+* ⅔ (cup) milk
+* 2 ½-3 (cups) chicken or turkey, cooked, shredded
+* 2 (cups) frozen mixed vegetables, thawed
+
+
+
+
+1. Heat oven to 425°. Prepare pie crusts as directed on the package for 2-crust pie using a 9-inch pie pan. 
+2. Melt margarine in medium saucepan over medium heat. Add onion; cook for 2 minutes or until tender. Add flour, salt and pepper; stir until well blended. 
+3. Gradually stir in broth and milk, cooking and stirring until bubbly and thickened. Add chicken and mixed vegetables; mix well. Remove from heat.
+4. Spoon chicken mixture into crust-lined pan. Top with second crust; seal edges and flute. Cut slits in several places in top crust. Bake at 425° for 30-40 minutes or until crust is golden brown. Let stand 5 minutes before serving. Makes 6 servings.
 
 
 Quick winter meal.
 
 
-
-
--139-
-
-
-
-
-N
-
-
-D
-1
-S
-H
-E
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@@@@
 HOT CHICKEN SALAD
-
-
-6 whole chicken breasts
-1 (cup) cheese, shredded 
-½ can cream of chicken soup
-2 (cups) celery (finely chopped)
-1 (cup) mayonnaise (use Hellmann's)
-1 (cup) sour cream
-1 (8 oz can) sliced water chestnuts
-1 (4 oz can) sliced mushrooms
-(drained)
-
-
-
-
-
-
-
-
 Amanda Brunkhorst
 
 
-½ (cup) slivered almonds
-2 (tbsp) lemon juice
-2 (tbsp) onion, minced
-1 (tsp) salt
-¼(tsp) pepper
-1 (2.5 oz can) French fried onion rings 
-        (may use cheddar onion rings)
+* 6 whole chicken breasts
+* 1 (cup) cheese, shredded 
+* ½ (can) cream of chicken soup
+* 2 (cups) celery, finely chopped
+* 1 (cup) mayonnaise, I use Hellmann's
+* 1 (cup) sour cream
+* 1 (8 oz can) sliced water chestnuts
+* 1 (4 oz can) sliced mushrooms, drained
+* ½ (cup) slivered almonds
+* 2 (tbsp) lemon juice
+* 2 (tbsp) onion, minced
+* 1 (tsp) salt
+* ¼ tsp) pepper
+* 1 (2.5 oz can) French fried onion rings, may use cheddar onion rings
+
+
+1. Cook chicken breast and cut into 1-inch pieces. Mix ingredients from chicken soup through pepper and add cut up chicken. 
+2. Pour ingredients into a casserole dish and top with cheese. Bake at 350° for 30 minutes and then sprinkle onions all over the top and bake 15 minutes longer. Serves 6-8.
+
+
+@@@@
+HONEY-GLAZED CHICKEN        
+Pat Schumacher and Family
+
+
+* ½ (cup) flour
+* 1 (tsp) salt
+* ½ (tsp) cayenne pepper
+* 1 (approx. 3 lb) broiler-fryer chicken, cut up
+* ½ (cup) butter or margarine, melted, divided
+* ¼ (cup) brown sugar, packed
+* ¼ (cup) honey
+* ¼ (cup) lemon juice
+* 1 (tbsp) soy sauce 
+* 1 ½ (tsp) curry powder
+
+
+
+
+1. In a bowl or bag, combine flour, salt and cayenne pepper; add chicken pieces and dredge or shake to coat. 
+2. Pour 4 (tbsp) butter into a 13x9x2-inch baking pan, turning pieces once to coat. Bake, uncovered, at 350° for 30 minutes.
+3. Combine brown sugar, honey, lemon juice, soy sauce, curry powder and remaining butter; pour over chicken. Bake 45 minutes more or until the chicken is tender, basting several times with pan drippings. Yield: 4-6 servings.
+
+
+
+
+@@@@
+SWEET 'N SOUR CHICKEN        BREAST
+Ann and Phil Brunkhorst
+
+
+* 8-10 skinless chicken breast halves        
+* 1 (12 oz) jar apricot preserves or jam        
+* 1 (1 oz package) onion soup mix        
+* 1 (8 oz) bottle Russian salad dressing
+* 1 (cup) green and/or red pepper rings
+* 1 (cup) chunk pineapple and juice
+* Cashews, optional
+
+
+1. Place breast into roaster or can be prepared in a crock pot. Combine jam, dressing and soup mix. Pour over chicken. 
+2. Bake, covered, for 1 hour at 350°. (Longer in crock pot.) Take out the oven and add peppers and pineapple. Cashews are optional. Continue to bake another ½ hour. Serve with rice and salad.
 
 
 
 
 
 
-Cook chicken breast and cut into         1-inch pieces. Mix ingredients from chicken soup through pepper and add cut up chicken. Pour ingredients into casserole and top with cheese. Bake at 350° for 30 minutes and then sprinkle onions all over the top and bake 15 minutes longer. Serves 6-8.
-
-
-HONEY-GLAZED CHICKEN        Pat Schumacher and Family
-
-
-
-
-
-
-½ (cup) flour
-1 (tsp) salt
-½(tsp) cayenne pepper
-1 broiler-fryer (about 3 (lb), cut up) 
-½ (cup) butter or margarine (melted,
-divided)
-
-
-
-
-
-
-¼ (cup) brown sugar (packed) ¼ (cup) honey
-¼ (cup) lemon juice
-1 (tbsp) soy sauce 
-1½(tsp) curry powder
-
-
-
-
-In a bowl or bag, combine flour, salt and cayenne pepper; add chicken pieces and dredge or shake to coat. Pour 4 (tbsp) butter into a 13x9x2-inch baking pan, turning pieces once to coat. Bake, uncovered, at 350° for 30 minutes.
-Combine brown sugar, honey, lemon juice, soy sauce, curry powder and remaining butter; pour over chicken. Bake 45 minutes more or until the chicken is tender, basting several times with pan drippings. Yield: 4-6 servings.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--140-
-
-
-
-
-
-
-
-
-SWEET 'N SOUR CHICKEN        Ann and Phil Brunkhorst
-BREAST
-
-
-8-10 skinless chicken breast halves        1 (cup) green and/or red pepper rings
-1 (12 oz) jar apricot preserves (jam)        1 (cup) chunk pineapple and juice
-1 (1 oz) pkg. onion soup mix        Cashews (optional)
-1 (8 oz) bottle Russian salad dressing
-
-
-Place breast into roaster or can be prepared in a crock pot. Combine jam, dressing and soup mix. Pour over chicken. Bake, covered, for 1 hour at 350°. (Longer in crock pot.) Take out the oven and add peppers and pineapple. Cashews are optional. Continue to bake another ½ hour. Serve with rice and salad.
-
-
-
-
-
-
-
-
+@@@@
 TETRAZZINI
+Katie and Mark Weigel
 
 
 1 onion, chopped
-1 green pepper, chopped I  (cup) celery, chopped
+1 green pepper, chopped 
+1 (cup) celery, chopped
 3 (tbsp) oleo
 1 can cream of chicken soup
 1 can cream of mushroom soup
@@ -5515,7 +5116,8 @@ TETRAZZINI
 
 
 
-Katie and Mark Weigel
+
+
 
 
 4 (cups) chicken (cooked, diced)         M
@@ -5664,7 +5266,7 @@ Katie and Mark Weigel
 
 
 
-Place ½ the ham into a         2-qt. casserole. Cover with half the potatoes and half the onion. Sift half the flour over; season with salt and pepper. Repeat layers ending with flour on top. Pour milk over all.
+Place ½ the ham into a 2-quart casserole. Cover with half the potatoes and half the onion. Sift half the flour over; season with salt and pepper. Repeat layers ending with flour on top. Pour milk over all.
 Bake, uncovered, in a         350° oven for         1-1¼ hours or until potatoes are nearly tender. Uncover. Drizzle with melted butter. Bake an additional 15 minutes or until done.
 
 
@@ -6184,7 +5786,7 @@ so he never did return to his birth country.
 TORTILLA SPIRALS
 
 
-1 (8 oz) pkg. cream cheese
+1 (8 oz package) cream cheese
 5 oz goat cheese
 1-2 garlic cloves, minced
 3 scallions, minced
@@ -6431,7 +6033,7 @@ may be doubled and placed into a 9x13-inch pan but needs to be baked longer.
 CREAMY FETTUCCINE ALFREDO
 
 
-1 (8 oz) pkg. cream cheese (cubed)         ½ (cup) milk
+1 (8 oz package) cream cheese (cubed)         ½ (cup) milk
 ¾ (cup) Parmesan cheese, grated         8 oz fettuccine (cooked, drained) ½ (cup) margarine
 
 
@@ -6691,11 +6293,11 @@ SEAFOOD LASAGNA
 * 12 lasagna noodles
 * 1 (lb) bay scallops (cut in half)
 * 1 (cup) small shrimp (cut in pieces)
-* 1 (1 lb) pkg. imitation crab meat (chopped)
+* 1 (1 lb package) imitation crab meat (chopped)
 * 1 small onion
 * 1 (tsp) Italian seasoning Salt and pepper
 * 2 (15 oz) jars Alfredo sauce
-* 1 (12 oz) pkg. mozzarella cheese
+* 1 (12 oz package) mozzarella cheese
 
 
 
@@ -6946,10 +6548,10 @@ GERMAN SWEET CHOCOLATE CREAM PIE
 Ann and Phil Brunkhorst
 
 
-* 1 (4 oz) pkg. Baker's German sweet chocolate        
+* 1 (4 oz package) Baker's German sweet chocolate        
 * ⅓ (cup) milk        
 * 2 (tbsp) sugar
-* 1 (3 oz) pkg. cream cheese (softened)
+* 1 (3 oz package) cream cheese (softened)
 * 1 (8 oz) carton Cool Whip
 * 1 (8-inch) graham cracker crust
 
@@ -6991,7 +6593,7 @@ Marlene Goetschel
 * 1/2 stick butter or margarine (melted)
 * 2 (cups) milk
 * 1 (tsp) Vanilla
-* 1 (8 oz) pkg. shredded coconut
+* 1 (8 oz package) shredded coconut
 
 
 
@@ -7038,7 +6640,7 @@ LUSCIOUS LEMON PIE
 Ann and Phil Brunkhorst
 
 
-* 1 (8 oz) pkg. cream cheese (softened)
+* 1 (8 oz package) cream cheese (softened)
 * 1 (cup) lemon juice
 * 1 (cup) milk
 * 1 (tbsp) lemon rind
@@ -7056,7 +6658,7 @@ Erin McFadden
 
 
 * 1 (cup) peanut butter
-* 1 (8 oz) pkg. cream cheese
+* 1 (8 oz package) cream cheese
 * ½ (cup) sugar
 * 12 oz Cool Whip
 * 1 chocolate pie crust
@@ -7266,7 +6868,7 @@ Ann and Philip Brunkhorst
 
 * 2 (cups) rhubarb (diced)        
 * 1¼ (cup) sugar        
-* 1 (3 oz) pkg. strawberry Jello        
+* 1 (3 oz package) strawberry Jello        
 * 1 (13 oz can) evaporated milk
 * 1 (tbsp) lemon juice concentrate
 * 1 (9-inch) wafer crust
@@ -7552,7 +7154,7 @@ LAYERED LETTUCE SALAD        Angie Brunkhorst
 ½ (cup) celery, chopped        2 (tbsp) sugar
 1 (cup) green pepper, chopped        4 oz cheddar cheese, grated
 1 small green onion (diced)        Bacon Bits
-1 (10 oz) pkg. frozen green peas 
+1 (10 oz package) frozen green peas 
         (thawed)
 
 
@@ -7668,7 +7270,7 @@ Mix all together. Refrigerate. Serve.
 PASTA SALAD
 
 
-1 (16 oz) pkg. spiral pasta (cooked)
+1 (16 oz package) spiral pasta (cooked)
 1 large onion, chopped
 1 large green pepper, chopped
 4 large carrots, shredded
@@ -7747,8 +7349,8 @@ ASIAN CHICKEN AND ORZO SALAD
 Pam (Brunkhorst) French
 
 
-* 1 (9 oz) pkg. frozen sugar snap peas
-* 1 (16 oz) pkg. orzo (cooked, drained)
+* 1 (9 oz package) frozen sugar snap peas
+* 1 (16 oz package) orzo (cooked, drained)
 * 1 (cup) water chestnuts (drained, chopped)
 * 3 (cups) chicken (cooked, diced) 
 * 3-4 green onions, chopped
@@ -7793,7 +7395,7 @@ Ann Brunkhorst
 * 1 (large package).chicken flavor Rice-a-Roni, or 3 small packages
 * 2 (cups) chicken breast (cooked, chopped)
 * 2 cans mandarin oranges (drained)
-* 1 (16 oz) pkg. frozen peas
+* 1 (16 oz package) frozen peas
 * 2 cans sliced water chestnuts (chopped)
 * 1 bunch green onions (sliced)
 * 1 (cup) celery
@@ -7881,10 +7483,10 @@ CHAMPAGNE SALAD
 Ann Brunkhorst (I.F.)
 
 
-* 1 (8 oz) pkg. cream cheese 
+* 1 (8 oz package) cream cheese 
 * ¾ (cup) sugar
 * 1 (20 oz can) crushed pineapple (drained)
-* 1 (10 oz) pkg. frozen strawberries
+* 1 (10 oz package) frozen strawberries
 * 2 bananas (diced)
 * ½ (cup) nuts, chopped
 * 1 (8 oz) carton Cool Whip
@@ -7919,7 +7521,7 @@ FRUIT CUP
 Alicia Brunkhorst
 
 
-* 1 (3 oz) pkg. lemon Jello
+* 1 (3 oz package) lemon Jello
 * 1 (cup) water (hot)
 * 1 (6 oz can) frozen orange juice
 * 1 (20 oz can) pineapple chunks with juice (can use crushed or tidbits)
@@ -7974,7 +7576,7 @@ Stefanie Brunkhorst
 
 
 * 1 (16 oz) carton whipped topping (thawed)
-* 1 (3 oz) pkg. orange Jello
+* 1 (3 oz package) orange Jello
 * 1 (20 oz can) crushed pineapple (drained)
 * 1 (11 oz can) mandarin oranges (drained)
 * 2 (cups) miniature marshmallows 
@@ -8054,12 +7656,12 @@ Ann and Philip Brunkhorst
 * 2 (cups) pretzels (crushed) 
 * ½ (cup) margarine or butter
 * 3 (tbsp) sugar
-* 1 (8 oz) pkg. cream cheese
+* 1 (8 oz package) cream cheese
 * 1 (cup) sugar
 * 2 (cups) Cool Whip
-* 1 (6 oz) pkg. raspberry or strawberry Jello
+* 1 (6 oz package) raspberry or strawberry Jello
 * 2 (cups) water, boiling
-* 1 (10 oz) pkg. frozen raspberries or strawberries
+* 1 (10 oz package) frozen raspberries or strawberries
 * ½ (tsp) almond flavoring (optional)
 
 
@@ -8081,10 +7683,10 @@ Marlene Goetschel
 * 2 (cups) pretzels (crushed)        
 * 1 (tbsp) white sugar        
 * 1 stick margarine or butter (melted)        
-* 1 (8 oz) pkg. cream cheese (softened)        
+* 1 (8 oz package) cream cheese (softened)        
 * 1 (cup) white sugar
 * 2 (cups) Cool Whip
-* 1 (6 oz) pkg. strawberry Jello
+* 1 (6 oz package) strawberry Jello
 * 2 (10 oz packages) frozen strawberries (thawed)
 1. Mix together crushed pretzels, 1 (tbsp) white sugar, and melted margarine or butter and pat into a 9x13-inch pan. Bake at 350° for 10 minutes. Cool. 
 2. Blend cream cheese and 1 (cup) sugar until fluffy; fold in Cool Whip. Spread over chilled pretzel crust. 
@@ -8459,7 +8061,7 @@ Ann and Philip Brunkhorst
  
 
 
-   * 1 (16 oz) pkg. frozen shredded or diced hash brown potatoes
+   * 1 (16 oz package) frozen shredded or diced hash brown potatoes
    * ½-1 (cup) onion, chopped
    * 1 (14 oz can) chicken broth, or equivalent made from chicken bouillon
    * 2 (cups) water
@@ -8505,9 +8107,9 @@ Marlene Goetschel
    * 2 garlic cloves (crushed)         
    * 1 (tsp) margarine         
    * 3 (13 oz cans) chicken broth         
-   * 1 (10 oz) pkg. frozen spinach         
+   * 1 (10 oz package) frozen spinach         
    * Parmesan cheese, grated
-   * 1 (8 oz) pkg. fresh or frozen cheese
+   * 1 (8 oz package) fresh or frozen cheese
    * Tortellini
    * 1 (16 oz can) tomatoes (undrained, coarsely chopped)
 
@@ -8910,7 +8512,7 @@ Patricia Mass
 
 
 6-8 large potatoes         1 (8 oz) carton sour cream
-1 (8 oz) pkg. cream cheese
+1 (8 oz package) cream cheese
 
 
 Boil potatoes in salted water; drain. Mash potatoes and add cream cheese and 
@@ -8921,82 +8523,30 @@ hour.
 Note: We enlarge recipe until we have a roaster oven full. We also make an extra turkey roaster pan full.
 
 
+@@@
+CHEESY RANCH AND BACON MASHED POTATOES        
+Marlene Goetschel
 
 
-CHEESY RANCH AND BACON         Marlene Goetschel
-MASHED POTATOES
-
-
-1 (1 oz) pkg. Ranch dressing mix         1 (22 oz) pkg. frozen mashed
-1 (cup) sour cream         potatoes
-1¾ (cups) milk         6 bacon slices (cooked, crumbled)
+1 (1 oz package) Ranch dressing mix         
+1 (cup) sour cream         
+1 ¾ (cups) milk         
 ½ (cup) cheese, shredded
+1 (22 oz package) frozen mashed potatoes
+6 bacon slices, cooked, crumbled
 
 
-Whisk together in a large glass bowl: Ranch dressing mix, sour cream and milk. 
-Stir in frozen mashed potatoes. Microwave on high 12 minutes, stirring every 4 
-minutes. Last 4 minutes, stir in crumbled bacon and shredded cheese. Serves 
-8.
+   1. Whisk together in a large glass bowl: Ranch dressing mix, sour cream and milk. 
+   2. Stir in frozen mashed potatoes. Microwave on high 12 minutes, stirring every 4 minutes. Last 4 minutes, stir in crumbled bacon and shredded cheese. Serves 8.
 
 
+@@@
+HASH BROWN CASSEROLE         
+Vince McFadden
 
 
-HASH BROWN CASSEROLE         Vince McFadden
-
-
-2 (lb) frozen hash browns         1 small onion (chopped, optional)
-2 cans cream of mushroom soup ?         2 (cups) cheddar cheese, shredded
-
-
-
-
-
-
-
-
-
-
-
-
-V
-E
-G
-E
-T
-A
-B
-L
-E
-S
-S
-1
-D
-E
-
-
-D
-
-
-S
-H
-E
-
-
-
-
-1 pt. sour cream ti/Z OLE4?0641,6
-
-
-Mix together. Pour into a buttered 9x13-inch casserole. Bake at 350° for 1 hour.
-
-
-
-
-
-
-
-
--209-
+2 (lb) frozen hash browns         
+2 (10 ½ oz cans) cream of mushroom soup 
 
 
 
@@ -9007,7 +8557,16 @@ Mix together. Pour into a buttered 9x13-inch casserole. Bake at 350° for 1 hour
 
 
 
-________________
+
+
+1 (pint) sour cream 
+1 small onion, chopped, optional
+2 (cups) cheddar cheese, shredded
+
+
+   1. Mix together. Pour into a buttered 9x13-inch casserole. Bake at 350° for 1 hour.
+
+
 
 
 @@@
@@ -9016,16 +8575,16 @@ Kathy Klotz
 
 
         BASE
-   * 1 (32 oz) pkg. Ore-Ida "Southern Style" hash browns
+   * 1 (32 oz package) Ore-Ida "Southern Style" hash browns
    * 1 (cup) sour cream
-   * 1 can cream of chicken soup
-   * 1 stick butter or oleo (melted) 
+   * 1 (10 ½ oz can) cream of chicken soup
+   * 1 (stick) butter or oleo, melted
    * 1½ (cup) Colby cheese, shredded
 
 
 TOPPING
-   * ¼ (cup) oleo (melted)
-   * 4 (cups) corn flakes (crushed, 2 (cups))
+   * ¼ (cup) oleo, melted
+   * 4 (cups) corn flakes, crushed (producing 2 cups small flakes)
 
 
    1. Mix together the first 5 ingredients; put in a 9x13-inch pan. Melt oleo for topping and mix in crushed corn flakes. Spread on top of hash brown mixture. Bake at 350° degrees for 1 hour.
@@ -9059,7 +8618,7 @@ Pam (Brunkhorst) French
    * ½ (tsp) salt
    * ½ (tsp) pepper
    * 1 (cup) Half-and-Half cream
-   * 1 (12 oz) pkg. frozen hash browns (thawed)
+   * 1 (12 oz package) frozen hash browns (thawed)
    * 1 (cup) Parmesan cheese (divided)
    * Paprika 
 
@@ -9295,10 +8854,10 @@ STRAWBERRY FREEZER JAM
 Ann and Philip Brunkhorst
 
 
-   * 2 (cups) strawberries (crushed, use fully ripe fruit)
+   * 2 (cups) strawberries, crushed, use fully ripe fruit
    * 4 (cups) sugar
    * ¾ (cup) water
-   * 1 box Sure Jell Fruit Pectin
+   * 1 (box) Sure Jell Fruit Pectin
 
 
    1. Rinse clean containers and lids in boiling water. Dry thoroughly. Wash, stem
@@ -9317,11 +8876,11 @@ ZUCCHINI JAM
 Ann and Phil Brunkhorst
 
 
-   * 6 medium zucchini (peeled, ground)
+   * 6 medium zucchini, peeled, ground
    * 6 (cups) sugar
    * ½ (cup) lemon juice
-   * 1 (cup) crushed pineapple (undrained)
-   * 1 (6 oz) pkg. red Jello
+   * 1 (cup) crushed pineapple, undrained
+   * 1 (6 oz package) red Jello
 
 
    1. Prepare zucchini and drain. Bring to a boil and cook until clear, about 6 minutes.
