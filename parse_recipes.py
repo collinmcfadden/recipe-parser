@@ -2,6 +2,7 @@ import re
 import io
 import json
 import sys 
+import string
 
 # TODO: Actually parse the values
 # Example final format 
@@ -31,7 +32,7 @@ class Recipe:
 			return None
 
 		# Parse out the recipe title
-		self.title = recipe_lines[0].strip()
+		self.title = string.capwords(recipe_lines[0].strip())
 		recipe_lines.pop(0)
 		
 		# Parse out the recipe author if present
@@ -70,7 +71,7 @@ class Recipe:
 		for curr_type, curr_content in raw_content:
 			# If there was a subsection header on the ingredient block, add it to the list
 			if prev_type == "TEXT" and curr_type == "INGREDIENT":
-				self.ingredients_flat.append({"name": prev_content, "type": "group"})
+				self.ingredients_flat.append({"name": string.capwords(prev_content), "type": "group"})
 
 			# Add ingredient to the list
 			if curr_type == "INGREDIENT":
@@ -78,7 +79,7 @@ class Recipe:
 
 			# If there was a subsection header on the steps block, add it to the list
 			if prev_type == "TEXT" and curr_type == "STEP":
-				self.instructions_flat.append({"name": prev_content, "type": "group"})
+				self.instructions_flat.append({"name": string.capwords(prev_content), "type": "group"})
 			
 			# Add step to the list
 			if curr_type == "STEP":
@@ -100,6 +101,11 @@ class Recipe:
 			"name": self.title,
 			# TODO, add remaining fields
 		})
+
+	@staticmethod
+	def output_header():
+		header_variables = ["title", "json_data", "author", "summary", "ingredients", "instructions"]
+		return "\t".join(header_variables)
 
 	def __str__(self):
 		class_variables = [str(self.title), str(self.json_format), str(self.author), 
@@ -132,6 +138,7 @@ recipe_list.append(current_recipe)
 
 # Parse out details of the recipe and write to output file
 output = io.open(output_file_name, "w", encoding='utf8')
+output.write(Recipe.output_header() + "\n")
 
 for r in recipe_list:
 	recipe = Recipe(r)
