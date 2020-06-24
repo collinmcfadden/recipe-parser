@@ -8,6 +8,8 @@ def format_ingredient(raw_string):
 
 # if there is a comma present, split line on “,” and only look at first (zero-ith) substring, else use whole line
 # If there is a unit (parentheses are present), just grab the substring before the ( and use the strip method to remove whitespace on the ends (this will allow for situations where the amount is not a number - Ex: Few (drops) hot sauce
+    
+    #init values
     ingredientString = ""
     notes = ""
     
@@ -30,19 +32,14 @@ def format_ingredient(raw_string):
     
     # Checks for parenthesis to find unit type, and removes it from top of the string.
     if ingredientString[0] == "(":
-        unit = ingredientString[1:ingredientString.find(")")].strip()
-        ingredientSplit = ingredientString.split(")")
+        endParenthesisIndex = ingredientString.find(")")
+        unit = ingredientString[1:endParenthesisIndex].strip()
+        ingredientString = ingredientString[endParenthesisIndex+1:]
 
          # TODO: Unplural certain unit types when naming them
-         
-        # There must be a parenthesis at the end of some ingredientString producing errors.  There's definitely a more elegant way to write this block.
-        if len(ingredientSplit) > 1:
-           ingredientString = ingredientSplit[1].strip()  
-        else:
-            ingredientString = ingredientSplit[0].strip()
+
     else:
         unit = ""
-        
 
 # Returns remaining ingredientString as "name" value
                                                                                                                                               
