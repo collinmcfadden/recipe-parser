@@ -26,7 +26,13 @@ def format_ingredient(raw_string):
     if ingredientString[0].isnumeric():
         ingredientSplit = ingredientString.split(" ")
         amount = ingredientSplit.pop(0)
-        ingredientString = " ".join(ingredientSplit)
+
+        # In the case of compound fractions, adds the fraction to the amount
+        if ingredientSplit[0].isnumeric():
+            amount = "{} {}".format(amount, ingredientSplit[0])
+            ingredientSplit.pop(0)
+
+        ingredientString = " ".join(ingredientSplit).strip()
     else:
         amount = ""
     
@@ -43,14 +49,14 @@ def format_ingredient(raw_string):
 
 # Returns remaining ingredientString as "name" value
                                                                                                                                               
-    formatted = { 
+    return { 
         "amount": amount,
         "unit": unit,
         "name": ingredientString.strip(),
         "notes": notes,
         "type": "ingredient"
     }
-    return formatted
+
 
 class Recipe:
 
