@@ -4,24 +4,59 @@ import json
 import sys 
 import string
 
-# TODO: Actually parse the values
-# Example final format 
-# {
-#     "amount": "1",
-#     "unit": "cup",
-#     "name": "water",
-#     "notes": "lukewarm",
-#     "type": "ingredient"
-# }
 def format_ingredient(raw_string):
-	formatted = { 
-		"amount": "",
-		"unit": "",
-		"name": raw_string,
-		"notes": "",
-		"type": "ingredient"
-	}
-	return formatted
+
+# if there is a comma present, split line on “,” and only look at first (zero-ith) substring, else use whole line
+# If there is a unit (parentheses are present), just grab the substring before the ( and use the strip method to remove whitespace on the ends (this will allow for situations where the amount is not a number - Ex: Few (drops) hot sauce
+    
+    #init values
+    ingredientString = ""
+    notes = ""
+    
+# Checks for a comma and makes notes if needed    
+    if "," in raw_string:
+        ingredientNotesSplit = raw_string.split(",")
+        notes = ",".join(ingredientNotesSplit[1:]).strip()
+        ingredientString = ingredientNotesSplit[0]
+    else:
+        ingredientString = raw_string
+        notes = ""
+   
+    # Checks for number or fraction at top of string, records the amount, and removes the number/fraction
+    if ingredientString[0].isnumeric():
+        ingredientSplit = ingredientString.split(" ")
+        amount = ingredientSplit.pop(0)
+
+        # In the case of compound fractions, adds the fraction to the amount
+        if ingredientSplit[0].isnumeric():
+            amount = "{} {}".format(amount, ingredientSplit[0])
+            ingredientSplit.pop(0)
+
+        ingredientString = " ".join(ingredientSplit).strip()
+    else:
+        amount = ""
+    
+    # Checks for parenthesis to find unit type, and removes it from top of the string.
+    if ingredientString[0] == "(":
+        endParenthesisIndex = ingredientString.find(")")
+        unit = ingredientString[1:endParenthesisIndex].strip()
+        ingredientString = ingredientString[endParenthesisIndex+1:]
+
+         # TODO: Unplural certain unit types when naming them
+
+    else:
+        unit = ""
+
+# Returns remaining ingredientString as "name" value
+                                                                                                                                              
+    return { 
+        "amount": amount,
+        "unit": unit,
+        "name": ingredientString.strip(),
+        "notes": notes,
+        "type": "ingredient"
+    }
+
 
 class Recipe:
 
@@ -84,14 +119,14 @@ class Recipe:
 			# Add step to the list
 			if curr_type == "STEP":
 				self.instructions_flat.append({
-					"text": "<p>{}<\p>".format(curr_content),
+					"text": "<p>{}</p>".format(curr_content),
 					"type": "instruction",
 					"image_url": ""
 				})
 
 			# Adding text to the summary
 			if prev_type == "TEXT" and (curr_type != "INGREDIENT" and curr_type != "STEP"):
-				self.summary = self.summary + "<p>{}<\p>".format(prev_content)
+				self.summary = self.summary + "<p>{}</p>".format(prev_content)
 
 			# Setting the values for the next run through the loop
 			prev_type, prev_content = curr_type, curr_content 
