@@ -146,13 +146,14 @@ But these cases of alternative ingredients are messy in other recipes, so don’
 * 1 (large bottle/can) pineapple juice, or 1 can concentrate (mixed according to directions)
 
 
-### Shane: What’s the best way to represent little chef’s notes on the ingredients? E.g:
+Way to represent little chef’s notes on the ingredients? E.g:
 * 1 (8 oz package) cream cheese (I use ⅓ less fat, don’t use fat free)
 * Bacon (I  use the pre-cooked)
-I’ve been adding commas to separate them like so:
-* 1 (8 oz package) cream cheese, (I use ⅓ less fat, don’t use fat free)
-* Bacon, (I  use the pre-cooked)
-Let me know if there’s a more preferred way
+Remove parentheses and add a comma between the note and the ingredient:
+* 1 (8 oz package) cream cheese, I use ⅓ less fat, don’t use fat free
+* Bacon, I use the pre-cooked
+
+
 -APPETIZERS AND BEVERAGES-
 
 
@@ -307,7 +308,7 @@ Karen Eichmann
 * Pitted dates        
 * Cream cheese        
 * Pecan halves
-* Bacon, (I  use the pre-cooked)
+* Bacon, I  use the pre-cooked
 
 
 1. Fill pitted date with cream cheese and pecan half. 
@@ -337,7 +338,7 @@ CHEESECAKE PHYLLO CUPS
 CHOCOLATE CHIP CHEESE BALL        
 Amanda Brunkhorst
                                                                                    
-* 1 (8 oz package) cream cheese, (I use ⅓ less fat, don't use fat free)        
+* 1 (8 oz package) cream cheese, I use ⅓ less fat, don't use fat free
 * ½ (cup) butter, softened           
 * ¼ (tsp) vanilla        
 * ¾ (cup) powdered sugar
@@ -617,7 +618,7 @@ Alyce McFadden
 * 1 (tbsp) instant minced onion         
 * ¼ (tsp) garlic powder         
 * ¼ (tsp) pepper
-* 2 (tbsp) butter (melted) 
+* 2 (tbsp) butter, melted 
 
 
 1. Beat cream cheese with milk until smooth. Stir in chopped chipped beef, sour cream, instant minced onion, garlic powder and pepper. 
@@ -630,7 +631,7 @@ Karen Eichmann
 
 
 * 1 (lb) ground beef         
-* 1 (lb) pork sausage, (I use 2 12 oz packages of Jimmy Dean Original Sausage)         
+* 1 (lb) pork sausage, I use 2 12 oz packages of Jimmy Dean Original Sausage         
 * 1 (lb) Velveeta
 * ½ (tsp) dried oregano
 * ½ (tsp) garlic powder
@@ -859,7 +860,7 @@ Pam Morales
 * 1 (10 oz package) frozen spinach, thawed and liquid drained        
 * 1 (8 oz package) Monterey Jack cheese, shredded        
 * 1 (8 oz package) Philadelphia cream cheese
-* 2 (tbsp) jalapenos, (optional)
+* 2 (tbsp) jalapenos, optional
 * 2 tomatoes, cubed (or I would use a can of chopped tomatoes, drained, if I didn't have any tomatoes)
 
 
@@ -930,15 +931,15 @@ Kathy Klotz
 
 
 CINNAMON CHIPS:
-* 4 (7-inch) flour tortillas, (I usually make more, they keep well)
+* 4 (7-inch) flour tortillas, I usually make more, they keep well
 * 1 (tbsp) sugar
-* ½ (tbsp) ground cinnamon, (or your own cinnamon and sugar mixture)         
+* ½ (tbsp) ground cinnamon, or your own cinnamon and sugar mixture         
 
 
 SALSA:
 * 2 medium Granny Smith apples 
-* 1½ (cup) strawberries, chopped (I used quick frozen)
-* 2 kiwi fruit (peeled, chopped)
+* 1½ (cup) strawberries, chopped, I used quick frozen
+* 2 kiwi fruit, peeled, chopped
 * 1 small orange
 * 2 (tbsp) brown sugar, packed
 * 2 (tbsp) orange marmalade, apricot preserves, or apple jelly         
@@ -983,7 +984,7 @@ Pam (Brunkhorst) French
 -BREADS AND ROLLS-
 
 
-@@@
+@@@@
 POP UP ROLLS
 Donna Brunkhorst Litman
 
@@ -995,33 +996,33 @@ Donna Brunkhorst Litman
 
 
 1. Combine all ingredients; stir until combined well.
-2. Fill greased muffin cups. Bake at 375' for 18-20 minutes.
+2. Fill greased muffin cups. Bake at 375° for 18-20 minutes.
 
 
-@@@
+@@@@
 RED LOBSTER CHEESE BISCUITS
 
 
 * 2 (cups) Bisquick baking mix        
 * ⅔ (cup) milk
-* ½ (cup) cheddar cheese (shredded, 4 oz)
-* ¼ (cup) margarine or butter (melted)
+* ½ (cup) cheddar cheese, shredded, 4 oz
+* ¼ (cup) margarine or butter, melted
 * ¼ (tsp) garlic powder
 * ¼ (tsp) garlic powder
 
 
 1. Heat oven to 450°. 
-2. Mix baking mix, milk and cheese until soft dough forms.Beat vigorously 30 seconds.
+2. Mix baking mix, milk, and cheese until soft dough forms. Beat vigorously 30 seconds.
 3. Drop dough by spoonful onto an ungreased cookie sheet. Bake for 8-10 minutes or until golden brown. 
 4. Mix margarine and garlic powder; brush over warm biscuits before removing them from the cookie sheet. Serve warm. Makes 10-12 large biscuits.
 
 
-@@@
+@@@@
 ERIN'S BANANA BREAD
 Donna Brunkhorst Litman, In Memory of Erin Delaney
 
 
-* 3 bananas (ripe/brown)
+* 3 bananas, ripe/brown
 * 1 (cup) sugar
 * ½ (cup) butter or margarine
 * ½ (cup) milk
@@ -1032,14 +1033,14 @@ Donna Brunkhorst Litman, In Memory of Erin Delaney
 
 
 1. Combine sugar and butter in a bowl. Add bananas and blend well. 
-2. Add milk and mix in. Then add soda, salt and flour. Mix well. 
+2. Add milk and mix in. Then add soda, salt, and flour. Mix well. 
 3. Grease and flour 1 loaf pan. Pour mixture into pan. Bake at 350° for 1 hour.
 
 
 Sometimes I throw in chocolate chips, which is a delicious variation. However, if you add chocolate chips, you will need to increase the baking time.
 
 
-@@@
+@@@@
 BANANA SOUR CREAM BREAD
 Margaret Brockman (Maas)
 
@@ -1048,8 +1049,8 @@ Margaret Brockman (Maas)
 * 1 (tsp) ground cinnamon
 * 3 (cups) white sugar
 * 3 eggs
-* 6 very ripe bananas (mashed)
-* 1 (16 oz) carton sour cream
+* 6 very ripe bananas, mashed
+* 1 (16 oz carton) sour cream
 * 2 (tsp) vanilla extract
 * ¾ (cup) butter
 * 2 (tsp) ground cinnamon ½ (tsp) salt
@@ -1059,28 +1060,29 @@ Margaret Brockman (Maas)
 * ½ (cup) cranberries or blueberries (optional)
 
 
-1. Preheat the oven to 300'. Grease four 7x3-inch loaf pans.
-2. In a small bowl, stir together ¼ (cup) sugar and 1 (tsp) cinnamon; dust pans lightly with sugar and cinnamon mixture.
-3. In a large bowl, cream butter and 3 (cups) sugar. Mix in eggs, mashed bananas, sour cream, vanilla and cinnamon. Mix in salt, baking soda and flour. Stir in nuts, cranberries or blueberries.
+1. Preheat the oven to 300°. Grease four 7x3-inch loaf pans.
+2. In a small bowl, stir together ¼ cup sugar and 1 tsp cinnamon; dust pans lightly with sugar and cinnamon mixture.
+3. In a large bowl, cream butter and 3 cups sugar. Mix in eggs, mashed bananas, sour cream, vanilla and cinnamon. Mix in salt, baking soda and flour. Stir in nuts, cranberries or blueberries.
 4. Bake for 1 hour or until a toothpick inserted in the center comes out clean. Makes 32 servings.
 
 
-@@@
+@@@@
 DILLY ONION BREAD
 Edna Brunkhorst
 
 
-* 1 pkg. dry yeast
-* 1 (cup) cottage cheese (creamed, warm)
+* 1 (package) dry yeast
+* 1 (cup) cottage cheese, creamed, warm
 * 2 (tbsp) sugar
 * ½ (tbsp) instant onion
 * 2 (tsp) dill seed or 1 (tbsp) dill weed
 * 1 (tsp) salt 
 * ¼ (tsp) soda
-* 1 unbeaten egg 2½ (cup) flour
+* 1 unbeaten egg 
+* 2½ (cup) flour
 
 
-1. Dissolve yeast in ¼ (cup) warm water. Stir in all ingredients, except flour, then mix in 1½ (cup) flour and beat 2 minutes. Add remaining flour and mix by hand. Let rise until double. 
+1. Dissolve yeast in ¼ cup warm water. Stir in all ingredients, except flour, then mix in 1½ cup flour and beat 2 minutes. Add remaining flour and mix by hand. Let rise until double. 
 2. Pour out. Punch down. Knead a bit and shape into a loaf.
 3. Put in a well-greased loaf pan and let rise until double.
 4. Bake 1 hour at 350°. Serves 8.
@@ -1089,15 +1091,15 @@ Edna Brunkhorst
 Delicious served with soup or salad. I like to take it to potluck meals.
 
 
-@@@
+@@@@
 BLUEBERRY BREAKFAST BREAD
 Ann and Phil Brunkhorst
 
 
 BREAD
-* 1 (1 lb) loaf frozen bread dough (white or wheat, thawed)
+* 1 (1 lb loaf) frozen bread dough, white or wheat, thawed
 * 1 (8 oz package) cream cheese
-* 1 egg (beaten)
+* 1 egg, beaten
 * 1 (tsp) vanilla
 * ½ (cup) granulated sugar
 
@@ -1113,9 +1115,9 @@ GLAZE
 
 
 1. On a lightly floured surface, roll thawed dough out to fit a 10x15-inch jelly roll pan.
-2. Beat cream cheese with ½ (cup) sugar in a mixing bowl until light and fluffy.
-3. Beat in egg and 1 (tsp) vanilla. Spread over bread dough. Sprinkle with blueberries.
-4. Combine flour and ½ (cup) sugar in a small bowl. Cut in margarine or butter until crumbly. Sprinkle over blueberries. Let rise in a warm area for 30-40 minutes or until golden brown.
+2. Beat cream cheese with ½ cup sugar in a mixing bowl until light and fluffy.
+3. Beat in egg and 1 tsp vanilla. Spread over bread dough. Sprinkle with blueberries.
+4. Combine flour and ½ cup sugar in a small bowl. Cut in margarine or butter until crumbly. Sprinkle over blueberries. Let rise in a warm area for 30-40 minutes or until golden brown.
 5. Remove from the oven and let cool.
 6. For glaze, combine all ingredients and mix well. Drizzle bread with glaze.
 
@@ -1123,7 +1125,7 @@ GLAZE
 Coffeecake may be assembled the night before to bake in the morning. Lightly cover assembled bread with plastic wrap. Place in the refrigerator to rise overnight. Bake in the morning. Be careful, the risen coffeecake is very fragile and will fall if bumped.
 
 
-@@@
+@@@@
 MANDARIN ORANGE BREAD
 Alyce Woltzen McFadden
 
@@ -1135,17 +1137,17 @@ Alyce Woltzen McFadden
 * 1 (tsp) soda
 * ½ (cup) frozen orange juice concentrate
 * ½ (cup) buttermilk
-* 1 can mandarin oranges (drained)
+* 1 (can) mandarin oranges, drained
 * ½ (cup) nuts, chopped
 
 
 1. Cream together margarine and sugar. Add eggs; mix well.
-2. In a medium bowl, mix orange juice and buttermilk together; add soda and mix well. (Mixture will foam when soda is added.)
+2. In a medium bowl, mix orange juice and buttermilk together; add soda and mix well. Mixture will foam when soda is added.
 3. Add orange mixture to creamed margarine mixture and blend. Add flour and beat well. Fold in orange segments and nuts.
-4. Pour into 2 greased and floured 4x8-inch loaf pans. Bake 55-60 minutes at 350.
+4. Pour into 2 greased and floured 4x8-inch loaf pans. Bake 55-60 minutes at 350°.
 
 
-@@@
+@@@@
 RHUBARB BREAD
 Monica Piersall
 
@@ -1153,32 +1155,32 @@ Monica Piersall
 BREAD
 * 1½ (cup) brown sugar
 * ⅔ (cup) shortening
-* 1 egg (beaten)        
+* 1 egg, beaten
 * 1 (cup) buttermilk        
 * 1 (tsp) soda
 * 2½ (cup) flour
 * 1 (tsp) vanilla
-* 1½-2 (cups) rhubarb (diced)
+* 1½-2 (cups) rhubarb, diced
 * ½ (cup) nuts, chopped
 
 
 TOPPING
 * ½ (cup) sugar
 * ½ - 1 (tsp) cinnamon
-* 1 (tbsp) butter (softened)
+* 1 (tbsp) butter, softened
 
 
-1. Combine brown sugar, shortening, egg and buttermilk. Sift in dry ingredients, mix well. Stir in vanilla, rhubarb and nuts. 
-2. Pour batter into 2 greased loaf pans; I use Pam. Sprinkle with topping.
+1. Combine brown sugar, shortening, egg, and buttermilk. Sift in dry ingredients, mix well. Stir in vanilla, rhubarb, and nuts. 
+2. Pour batter into 2 greased loaf pans (I use Pam). Sprinkle with topping.
 3. Bake at 350° for 45-50 minutes. Let cool 20 minutes to ½ hour before turning out of the pan.
 
 
-@@@
+@@@@
 CHOCOLATE ZUCCHINI BREAD  
 Ann and Phil Brunkhorst
 
 
-* 2 (1 oz) squares unsweetened chocolate
+* 2 (1 oz squares) unsweetened chocolate
 * 3 eggs        1 (tsp) baking soda
 * 2 (cups) white sugar
 * 1 (cup) vegetable oil
@@ -1196,35 +1198,35 @@ Ann and Phil Brunkhorst
 4. Pour batter into prepared loaf pans. Bake in a preheated oven for 60-70 minutes, or until a toothpick inserted into the center of a loaf comes out clean.
 
 
-@@@
+@@@@
 LEMON ZUCCHINI BREAD
 Ann and Phil Brunkhorst
 
 
 * 4 (cups) flour
-* 1 pkg. instant lemon pudding mix
-* 1 (tsp) baking powder
-* 4 eggs
-* 1 (cup) oil
-* 1 (tsp) lemon extract 
-* ¼ (cup) poppy seeds
 * 1½ (cup) sugar
+* 1 (package) instant lemon pudding mix
 * 1½ (tsp) baking soda
+* 1 (tsp) baking powder
 * 1 (tsp) salt
+* 4 eggs
 * 1¼ (cup) milk
+* 1 (cup) oil
 * 3 (tbsp) lemon juice
+* 1 (tsp) lemon extract 
 * 2 (cups) zucchini, shredded
+* ¼ (cup) poppy seeds
 * 2 (tsp) lemon peel, grated
 
 
-1. Combine flour, sugar, pudding mix, baking soda, baking powder and salt.
+1. Combine flour, sugar, pudding mix, baking soda, baking powder, and salt.
 2. In another bowl, whisk the eggs, milk, oil, lemon juice and extract. Stir into dry
-3. ingredients just until moistened. Fold in zucchini, poppy seeds and lemon peel.
-4. Pour into two greased 9x5x3-inch loaf pans. Bake at 350° for 50-55 minutes or until a toothpick inserted near the center comes out clean.
-5. Cool for 10 minutes before removing from the pans to cool completely.
+ingredients just until moistened. Fold in zucchini, poppy seeds and lemon peel.
+3. Pour into two greased 9x5x3-inch loaf pans. Bake at 350° for 50-55 minutes or until a toothpick inserted near the center comes out clean.
+4. Cool for 10 minutes before removing from the pans to cool completely.
 
 
-@@@
+@@@@
 MOIST ZUCCHINI BREAD
 Marlene Goetschel
 
@@ -1234,30 +1236,30 @@ Marlene Goetschel
 * 2 (cups) sugar
 * 3 (cups) flour
 * 2 (tsp) baking soda
-* 1 1/4 (tsp) baking powder
+* 1¼ (tsp) baking powder
 * 1 (tsp) salt
-* ¾(tsp) nutmeg
+* ¾ (tsp) nutmeg
 * 2 (tsp) vanilla
-* 2 (cups) unpeeled zucchini (shredded, well drained)
-* 1 (8½ oz can) crushed pineapple (well drained)
+* 2 (cups) unpeeled zucchini, shredded, well drained
+* 1 (8½ oz can) crushed pineapple, well drained
 * 1 (cup) walnuts, chopped
 * 1 (cup) dates, chopped
 
 
 1. Preheat the oven to 350°.
 2. Mix eggs, oil and sugar. Blend in flour, baking soda, baking powder, salt and nutmeg. Add vanilla, zucchini and pineapple. Stir in nuts and dates.
-3. Pour in 2 greased 5x9x3-inch loaf pans. Bake for 1 hour 15 minutes; test with a toothpick. May take 15 minutes more.
+3. Pour in 2 greased 5x9x3-inch loaf pans. Bake for 1 hour 15 minutes. Test with a toothpick. May take 15 minutes more.
 4. Cool slightly in pan and then remove from pan. Cool on a wire rack. Let cool completely before slicing. Wrap in foil and refrigerate.
 
 
-@@@
+@@@@
 ZUCCHINI BREAD
 Donna Brunkhorst Litman
 
 
 * 3 (cups) flour
 * 3 (cups) sugar
-* ½(tsp) baking powder
+* ½ (tsp) baking powder
 * 1½ (tsp) baking soda
 * 1 (tsp) cinnamon
 * 1 ½ (cups) nuts
@@ -1271,7 +1273,7 @@ Donna Brunkhorst Litman
 1. Combine ingredients. Pour into 2 greased and floured loaf pans. Bake 1 hour in a 350° oven.
 
 
-@@@
+@@@@
 ZUCCHINI BREAD
 
 
@@ -1279,11 +1281,11 @@ ZUCCHINI BREAD
 * 2 (cups) sugar
 * 1 (cup) oil
 * 1 (tsp) vanilla
-* 1 (8 oz package) cream cheese (softened)
+* 1 (8 oz package) cream cheese, softened
 * 2 (cups) flour
 * 1 (tsp) soda
 * 1 (tsp) baking powder
-* 1 (tsp) cinnamon (adjust to taste)
+* 1 (tsp) cinnamon, adjust to taste
 * 1 (tsp) salt
 * 2 (cups) walnuts or pecans, chopped
 * 2 (cups) zucchini, shredded
@@ -1291,20 +1293,20 @@ ZUCCHINI BREAD
 
 1. Heat oven to 350°. 
 2. Beat eggs, sugar, oil and vanilla until smooth, about 3 minutes. Beat in cream cheese.
-3. Add remaining ingredients. Fold in nut meats and zucchini.
+3. Add remaining ingredients. Fold in nuts and zucchini.
 4. Divide batter into 2 greased and floured 9x5-inch loaf pans. Bake for 60 minutes.
 5. Remove from the oven and cool for 10 minutes in the pan. Freezes well.
 
 
-@@@
+@@@@
 BREAKFAST PECAN ROLLS
 Ann Brunkhorst (I.F.)
 
 
 * 1 (cup) pecans
-* 1 pkg. Parker House rolls
-* 1 pkg. regular butterscotch pudding
-* 1/2 (cups) margarine
+* 1 (package) Parker House rolls
+* 1 (package) regular butterscotch pudding
+* ½ (cup) margarine
 * ½ (cup) brown sugar
 
 
@@ -1313,25 +1315,25 @@ Ann Brunkhorst (I.F.)
 3. Cover with Saran Wrap or buttered foil. Leave on the counter overnight. Bake at 350° for ½ hour.
 
 
-@@@
+@@@@
 EASY COFFEE CAKE
 Monica Piersall
 
 
 * 3 eggs
 * 1 yellow cake mix
-* 1 can apple cinnamon pie filling
+* 1 (can) apple cinnamon pie filling
 * 1 (cup) brown sugar
 * 1 (tbsp) flour
 * 1 (tsp) cinnamon
 
 
-1. Mix together eggs, cake mix and apple cinnamon pie filling with an electric mixer.
-2. Pour into a 9x13-inch pan. Mix together brown sugar, flour and cinnamon and sprinkle on cake.
+1. Mix together eggs, cake mix, and apple cinnamon pie filling with an electric mixer.
+2. Pour into a 9x13-inch pan. Mix together brown sugar, flour, and cinnamon and sprinkle on cake.
 3. Bake at 350° for 35-40 minutes.
 
 
-@@@
+@@@@
 CINNAMON ROLL-UPS
 Katie Weigel
 
@@ -1340,22 +1342,23 @@ Katie Weigel
 * ½ (cup) sugar
 * 1 egg yolk
 * 1 (tsp) vanilla
-* 20 slices white bread (crust removed)
-* 1 ½ sticks margarine (melted)
+* 20 (slices) white bread, crust removed
+* 1½ (sticks) margarine, melted
 * 2 (tsp) cinnamon
 * ¾ (cup) sugar
 
 
-1. Mix together cream cheese, ½ (cup) sugar, egg yolk and vanilla. Roll bread slices, with crust removed, flat with a rolling pin. Spread bread with cream cheese mixture. Roll up as for a jelly roll. Refrigerate overnight.
-2. Cut rolls in half crosswise. Mix ¾ (cup) sugar and 2 (tsp) cinnamon.
-3. Dip rolls in melted margarine and then roll in cinnamon-sugar mixture.
-4. Bake on greased cookie sheets for 20-25 minutes at 350°.
+1. Mix together cream cheese, ½ cup sugar, egg yolk, and vanilla. 
+2. Roll bread slices flat with a rolling pin. Spread bread with cream cheese mixture. Roll up as for a jelly roll. Refrigerate overnight.
+3. Cut rolls in half crosswise. Mix ¾ cup sugar and cinnamon.
+4. Dip rolls in melted margarine and then roll in cinnamon-sugar mixture.
+5. Bake on greased cookie sheets for 20-25 minutes at 350°.
 
 
-May skip the refrigeration step and reduce baking time. You can also do all of the preparation ahead of time, refrigerate overnight and bake the next day.
+May skip the refrigeration step and reduce baking time. You can also do all of the preparation ahead of time, refrigerate overnight, and bake the next day.
 
 
-@@
+@@@@
 MAGIC MARSHMALLOW CRESCENT PUFFS
 Angie Brunkhorst
 
@@ -1366,49 +1369,48 @@ PUFFS
 * 1 (tsp) cinnamon
 * 2 (8 oz cans) crescent rolls
 * 16 large marshmallows
-* ¼ (cup) margarine or butter (melted)
+* ¼ (cup) margarine or butter, melted
 
 
 GLAZE
 * ½ (cup) powdered sugar
 * ½ (tsp) vanilla
 * 2 (tsp) milk
-* ¼ (cup) nuts (chopped, optional)
+* ¼ (cup) nuts, chopped (optional)
 
 
 1. Heat oven to 375°.
-2. Combine sugar, flour and cinnamon. Separate dough into 16 triangles.
+2. Combine sugar, flour, and cinnamon. Separate dough into 16 triangles.
 3. Dip 1 marshmallow in margarine; roll in sugar mixture. Place marshmallow on the wide end of the triangle and roll to the opposite point. Completely cover marshmallow with dough; firmly pinch edges to seal.
 4. Dip 1 end in remaining margarine; place margarine-side down in an ungreased large muffin cup. Repeat with remaining marshmallows.
 5. Bake 12-15 minutes until golden brown.
 
 
-
-
+@@@@
 RED POTATO CINNAMON ROLLS
 Ann (Phil) Brunkhorst
 
 
-* 6 red potatoes (peeled)
+* 6 red potatoes, peeled
 * 5¼ -7¼ (cup) flour
 * 1¾ (cup) sugar
 * 2 (packages) dry yeast
-* 1 (cup) potatoes (mashed)
-* 1 (cup) potato water (cooled to 115°-120°)
-* 1 (cup) butter (melted)
-* 1 (cup) milk (scalded)
-* 3 eggs (beaten)
+* 1 (cup) potatoes, mashed
+* 1 (cup) potato water, cooled to 115°-120°
+* 1 (cup) butter, melted
+* 1 (cup) milk, scalded
+* 3 eggs, beaten
 * ½ (tsp) salt
-* Cinnamon (to taste)
-* Nuts (to taste)
-* Brown sugar (to taste)
+* Cinnamon, to taste
+* Nuts, to taste
+* Brown sugar, to taste
 
 
 1. Boil potatoes in salted water. Drain potatoes and save water.
-2. Add ¼ (cup) flour, ¼ (cup) white sugar and dry yeast to 1 (cup) potato water. Mix well and set aside to rise.
-3. Mix mashed potatoes, the rest of the sugar, butter, milk, eggs, 1 (cup) flour and salt. Add raised yeast mixture.
-4. Add 4-6 cups flour until dough is not sticky. Knead dough and cover to let rise in a warm spot.
-5. Roll out dough to ½ inch thick.Spread with melted butter, cinnamon and brown sugar. Roll up and cut every 2 inches.
+2. Add ¼ cup flour, ¼ cup white sugar, and dry yeast to 1 cup potato water. Mix well and set aside to rise.
+3. Mix mashed potatoes, the rest of the sugar, butter, milk, eggs, 1 cup flour, and salt. Add raised yeast mixture.
+4. Add 4-6 cups flour until dough is not sticky. Knead dough, and cover to let rise in a warm spot.
+5. Roll out dough to ½ inch thick.Spread with melted butter, cinnamon, and brown sugar. Roll up and cut every 2 inches.
 6. Put into a greased pan to let rise again.
 7. Bake for 25 minutes at 350°. Frost when cooled.
 
@@ -1416,14 +1418,14 @@ Ann (Phil) Brunkhorst
 Great when frosted with Creamy Caramel Frosting.
 
 
-@@@
+@@@@
 YUMMY BUNS OR CINNAMON ROLLS
 Pat Schumacher, Alden, Iowa
 
 
 * 2 (cups) lukewarm water
 * 3 (packages) dry yeast
-* 1 stick margarine
+* 1 (stick) margarine
 * 1 (tbsp) salt
 * ⅓ (cup) sugar
 * 2 eggs
@@ -1432,11 +1434,12 @@ Pat Schumacher, Alden, Iowa
 * 1 (cup) brown sugar
 
 
-1. Dissolve yeast in lukewarm water. Add salt, sugar, melted margarine, and 2 eggs. Beat well with an electric mixer. Add flour gradually.
-2. Knead well. Let rise until it doubles in size. Shape into rolls or make cinnamon rolls.
-3. Mix brown sugar and cream in the bottom of a 9x13-inch ungreased pan.
-4. Place rolls on top of the mixture. Bake at 350° for 30-35 minutes.
-5. Immediately invert the pan on the serving plate after removing from the oven.
+1. Dissolve yeast in lukewarm water. Add salt, sugar, melted margarine, and eggs. Beat well with an electric mixer. Add flour gradually.
+2. Knead well. Let rise until it doubles in size. 
+3. Shape into rolls or make cinnamon rolls.
+4. Mix brown sugar and cream in the bottom of a 9x13-inch ungreased pan.
+5. Place rolls on top of the mixture. Bake at 350° for 30-35 minutes.
+6. Immediately invert the pan on the serving plate after removing from the oven.
 
 
 Yield: 2 dozen rolls.
@@ -1448,7 +1451,7 @@ In Memory of Jennifer Brunkhorst
 
 
 * 2 (packages) frozen dinner rolls
-* 1 (3 oz package) butterscotch pudding (cooked type)
+* 1 (3 oz package) butterscotch pudding, cooked type
 * ½ (cup) margarine
 * ½ (cup) milk
 * ¾ (cup) brown sugar
@@ -1457,7 +1460,7 @@ In Memory of Jennifer Brunkhorst
 
 
 1. Place frozen rolls in a single layer in a bundt pan. Sprinkle dry pudding over rolls.
-2. Mix together remaining ingredients and pour over rolls and pudding. Let stand overnight in a cold oven.
+2. Mix together remaining ingredients, and pour over rolls and pudding. Let stand overnight in a cold oven.
 3. In the morning, bake for 35-40 minutes.
 4. Let set for approximately 5-10 minutes. Invert onto a serving platter.
 
@@ -1465,42 +1468,46 @@ In Memory of Jennifer Brunkhorst
 These were Jennifer Brunkhorst's favorites.
 
 
-@@@
+@@@@
 KOLACHE
 Pat Schumacher
 
 
 * Yeast Dough
 * 2 (cups) milk
-* 1 stick margarine
+* 1 (stick) margarine
 * ½ (cup) lukewarm water
 * 2 (packages) yeast
 * ½ - ¾ (cup) sugar
 * 2 (tsp) salt
+* 3 (cups) flour
+* 4-5 (tbsp) jam
+* Powdered sugar frosting
 
 
 1. Scald milk; take from heat and add margarine. Set aside until lukewarm.
 2. Meanwhile, add yeast to lukewarm water; set aside. 
-3. When the milk mixture is lukewarm, add ½ - ¾ (cup) sugar and salt, yeast mixture and several cups of flour (about 3).
-4. Using a large mixing spoon, beat together well. Add enough flour to make dough stiff enough to knead. Try not to get it too stiff. Knead on pastry cloth or floured board. Let rise in a warm room until double in bulk. Knead down and make into hamburger buns - about 12 or 15 on a large cookie sheet or jelly roll pan. I usually make 12 on a pan. Be sure to flatten them as much as possible before they start to rise.
-5. Let rise until light; gently, with a forefinger, press the centers down, hole about the size of a quarter.
-6. Put about a teaspoon of your favorite jam in the center (apricot jam with a little lemon juice in it is good); can also use ½ cooked prunes or pureed apricots.
-7. Bake in a moderate oven until light brown. Take out of the oven and while hot, frost with a powdered sugar frosting made with lemon juice and butter or margarine. Frosting shouldn't be too thick and it will melt over the rolls like a glaze.
+3. When the milk mixture is lukewarm, add ½ - ¾ cup sugar and salt, yeast mixture and several cups of flour (about 3).
+4. Using a large mixing spoon, beat together well. Add enough flour to make dough stiff enough to knead. Try not to get it too stiff. Knead on pastry cloth or floured board. Let rise in a warm room until double in bulk.
+5. Knead down and make into hamburger buns - about 12 or 15 on a large cookie sheet or jelly roll pan. I usually make 12 on a pan. Be sure to flatten them as much as possible before they start to rise. Let rise until light. 
+6. Gently, with a forefinger, press the centers down, hole about the size of a quarter.
+7. Put about a teaspoon of your favorite jam in the center (apricot jam with a little lemon juice in it is good); can also use ½ cooked prunes or pureed apricots.
+8. Bake in a moderate oven until light brown. Take out of the oven and while hot, frost with a powdered sugar frosting made with lemon juice and butter or margarine. Frosting shouldn't be too thick, and it will melt over the rolls like a glaze.
 
 
-@@@
+@@@@
 BANANA BREAD MUFFINS
 Ann and Phil Brunkhorst
 
 
-* 2 eggs (beaten)
+* 2 eggs, beaten
 * 1 (cup) sugar
-* 7 (tbsp) milk (soured)
+* 7 (tbsp) milk, soured
 * 2 (cups) flour
 * 1 (tsp) soda
 * ½ (cup) margarine
 * ½ (cup) nuts
-* 3 bananas (mashed)
+* 3 bananas, mashed
 
 
 1. Blend eggs, sugar and margarine. Add bananas.
@@ -1508,39 +1515,41 @@ Ann and Phil Brunkhorst
 3. Bake at 350° for 25-30 minutes.
 
 
-@@@
+@@@@
 GERMAN COFFEECAKE  (DEUTSCH KAFFEE KUCHEN)
 Bob and Kris Brunkhorst
 
 
-* 2 (cups) milk (heated, lukewarm)
-* 5 level (tsp) yeast (1 pkg. = 4 (tsp), I use rapid rise)
+* 2 (cups) milk, heated, lukewarm
+* 5 (level tsp) yeast, 1 pkg. = 4 tsp, I use rapid rise
 * ⅓ (cup) sugar
 * ¼ (cup) oil
 * 2 eggs
 * 2 (tbsp) cinnamon
 * ½ (tsp) nutmeg 
 * ½ (tsp) cloves
-* 5½ (cup) flour (may need ¼ (cup) more)
-* 1 (cup) dates, prunes or raisins will do (diced) 
+* 5½ (cup) flour, may need ¼  cup more
+* 1 (cup) dates, prunes or raisins will do, diced
 * ½ (cup) walnuts or pecans (optional)
 
 
-1. In a large bowl, KitchenAid or bread maker, put yeast and add warm milk. Add sugar, oil, spices, some of the flour, prunes or dates and then eggs. Knead for 5 minutes, dough should not be sticky.
-2. Put in a greased bowl and turn to coat. Let rise, covered, in a warm place until double; 1 hour for regular yeast, ½ hour for rapid rise.
-3. Punch dough down. Roll into 2 large loafs for coffeecake or 1 large and 3 small ones. Can shape them or "U" shape them or put them in a circle.Let rise again for 25 minutes.
-4. Put the oven at 250° and put them in; after about 10 minutes, turn the temperature up to 325° and bake for about 20 minutes for large. Don't let the bottom get too brown.
-5. Cool and then ice with powdered sugar frosting; dust lightly with cinnamon. Serve warm!
+1. In a large bowl, KitchenAid, or bread maker, put yeast and add warm milk. Add sugar, oil, spices, some of the flour, prunes or dates, and then eggs. 
+2. Knead for 5 minutes, dough should not be sticky.
+3. Put in a greased bowl and turn to coat. Let rise, covered, in a warm place until doubled; 1 hour for regular yeast, ½ hour for rapid rise.
+4. Punch dough down. Roll into 2 large loafs for coffeecake or 1 large and 3 small ones. Can shape them or "U" shape them or put them in a circle.Let rise again for 25 minutes.
+5. Put the oven at 250° and put them in; after about 10 minutes, turn the temperature up to 325°, and bake for about 20 minutes for large. Don't let the bottom get too brown.
+6. Let cool, then ice with powdered sugar frosting; dust lightly with cinnamon. Serve warm!
 
 
-@@@
+@@@@
 BRAN MUFFINS
 George and Rosaline Schumacher, In Memory of Berniece Schumacher
 
 
 * 2 (cups) 40% Bran Flakes
 * 1 (cup) milk
-* ⅓ (cup) shortening (soft)
+* 1 egg
+* ⅓ (cup) shortening, soft
 * 1½ (cup) flour
 * ½ (cup) sugar
 * 3 (tsp) baking powder
@@ -1549,14 +1558,15 @@ George and Rosaline Schumacher, In Memory of Berniece Schumacher
 
 
 
-1. Combine Bran Flakes and milk. Let stand about 2 minutes or until moisture is mostly absorbed. Add egg and shortening; beat well. Combine flour, sugar, baking powder and salt. Combine with Bran Flake mixture.
-2. Put into muffin pans. Bake at 350°.
+1. Combine Bran Flakes and milk. Let stand about 2 minutes or until moisture is mostly absorbed. 
+2. Add egg and shortening; beat well. Combine flour, sugar, baking powder, and salt. Combine with Bran Flake mixture.
+3. Put into muffin pans. Bake at 350°.
 
 
 Makes 12.
 
 
-@@@
+@@@@
 GOLDEN HARVEST MUFFINS
 Ann and Phil Brunkhorst
 
@@ -1568,69 +1578,70 @@ Ann and Phil Brunkhorst
 * 4 (tsp) cinnamon
 * 1 (tsp) salt
 * ½ (tsp) cloves        4 (tsp) vanilla
-* 4 (cups) apples (peeled, shredded)
+* 4 (cups) apples, peeled and shredded
 * 1 (cup) carrots, shredded
 * 1 (cup) coconut
 * 1 (cup) raisins
 * 1 (cup) walnuts or pecans, chopped
 * 1½ (cup) oil
 * ½ (cup) milk
-* 3 eggs (beaten)
+* 3 eggs, beaten
 
 
-1. Heat oven to 350°. Line with paper baking cups 36 muffin cups.
+1. Heat oven to 350°. Line 36 muffin cups with paper baking cups.
 2. Combine dry ingredients. Add apples, carrots, coconut, raisins and nuts. Mix well.
 3. Add oil, milk, vanilla and eggs; stir just until moistened.
 4. Fill lined or greased muffin cups ¾ full.
-5. Bake at 350° for 20-25 minutes, or until a toothpick inserted into the center of the muffin comes out clean. Immediately remove from pans.
+5. Bake at 350° for 20-25 minutes or until a toothpick inserted into the center of the muffin comes out clean. Immediately remove from pans.
 6. To freeze muffins, cool completely. Place in large plastic freezer bags; freeze up to 1 month.
 
 
-@@@
+@@@@
 PECAN PIE MINI MUFFINS
 Ann and Phil Brunkhorst
 
 
-* 1 (cup) brown sugar (packed)
-* 1 (cup) pecans, chopped
-* 2 eggs (beaten)
+* 1 (cup) brown sugar, packed
 * ½ (cup) flour
+* 1 (cup) pecans, chopped
+* 2 eggs, beaten
 * ⅔ (cup) butter
 
 
-1. Combine brown sugar, flour and chopped pecans. Mix butter and eggs together; then stir into flour ingredients, just until moistened.
-2. Fill greased and floured muffin tin or foil-lined miniature muffin tins ⅔ full. Bake for 20-25 minutes. Remove immediately to cool on a wire rack.
+1. Combine brown sugar, flour, and chopped pecans. 
+2. In a separate bowl, mix butter and eggs together; then stir into flour ingredients until just moistened.
+3. Fill greased and floured muffin tin or foil-lined miniature muffin tins ⅔ full. Bake for 20-25 minutes. Remove immediately to cool on a wire rack.
 
 
-@@@
+@@@@
 RHUBARB PECAN MUFFINS
 Monica Piersall
 
 
 * 2 (cups) flour
-* 1½ (tsp) baking powder
-* 1 egg
-* ¼ (cup) vegetable oil
-* 1¼ (cup) rhubarb (finely chopped)
 * ¾ (cup) sugar
+* 1½ (tsp) baking powder
 * ½ (tsp) soda
 * ¾ (cup) nuts, chopped
+* 1 egg
+* ¼ (cup) vegetable oil
 * ¾ (cup) orange juice or buttermilk
+* 1¼ (cup) rhubarb, finely chopped
 
 
 1. In a large bowl, combine flour, sugar, baking powder, soda and nuts.
 2. Separately combine egg, oil and orange juice or buttermilk; add to dry ingredients. Stir until moistened. Add rhubarb.
-3. Pour into muffin tins. Bake at 375° for 25-30 minutes. I like to add ½ (tsp) nutmeg.
+3. Pour into muffin tins. Bake at 375° for 25-30 minutes. I like to add ½ tsp nutmeg.
 
 
-@@@
+@@@@
 PUMPKIN CHIP MUFFINS
 Pam (Brunkhorst) French
 
 
 * 4 eggs
 * 2 (cups) sugar
-* 1 (16 oz can) pumpkin (not pie mix)
+* 1 (16 oz can) pumpkin, not pie mix
 * 1 (cup) oil
 * 3 (cups) flour
 * 2 (tsp) baking soda
@@ -1640,9 +1651,9 @@ Pam (Brunkhorst) French
 * 1 (cup) chocolate chips
 
 
-1. In a large mixing bowl, beat eggs, sugar, pumpkin and oil until smooth. Combine flour, baking soda, baking powder, cinnamon and salt; add to pumpkin mixture and mix well. Fold in chocolate chips.
-2. Fill greased or paper-lined muffin cups ¾ full.
-3. Bake at 400° for 16-20 minutes or until done. Cool in pan 10 minutes before removing.
+1. In a large mixing bowl, beat eggs, sugar, pumpkin and oil until smooth. 
+2. In a separate bowl, combine flour, baking soda, baking powder, cinnamon and salt; add to pumpkin mixture and mix well. Fold in chocolate chips.
+3. Fill greased or paper-lined muffin cups ¾ full. Bake at 400° for 16-20 minutes or until done. Cool in pan 10 minutes before removing.
 
 
 Makes 24 muffins.
@@ -4964,7 +4975,7 @@ Kathy Klotz
 
 
 
-1. Prepare lasagna noodles according to package directions.  In a medium saucepan, saute onion and green pepper in butter until tender. Stir in soup, milk, mushrooms and basil. 
+1. Prepare lasagna noodles according to package directions.  In a medium saucepan, sauté onion and green pepper in butter until tender. Stir in soup, milk, mushrooms and basil. 
 2. In a 9x13-inch baking dish, place half of each of the following: noodles, cottage cheese, American cheese, chicken, sauce and Parmesan cheese; repeat layers. 
 3. Bake, uncovered, at 350° for 45 minutes.
 
@@ -5101,453 +5112,262 @@ TETRAZZINI
 Katie and Mark Weigel
 
 
-1 onion, chopped
-1 green pepper, chopped 
-1 (cup) celery, chopped
-3 (tbsp) oleo
-1 can cream of chicken soup
-1 can cream of mushroom soup
-1 (cup) chicken broth
+* 1 onion, chopped
+* 1 green pepper, chopped 
+* 1 (cup) celery, chopped
+* 3 (tbsp) oleo
+* 1 (can) cream of chicken soup
+* 1 (can) cream of mushroom soup
+* 1 (cup) chicken broth
+* 4 (cups) chicken, cooked, diced
+* 2 (cups) cheese, grated         
+* ½ (cup) mushrooms         
+* 1 (tsp) garlic salt         
+* ½ (cup) Parmesan cheese         
+* 8 (oz) linguini
+
+
+1. Cook the linguini. Sauté onion, pepper and celery in oleo. Combine the rest of the ingredients and stir until mixed well.
+2. Put in a 9x13-inch greased pan and top with Parmesan cheese. Bake at 400° for 30 minutes.
 
 
 
 
+@@@@
+BARBECUED RIBS        
+Monica Piersall        
+
+
+* Country style ribs        
+* Pepper        
+* 1 jar Famous Dave's Original BBQ sauce
+
+
+1. Brown ribs on both sides in a skillet. Season ribs with pepper. Pour BBQ sauce over ribs. Cover. Bake in a preheated 320° oven for 1½ hours.
 
 
 
 
-
-
-
-
-4 (cups) chicken (cooked, diced)         M
-2 (cups) cheese, grated         E
-½ (cup) mushrooms         A
-1 (tsp) garlic salt         T
-½ (cup) Parmesan cheese         $
-8 oz linguini
-M
-A
-
-
-
-
-Cook the linguini. Saut‚ onion, pepper and celery in oleo. Combine the rest of         N the ingredients and stir until mixed well. Put in a 9x13-inch greased pan and top
-with Parmesan cheese. Bake at 400° for 30 minutes.        D
-
-
-
-
-                                                                           H
-?        BARBECUED RIBS        Monica Piersall        E
-
-
-Country style ribs        1 jar Famous Dave's Original BBQ
-Pepper        sauce
-
-
-Brown ribs on both sides in a skillet. Season ribs with pepper. Pour BBQ sauce
-over ribs. Cover. Bake in a preheated 320' oven for 1½ hours.
-
-
-
-
--141-
-
-
-
-
-
-
-
-
-
-
+@@@@
 APRICOT GLAZED TURKEY BREAST
 
 
-1 turkey breast with bone (about 2.75        1 (tbsp) olive or canola
-   (lb))        1 (tbsp) honey
-½ (cup) apricot jam        1 /2 (tsp) salt
-¼ (cup) fresh orange juice        ½(tsp) pepper
+* 1 turkey breast with bone, approx. 2.75 lb        
+* ½ (cup) apricot jam        
+* ¼ (cup) fresh orange juice        
+* 1 (tbsp) olive or canola oil
+* 1 (tbsp) honey
+* ½ (tsp) salt
+* ½ (tsp) pepper
 
 
-Remove skin from turkey breast. Combine remaining ingredients until well blended. Spray roasting pan with cooking spray. Place the turkey breast bone-
-side down and cover the top with half the sauce. Bake 10 minutes at 450. Reduce temperature to 350° and bake 40 minutes. Remove foil and spread with remaining glaze. Insert meat thermometer in the thickest part of the breast and
-bake, uncovered, until the turkey reaches        165 to        170        (about 40-50 minutes
-more). Baste with glaze often. Let stand for about 5 minutes before slicing.
+1. Remove skin from turkey breast. Combine remaining ingredients until well blended. Spray roasting pan with cooking spray. Place the turkey breast bone-side down and cover the top with half the sauce. 
+2. Bake for 10 minutes at 450°. 
+3. Reduce the temperature to 350° and bake for 40 minutes. 
+4. Remove foil and spread with remaining glaze. Insert the meat thermometer in the thickest part of the breast and bake, uncovered, until the turkey reaches 165° to 170° (about 40-50 minutes more). Baste with glaze often. Let stand for about 5 minutes before slicing.
 
 
-HAM BALLS        Katie Weigel
+@@@@
+HAM BALLS        
+Katie Weigel
 
 
-2¼Ibs. ham loaf mix        ⅓ (cup) vinegar
-½lb hamburger        1 can tomato soup
-1½ (cups) graham cracker crumbs        1 (cup) brown sugar
-2 eggs        1 (tsp) dry mustard
-1 (cup) milk
+* 2 ¼ (Ib). ham loaf mix        
+* ½ (lb) hamburger        
+* 1 ½ (cups) graham cracker crumbs        
+* 2 eggs        
+* 1 (cup) milk
+* ⅓ (cup) vinegar
+* 1 (can) tomato soup
+* 1 (cup) brown sugar
+* 1 (tsp) dry mustard
 
 
-Combine ham loaf mix, hamburger, graham cracker crumbs, eggs and milk. Mix and shape into balls. Mix together vinegar, soup, brown sugar and dry mustard.
+1. Combine ham loaf mix, hamburger, graham cracker crumbs, eggs and milk. Mix and shape into balls. 
+2. Mix together vinegar, soup, brown sugar and dry mustard. Pour over the balls. Bake at 325° for 1½ -2 hours. Watch carefully, will burn easily towards the end.
 
 
-
-
-Pour over the balls. Bake at 325 for easily towards the end.
-
-
-
-
+@@@@
 ZESTY GRILLED HAM
-
-
-1 (cup) brown sugar (packed) ⅓ (cup) prepared horseradish ¼ (cup) lemon juice
-
-
-
-
-1½ -2 hours. Watch carefully, will burn
-
-
-
-
-
-
 Pat Schumacher and Family
 
 
-1 ham steak (fully cooked, 1-1½Ibs., 
-        1-inch thick)
+* 1 (cup) brown sugar, packed
+* ⅓ (cup) prepared horseradish 
+* ¼ (cup) lemon juice
+* 1 ham steak, fully cooked, 1-1½ Ibs., 1-inch thick
 
 
 
 
 
 
-In a small saucepan, bring brown sugar, horseradish and lemon juice to a boil. Brush over both sides of ham. Grill over medium-hot heat, turning once, until heated through and well glazed, about 20-25 minutes. Yields: 4 servings.
--142-
+1. In a small saucepan, bring brown sugar, horseradish and lemon juice to a boil. Brush over both sides of ham. Grill over medium-hot heat, turning once, until heated through and well glazed, about 20-25 minutes. Yields: 4 servings.
 
 
-
-
-
-
-
-
-
-
+@@@@
 SCALLOPED POTATOES AND HAM
-
-
-2 (cups) ham (fully cooked, cubed)
-6 medium potatoes (peeled, thinly
-   sliced, about 2 (lb)) Salt and pepper
-
-
-
-
-
-
-
-
 Katie and Mark Weigel
 
 
+* 2 (cups) ham, fully cooked, cubed
+* 6 medium potatoes, peeled, thinly sliced, about 2 (lb)
+* Salt and pepper
+* 2 (cups) milk
+* ¼ (cup) onion, finely chopped
+* ⅓ (cup) flour
+* 1 (tbsp) butter
+
+
+1. Place ½ the ham into a 2-quart casserole. Cover with half the potatoes and half the onion. 
+2. Sift half the flour over; season with salt and pepper. Repeat layers ending with flour on top. Pour milk over all. Bake, uncovered, in a 350° oven for 1-1¼ hours or until potatoes are nearly tender. Uncover. Drizzle with melted butter. Bake for an additional 15 minutes or until done.
 
 
 
 
-2 (cups) milk
-¼ (cup) onion (finely chopped) ⅓ (cup) flour
-1 (tbsp) butter
-
-
-
-
-
-
-Place ½ the ham into a 2-quart casserole. Cover with half the potatoes and half the onion. Sift half the flour over; season with salt and pepper. Repeat layers ending with flour on top. Pour milk over all.
-Bake, uncovered, in a         350° oven for         1-1¼ hours or until potatoes are nearly tender. Uncover. Drizzle with melted butter. Bake an additional 15 minutes or until done.
-
-
-
-
-
-
-
-
+@@@@
 HASH BROWNS AND HAM
-
-
-
-
-
-
-
-
 Stefanie Brunkhorst
-M
-E
+
+
+* 1 (16 oz carton) sour cream
+* 1 (can) cream of chicken soup
+* 1 (32 oz bag) frozen hash browns
+* 2 (cups) ham, cubed
+* 8 (oz) American cheese, cubed or grated
+* 2 (cups) corn flakes, crushed 
+* ½ (cup) butter
+* 1 (cup) mozzarella cheese, shredded
 
 
 
 
-1 (16 oz) carton sour cream
-1 can cream of chicken soup
-1 (32 oz) bag frozen hash browns
-2 (cups) ham (cubed)
+1. Stir sour cream, soup, American cheese and ham into the potatoes. Put into a 9x13-inch pan. Spread evenly. Bake at 350° for 45-50 minutes, depending on how deep the potatoes are in the pan. 
+2. Combine corn flakes and melted butter and sprinkle over potatoes. Sprinkle mozzarella on top and bake for 10-15 minutes longer.
 
 
-
-
-8 oz American cheese (cubed or
-grated)
-2 (cups) corn flakes (crushed) ½ (cup) butter
-1 (cup) mozzarella cheese, shredded
-
-
-
-
-A
-T
-S
-?
-M
-A
-
-
-
-
-Stir sour cream, soup, American cheese and ham into the potatoes. Put into a 9x13-inch pan. Spread evenly. Bake at 350° for 45-50 minutes. (Depending on how deep the potatoes are in the pan.)
-Combine corn flakes and melted butter and sprinkle over potatoes. Sprinkle mozzarella on top and bake for 10-15 minutes longer.
-
-
-
-
-
-
-Della Frances Brunkhorst taught in the rural schools 
-        of Buchanan and Delaware counties.
-
-
-
-
-
-
-
-
--143-
-
-
-
-
-
-
-N
-
-
-D
-
-
-S
-
-
-E
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@@@@
 PENNE AND HAM
-
-
-1 pkg. pasta (penne, bow ties, etc.) ½ (cup) onions, chopped
-5 garlic cloves, minced
-2 (tbsp) butter
-2 (tbsp) olive oil
-1 (28 oz can) diced tomatoes 1½ (cups) ham or chicken
-
-
-Cook pasta. In a pan, saut‚ onion and
-
-
-
-
-
-
-
-
 Mary Lisa Goetschel
 
 
-1 (cup) sour cream
-½ (cup) Monterey Jack cheese (cubed) or 
-        Parmesan
-½ (cup) cheddar cheese (cubed) ½ (cup) tomato juice
-1 (tbsp) fresh basil or 1 (tsp) dried basil Salt and pepper
+* 1 (1 lb package) pasta, penne, bow ties, etc. 
+* ½ (cup) onions, chopped
+* 5 garlic cloves, minced
+* 2 (tbsp) butter
+* 2 (tbsp) olive oil
+* 1 (28 oz can) diced tomatoes 
+* 1 ½ (cups) ham or chicken
+* 1 (cup) sour cream
+* ½ (cup) Monterey Jack cheese, cubed or Parmesan
+* ½ (cup) cheddar cheese, cubed 
+* ½ (cup) tomato juice
+* 1 (tbsp) fresh basil, or 1 tsp dried basil 
+* Salt and pepper
 
 
-garlic salt until tender. Stir in remaining
+1. Cook pasta. In a pan, sauté‚ onion and garlic salt until tender. Stir in remaining ingredients. Drain pasta and add sauce. Toss and serve. Serves 7.
 
 
-
-
-ingredients. Drain pasta and add sauce. Toss and serve. Serves 7.
-
-
+@@@@
 PORK CHOPS WITH RICE        Stefanie Brunkhorst
 
 
-6 pork chops or pork steaks (amount        Yellow prepared mustard
-   as desired)        1 can chicken rice soup (more if
-Flour        desired)
-
-
-Spread both sides of meat with a light layer of mustard. Dredge in flour. Brown in skillet with a little oil. Place meat in roasting pan. Spoon rice soup over meat; then add ½ can water to skillet to get all browning from pan. Pour over chops. Cover with foil. Bake until tender. Serve with more rice. Use juice on meat as gravy.
-
-
-SWISS STEAK        Patricia Maas
-
-
-1 0. flour        ½ (cup) onions, chopped
-1'12 (tsp) salt        1 can whole tomatoes
-½(tsp) pepper        1-2 (cups) tomato juice
-4 (lb) round steak        3 (tbsp) shortening
-
-
-Combine flour, salt and pepper in a plastic bag. Pound meat with the flour mixture. Brown meat with shortening on both sides. Place in roasting pan with chopped onions, tomatoes and juice. Cook 1½ hours at 350° . You can thicken juice for gravy. Serves 8.
-
-
--144-
+* 6 pork chops or pork steaks, amount as desired        
+* Flour        
+* Yellow prepared mustard
+* 1 (can) chicken rice soup, more if desired
 
 
 
 
+1. Spread both sides of meat with a light layer of mustard. Dredge in flour. Brown in a skillet with a little oil. Place meat in a roasting pan. Spoon rice soup over meat; then add ½ can water to the skillet to get all browning from the pan. 
+2. Pour over chops. Cover with foil. Bake until tender. Serve with more rice. Use juice on meat as gravy.
 
 
+@@@@
+SWISS STEAK        
+Patricia Maas
 
 
+* 1 (cup) flour        
+* 1 ½  (tsp) salt        
+* ½ (tsp) pepper        
+* 4 (lb) round steak        
+* ½ (cup) onions, chopped
+* 1 can whole tomatoes
+* 1-2 (cups) tomato juice
+* 3 (tbsp) shortening
 
 
+1. Combine flour, salt and pepper in a plastic bag. Pound meat with the flour mixture. Brown meat with shortening on both sides. 
+2. Place in a roasting pan with chopped onions, tomatoes and juice. Cook 1 ½ hours at 350°. You can thicken juice for gravy. Serves 8.
 
 
+@@@@
 B.B.Q. BEEF
-
-
-4-5 (lb) beef (rump, chuck or brisket)
-1 (tsp) onion salt
-½(tsp) salt
-1 (tsp) garlic salt
-2 (tsp) celery salt
-
-
-
-
-
-
-
-
 Ann and Phil Brunkhorst
 
 
-2 (tbsp) Worcestershire sauce ½ (cup) sugar
-1 (cup) Russian salad dressing
-1 (cup) BBQ sauce (I use Cookies Brand)
+* 4-5 (lb) beef, rump, chuck, or brisket
+* 1 (tsp) onion salt
+* ½ (tsp) salt
+* 1 (tsp) garlic salt
+* 2 (tsp) celery salt
+* 2 (tbsp) Worcestershire sauce 
+* ½ (cup) sugar
+* 1 (cup) Russian salad dressing
+* 1 (cup) BBQ sauce, I use Cookies Brand
 
 
 
 
+1. Mix together onion salt, salt, garlic salt, celery salt and Worcestershire sauce. Rub onto both sides of meat. Bake in a pan at 225° for 8 hours. 
+2. Pour off part of the liquid and cool. Slice meat thinly or shred. Put back in the pan.
+3. Combine sugar, salad dressing, and BBQ sauce. Combine sauce with liquid and pour over meat. Return to the oven and heat through at 300°-325°. Best if made the day before serving.
 
 
-Mix together onion salt, salt, garlic salt, celery salt and Worcestershire sauce. Rub onto both sides of meat. Bake in a pan at 225 for 8 hours. Pour off part of liquid and cool. Slice meat thinly or shred. Put back in pan.
-Combine sugar, salad dressing and BBQ sauce. Combine sauce with liquid and pour over meat. Return to oven and heat through at 300 -325. Best if made the day before serving.
+@@@@
+SALISBURY STEAK        
+Angie Brunkhorst
 
 
-SALISBURY STEAK        Angie Brunkhorst
+* 1 (lb) ground beef         
+* ¼ (cup) dry bread crumbs         
+* 1 egg, beaten
+* 1 (tsp) salt         
+* ⅛ (tsp) pepper
+* 2 (tbsp) onion, minced
+* ¼ (cup) celery, finely chopped
+* 1 (can) cream of mushroom soup
+* ½ (cup) water 
 
 
+1. Combine ground beef, bread crumbs, egg, salt, pepper, onion and celery and shape into oval patties, about 1-inch thick. 
+2. Using a small amount of butter, brown on both sides in a skillet.
+3. After browning, place in an oven dish with a lid. Combine soup and water; pour over and around meat. Cook slowly at 300° for 25 minutes in a preheated oven.
 
 
+@@@@
+SWISS STEAK        
+Mary Lisa Goetschel
 
 
-1 (lb) ground beef         2 (tbsp) onion, minced
-¼ (cup) dry bread crumbs         ¼ (cup) celery (finely chopped)
-1 egg (beaten)         1 can cream of mushroom soup
-1 (tsp) salt         ½ (cup) water ⅛(tsp) pepper
+* ⅓ (cup) flour        
+* 3 (lb) round steak or chuck, I have used thin sirloin also
+* 2 (tbsp) fat        
+* 1 large onion, sliced
+* 1 ½ (tsp) salt
+* ⅛ (tsp) pepper
+* 1 ½ (stalks) celery, sliced or diced
+* ½ green pepper, sliced
+* ½ (cup) chili sauce
+* ½ (cup) water
 
 
-Combine ground beef, bread crumbs, egg, salt, pepper, onion and celery and shape into oval patties, about 1-inch thick. Using a small amount of butter, brown on both sides in skillet.
-
-
-
-
-
-
-
-
-A
-
-
-
-
-?
-
-
-A
-
-
-
-
-
-
-After browning, place in oven dish with lid. Combine soup and water; pour over  s and around meat. Cook slowly at 300 for 25 minutes in preheated oven.
-E
-S
-
-
-
-
-Albert Brunkhorst was known to ride his horse to the farm 
-        from Lamont, approximately 5 miles daily
-until shortly before his death on November 21,         1935.
-
-
-
-
-
-
--145-
-
-
-
-
-
-
-
-
-SWISS STEAK        Mary Lisa Goetschel
-
-
-⅓ (cup) flour        ⅛(tsp) pepper
-3 (lb) round steak or chuck (I have        1½ stalks celery (sliced or diced)
-   used thin sirloin also)        ½ green pepper (sliced)
-2 (tbsp) fat        ½0. chili sauce
-1 large onion (sliced)        ½ (cup) water
-1½ (tsp) salt
-
-
-Using a meat hammer, pound flour into both sides until absorbed. Saut‚ meat, brown on both sides. Sprinkle with salt and pepper. Spread onion, celery and green pepper over steak. Add chili sauce mixed with water. Cover and bake in a 300 oven for 2-2½ hours or at 325 for 1½ hours. Drippings can be thickened for gravy. Serves 6.
+1. Using a meat hammer, pound flour into both sides until absorbed. Sauté meat, brown on both sides. Sprinkle meat with salt and pepper. 
+2. Spread onion, celery and green pepper over steak. Add chili sauce mixed with water.
+3. Cover and bake in a 300° oven for 2-2½ hours or at 325 for 1½ hours. Drippings can be thickened for gravy. Serves 6.
 
 
 HUNGARIAN GOULASH        Marlene Goetschel
@@ -5633,7 +5453,7 @@ We kids enjoyed this recipe. it contains no beans, but we called it Chili Con Ca
 HAMBURGER BAKE
 
 
-1½ (lb) hamburger
+1 ½ (lb) hamburger
 1 egg (beaten)
 1 (tsp) salt
 1 (cup) evaporated milk
@@ -6302,7 +6122,7 @@ SEAFOOD LASAGNA
 
 
 
-1. Cook noodles; drain and set aside. Saut‚ shrimp, scallops and onion. Add all seasonings.
+1. Cook noodles; drain and set aside. Sauté shrimp, scallops and onion. Add all seasonings.
 2. In a 9x13-inch pan, alternate ingredients starting with noodles. Top with remaining sauce and cheese. Bake at 325 for 30 minutes. Let stand 10 minutes and then cut and serve. Serves 8.
 
 
@@ -6376,7 +6196,7 @@ SEAFOOD LINGUINE
 
 
 
-1. Melt butter in skillet. Add garlic and slowly saute scallops, until cooked. Remove from pan and set aside. 
+1. Melt butter in skillet. Add garlic and slowly sauté scallops, until cooked. Remove from pan and set aside. 
 2. Cook cod or tilapia. Remove from pan and set aside. Heat shrimp and crab meat. Steam broccoli for 5 minutes. Heat sauce; add seafood and broccoli. Serve over precooked linguine or mix together.
 
 
@@ -7208,7 +7028,7 @@ SALAD
 ½ (cup) water        Additional salt (to taste)
 
 
-In a skillet, cook bacon until crisp. Drain, reserving ¼ (cup) drippings. Crumble bacon and set aside. Saut‚ the celery and onion in drippings until tender. Combine sugar and flour; add to skillet with vinegar, water, salt and mustard. Cook, stirring constantly, until mixture thickens and bubbles.
+In a skillet, cook bacon until crisp. Drain, reserving ¼ (cup) drippings. Crumble bacon and set aside. Sauté the celery and onion in drippings until tender. Combine sugar and flour; add to skillet with vinegar, water, salt and mustard. Cook, stirring constantly, until mixture thickens and bubbles.
 In a large bowl, combine potatoes, carrots and parsley; pour the sauce over and stir gently to coat. Season to taste with additional salt. Spoon into a serving dish; garnish with the crumbled bacon. Serve warm. Yield: 14-16 servings.
 
 
@@ -7840,7 +7660,7 @@ FRENCH DIP SANDWICHES
 
    1. Place ingredients into crock pot and cook on low to medium until done. 
    2. Serve sliced or shredded meat on toasted, sliced hard rolls. Serve with au jus on the side.
-   3. Very good with sauteed mushrooms and onions and cheese served on top.
+   3. Very good with sautéed mushrooms and onions and cheese served on top.
    4. If you prepare this ahead of time and refrigerate, the fat can be skimmed off the top.
    5. Can also be sliced and served as a main dish served with juice thickened as gravy.
 
@@ -7972,7 +7792,7 @@ Karen Eichmann
 
 
 
-   1. Melt butter in a heavy large pot over medium heat. Add onions and saute‚ until tender, about 15 minutes. Add flour and stir 5 minutes. Do not brown. 
+   1. Melt butter in a heavy large pot over medium heat. Add onions and sauté until tender, about 15 minutes. Add flour and stir 5 minutes. Do not brown. 
    2. Gradually whisk in chicken broth and Half-and-Half. Simmer gently until thickened, about 10 minutes. Add white beans and roasted chilies, shredded chicken and next 5 ingredients. 
    3. Simmer gently to blend flavors, about 20 minutes. Add grated cheese and sour cream to chili. Stir until chili is heated through and cheese melts. Do Not Boil!
 
@@ -8147,7 +7967,7 @@ Pam (Brunkhorst) French
 
 
 
-   1. Heat oil in saucepan over medium-high heat; add onions and garlic, saut‚         3 minutes. Stir in tortilla pieces and saut‚ 2 minutes. 
+   1. Heat oil in saucepan over medium-high heat; add onions and garlic, sauté         3 minutes. Stir in tortilla pieces and sauté 2 minutes. 
    2. Add tomatoes, broth and spices; bring to a boil. Remove from heat; let cool 10 minutes. 
    3. Puree soup base in batches in a blender or food processor until smooth. Return soup to pot. Add chicken, corn and cream. Bring to a boil and simmer 5 minutes or until it begins to thicken. 
    4. Reduce heat to medium, sprinkle in cheese and stir until melted. Add lime juice and season with salt and pepper. Serve with salsa and sour cream, if desired. Makes 8 cups.
@@ -8178,7 +7998,7 @@ Marlene Goetschel
 
 
 
-   1. Saute‚ mushrooms, celery and onion in butter; add flour (mixture will be pasty). 
+   1. Sauté mushrooms, celery and onion in butter; add flour (mixture will be pasty). 
    2. Dissolve bouillon cubes in water; add to vegetables. Add uncooked rice with seasoning mix; cook about 45 minutes. 
    3. Add whipping cream just before serving.
    4. Note: Can be put in slow cooker overnight and be done in the morning.
@@ -8623,7 +8443,7 @@ Pam (Brunkhorst) French
    * Paprika 
 
 
-   1. Heat oven to 350° degrees. Saute onion in butter. Add salt, pepper and cream; heat. Add hash browns and cook while stirring until cream thickens. Add half of the Parmesan cheese, stir well. 
+   1. Heat oven to 350° degrees. Sauté onion in butter. Add salt, pepper and cream; heat. Add hash browns and cook while stirring until cream thickens. Add half of the Parmesan cheese, stir well. 
    2. Pour into a greased 11x7-inch pan. Cover with foil and bake for 40 minutes. Remove foil and top with remaining cheese. Sprinkle with paprika. Broil to melt cheese.        
 
 
