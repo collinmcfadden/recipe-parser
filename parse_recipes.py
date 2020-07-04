@@ -42,6 +42,11 @@ def format_ingredient(raw_string):
         unit = ingredientString[1:endParenthesisIndex].strip()
         ingredientString = ingredientString[endParenthesisIndex+1:]
 
+        # If unit starts with a number, surrond unit with parentheses. 
+        # Ex: 8 oz package -> (8 oz package) so that the line can read: 1 (8 oz package) cream cheese
+        if len(unit) > 0 and unit[0].isnumeric():
+            unit = "({})".format(unit)
+
          # TODO: Unplural certain unit types when naming them
 
     else:
@@ -106,7 +111,7 @@ class Recipe:
 		for curr_type, curr_content in raw_content:
 			# If there was a subsection header on the ingredient block, add it to the list
 			if prev_type == "TEXT" and curr_type == "INGREDIENT":
-				self.ingredients_flat.append({"name": string.capwords(prev_content), "type": "group"})
+				self.ingredients_flat.append({"name": string.capwords(prev_content).strip(":"), "type": "group"})
 
 			# Add ingredient to the list
 			if curr_type == "INGREDIENT":
@@ -114,7 +119,7 @@ class Recipe:
 
 			# If there was a subsection header on the steps block, add it to the list
 			if prev_type == "TEXT" and curr_type == "STEP":
-				self.instructions_flat.append({"name": string.capwords(prev_content), "type": "group"})
+				self.instructions_flat.append({"name": string.capwords(prev_content).strip(":"), "type": "group"})
 			
 			# Add step to the list
 			if curr_type == "STEP":
@@ -133,8 +138,13 @@ class Recipe:
 
 		# Save recipe details as JSON
 		self.json_format = json.dumps({
+			"type": "food",
 			"name": self.title,
-			# TODO, add remaining fields
+			"summary": self.summary,
+			"author_display": "disabled" if self.author is None else "enabled",
+			"author_name": "" if self.author is None else self.author,
+			"ingredients_flat": self.ingredients_flat,
+			"instructions_flat": self.instructions_flat,
 		})
 
 	@staticmethod

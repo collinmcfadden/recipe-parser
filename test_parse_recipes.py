@@ -58,6 +58,16 @@ class TestParseRecipes(unittest.TestCase):
         }
         self.assertEqual(parse_recipes.format_ingredient(line), formatted)
 
+    def test_parse_ingredients_numeric_unit(self):
+        line = "1 (8 oz package) cream cheese"
+        formatted = { 
+            "amount": "1",
+            "unit": "(8 oz package)",
+            "name": "cream cheese",
+            "notes": "",
+            "type": "ingredient"
+        }
+        self.assertEqual(parse_recipes.format_ingredient(line), formatted)
 
 if __name__ == '__main__':
     unittest.main()
