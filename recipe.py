@@ -94,7 +94,9 @@ class Recipe:
 					"SK": {"S": self.recipe_id},
 					"name": {"S": self.title},
 					"slug": {"S": self.slug},
-					"author": {"name" : { "S" : self.author}},
+					"author": {"M": {
+						"name" : { "S" : self.author}
+					}},
 					"description": {"S": self.summary},
 					"original_category": {"S": self.original_category},
 					"ingredients": self.ingredients_class.get_json() if self.ingredients_class is not None else None,

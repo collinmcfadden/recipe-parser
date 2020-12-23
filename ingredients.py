@@ -22,9 +22,10 @@ class Ingredients(IngredientBase):
 		self.ingredients.append(ingredient_dict)
 
 	def get_json(self):
-		return {
-			"type": self.type,
-			"items": self.ingredients
+		return {"M": {
+			"type": {"S": self.type},
+			"items": {"L": self.ingredients}
+			}
 		}
 
 
@@ -39,22 +40,24 @@ class SplitIngredients(IngredientBase):
 		if self.current_section is not None:
 			self.split_ingredients.append(self.current_section)
 
-		self.current_section = {
+		self.current_section = {"M": {
 			"title": {"S": title},
-			"items": []
+			"items": {"L": []}
+			}
 		}
 
 	def add_ingredient(self, ingredient_dict):
-		self.current_section["items"].append(ingredient_dict)
+		self.current_section["M"]["items"]["L"].append(ingredient_dict)
 
 	def get_json(self):
 		if self.current_section is not None:
 			self.split_ingredients.append(self.current_section)
 			self.current_section = None
 
-		return {
+		return {"M": {
 			"type": {"S": self.type},
-			"split_ingredients": self.split_ingredients
+			"split_ingredients": {"L": self.split_ingredients}
+			}
 		}
 
 
@@ -107,12 +110,13 @@ def format_ingredient(raw_string):
 		unit = ""
 
 # Returns remaining ingredientString as "name" value                                                                                                                         
-	return { 
-		"amount": {"S": amount},
-		"unit": {"S": unit},
-		"name": {"S": ingredientString.strip()},
-		"notes": {"S": notes},
-		"full_string": {"S": format_full_string(amount, unit, ingredientString, notes)}
+	return {"M": { 
+			"amount": {"S": amount},
+			"unit": {"S": unit},
+			"name": {"S": ingredientString.strip()},
+			"notes": {"S": notes},
+			"full_string": {"S": format_full_string(amount, unit, ingredientString, notes)}
+		}
 	}
 
 def format_full_string(amount, unit, ingredient_string, notes):

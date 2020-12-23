@@ -18,12 +18,13 @@ class Steps(InstructionsBase):
 		self.steps = []
 
 	def add_instruction(self, details):
-		self.steps.append({"details": {"S": details}})
+		self.steps.append({"M": {"details": {"S": details}}})
 
 	def get_json(self):
-		return {
+		return {"M": {
 			"type": {"S": self.type},
-			"steps": self.steps
+			"steps": {"L": self.steps}
+			}
 		}
 
 	
@@ -36,22 +37,23 @@ class SplitSteps(InstructionsBase):
 
 	def set_section_title(self, title):
 		if self.current_section is not None:
-			self.split_steps.append(self.current_section)
+			self.split_steps.append({"M": self.current_section})
 
 		self.current_section = {
 			"title": {"S": title},
-			"steps": []
+			"steps": {"L": []}
 		}
 
 	def add_instruction(self, details):
-		self.current_section["steps"].append({"details": {"S": details}})
+		self.current_section["steps"]["L"].append({"M": {"details": {"S": details}}})
 
 	def get_json(self):
 		if self.current_section is not None:
-			self.split_steps.append(self.current_section)
+			self.split_steps.append({"M": self.current_section})
 			self.current_section = None
 
-		return {
+		return {"M": {
 			"type": {"S": self.type},
-			"split_steps": self.split_steps
+			"split_steps": {"L": self.split_steps}
+			}
 		}
