@@ -1,195 +1,47 @@
-import re
 import io
 import json
 import sys 
 import string
-
-def format_ingredient(raw_string):
-
-# if there is a comma present, split line on “,” and only look at first (zero-ith) substring, else use whole line
-# If there is a unit (parentheses are present), just grab the substring before the ( and use the strip method to remove whitespace on the ends (this will allow for situations where the amount is not a number - Ex: Few (drops) hot sauce
-    
-    #init values
-    ingredientString = ""
-    notes = ""
-    
-# Checks for a comma and makes notes if needed    
-    if "," in raw_string:
-        ingredientNotesSplit = raw_string.split(",")
-        notes = ",".join(ingredientNotesSplit[1:]).strip()
-        ingredientString = ingredientNotesSplit[0]
-    else:
-        ingredientString = raw_string
-        notes = ""
-   
-    # Checks for number or fraction at top of string, records the amount, and removes the number/fraction
-    if ingredientString[0].isnumeric():
-        ingredientSplit = ingredientString.split(" ")
-        amount = ingredientSplit.pop(0)
-
-        # In the case of compound fractions, adds the fraction to the amount
-        if ingredientSplit[0].isnumeric():
-            amount = "{} {}".format(amount, ingredientSplit[0])
-            ingredientSplit.pop(0)
-
-        ingredientString = " ".join(ingredientSplit).strip()
-    else:
-        amount = ""
-    
-    # Checks for parenthesis to find unit type, and removes it from top of the string.
-    if ingredientString[0] == "(":
-        endParenthesisIndex = ingredientString.find(")")
-        unit = ingredientString[1:endParenthesisIndex].strip()
-        ingredientString = ingredientString[endParenthesisIndex+1:]
-
-        # If unit starts with a number, surrond unit with parentheses. 
-        # Ex: 8 oz package -> (8 oz package) so that the line can read: 1 (8 oz package) cream cheese
-        if len(unit) > 0 and unit[0].isnumeric():
-            unit = "({})".format(unit)
-
-         # TODO: Unplural certain unit types when naming them
-
-    else:
-        unit = ""
-
-# Returns remaining ingredientString as "name" value
-                                                                                                                                              
-    return { 
-        "amount": amount,
-        "unit": unit,
-        "name": ingredientString.strip(),
-        "notes": notes,
-        "type": "ingredient"
-    }
-
-
-class Recipe:
-
-	def __init__(self, recipe_lines):
-		# Print to console if we see this
-		if len(recipe_lines) < 2:
-			print(recipe_lines)
-			return None
-
-		# Parse out the recipe title
-		self.title = string.capwords(recipe_lines[0].strip())
-		recipe_lines.pop(0)
-		
-		# Parse out the recipe author if present
-		if recipe_lines[0].strip() != "":
-			self.author = recipe_lines[0].strip()
-			recipe_lines.pop(0)
-		else:
-			self.author = None
-		
-		# initialize our content
-		self.ingredients_flat = []
-		self.instructions_flat = []
-		self.summary = ""
-
-		# Label lines based on the content they contain
-		raw_content = []
-		for line in recipe_lines:
-			line = line.strip()
-						
-			if line == "":
-				raw_content.append(("BLANK", line))
-			elif re.search("^[*]", line):
-				raw_content.append(("INGREDIENT", line.lstrip("*").strip()))
-			elif re.search("^\d", line):
-				raw_content.append(("STEP", line.lstrip("0123456789.").strip()))
-			else:
-				raw_content.append(("TEXT", line))
-		
-		# Add extra value to array so that we capture all elements of the list and at least have one element
-		raw_content.insert(0, ("BLANK", ""))
-		raw_content.append(("BLANK", ""))
-		
-		# Save the contents of each line to the proper variable
-		prev_type, prev_content = None, None
-
-		for curr_type, curr_content in raw_content:
-			# If there was a subsection header on the ingredient block, add it to the list
-			if prev_type == "TEXT" and curr_type == "INGREDIENT":
-				self.ingredients_flat.append({"name": string.capwords(prev_content).strip(":"), "type": "group"})
-
-			# Add ingredient to the list
-			if curr_type == "INGREDIENT":
-				self.ingredients_flat.append(format_ingredient(curr_content))
-
-			# If there was a subsection header on the steps block, add it to the list
-			if prev_type == "TEXT" and curr_type == "STEP":
-				self.instructions_flat.append({"name": string.capwords(prev_content).strip(":"), "type": "group"})
-			
-			# Add step to the list
-			if curr_type == "STEP":
-				self.instructions_flat.append({
-					"text": "<p>{}</p>".format(curr_content),
-					"type": "instruction",
-					"image_url": ""
-				})
-
-			# Adding text to the summary
-			if prev_type == "TEXT" and (curr_type != "INGREDIENT" and curr_type != "STEP"):
-				self.summary = self.summary + "<p>{}</p>".format(prev_content)
-
-			# Setting the values for the next run through the loop
-			prev_type, prev_content = curr_type, curr_content 
-
-		# Save recipe details as JSON
-		self.json_format = json.dumps({
-			"type": "food",
-			"name": self.title,
-			"summary": self.summary,
-			"author_display": "disabled" if self.author is None else "enabled",
-			"author_name": "" if self.author is None else self.author,
-			"ingredients_flat": self.ingredients_flat,
-			"instructions_flat": self.instructions_flat,
-		})
-
-	@staticmethod
-	def output_header():
-		header_variables = ["title", "json_data", "author", "summary", "ingredients", "instructions"]
-		return "\t".join(header_variables)
-
-	def __str__(self):
-		class_variables = [str(self.title), str(self.json_format), str(self.author), 
-						  self.summary, str(self.ingredients_flat), str(self.instructions_flat)]
-		return "\t".join(class_variables)
+from recipe import Recipe
 
 
 # Start of Code
 input_file_name = sys.argv[1] if len(sys.argv) > 1 else "brunkhorst_recipes_formatted.txt"
-output_file_name = sys.argv[2] if len(sys.argv) > 2 else "brunkhorst_recipes_formatted.csv"
+output_file_name = sys.argv[2] if len(sys.argv) > 2 else "brunkhorst_recipes_formatted_dynamo.json"
 
 input = io.open(input_file_name, "r", encoding='utf8')
 recipe_list = []
 current_recipe = []
+current_category = None
 
 # Create recipe_list, a list where each element is a list[String] containing the lines from
 # one given recipe
 for line in input:
 	if "@@@" in line:
-		recipe_list.append(current_recipe)
+		recipe_list.append((current_recipe, current_category))
 		current_recipe = []
 	elif line[0] == "-":
-		# Ignore these lines for now, these are typically the recipe section names 
+		# These lines specify the category that the recipe was stored in
 		# Ex: -APPETIZERS AND BEVERAGES-
-		continue
+		current_category = string.capwords(line.strip("-").rstrip("-"))
 	else:
-		current_recipe.append(line)
+		current_recipe.append(line.strip())
 
-recipe_list.append(current_recipe)
+recipe_list.append((current_recipe, current_category))
 
 # Parse out details of the recipe and write to output file
 output = io.open(output_file_name, "w", encoding='utf8')
-output.write(Recipe.output_header() + "\n")
+recipe_dictionary = dict()
+recipe_dictionary["Recipe"] = list()
+id = 100
 
-for r in recipe_list:
-	recipe = Recipe(r)
-	if recipe is not None: 
-		output.write(str(recipe) + "\n")
+for r, category in recipe_list:
+	recipe = Recipe(r, f"RECIPE#{id}", category)
+	if recipe is not None:
+		recipe_dictionary["Recipe"].append(recipe.dynamo_dictionary())
+		id += 1
 
+output.write(json.dumps(recipe_dictionary, indent=4))
 output.close
 input.close
 	

@@ -1,0 +1,788 @@
+{
+    "Recipe": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#102"
+                    },
+                    "SK": {
+                        "S": "RECIPE#102"
+                    },
+                    "name": {
+                        "S": "Easy Punch"
+                    },
+                    "slug": {
+                        "S": "easy-punch"
+                    },
+                    "author": {
+                        "M": {
+                            "name": {
+                                "S": "Karalynn and Kris Brunkhorst"
+                            }
+                        }
+                    },
+                    "description": {
+                        "S": ""
+                    },
+                    "original_category": {
+                        "S": "Appetizers And Beverages-"
+                    },
+                    "ingredients": {
+                        "M": {
+                            "type": {
+                                "S": "ingredients"
+                            },
+                            "items": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "1"
+                                            },
+                                            "unit": {
+                                                "S": "large can"
+                                            },
+                                            "name": {
+                                                "S": "red Hawaiian Punch or 1 can concentrate"
+                                            },
+                                            "notes": {
+                                                "S": ""
+                                            },
+                                            "full_string": {
+                                                "S": "1 large can red Hawaiian Punch or 1 can concentrate"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "1"
+                                            },
+                                            "unit": {
+                                                "S": "liter"
+                                            },
+                                            "name": {
+                                                "S": "ginger ale or 7-Up"
+                                            },
+                                            "notes": {
+                                                "S": ""
+                                            },
+                                            "full_string": {
+                                                "S": "1 liter ginger ale or 7-Up"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": ""
+                                            },
+                                            "unit": {
+                                                "S": ""
+                                            },
+                                            "name": {
+                                                "S": "Ice ring"
+                                            },
+                                            "notes": {
+                                                "S": "made with Hawaiian Punch (optional)"
+                                            },
+                                            "full_string": {
+                                                "S": "Ice ring - made with Hawaiian Punch (optional)"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "1"
+                                            },
+                                            "unit": {
+                                                "S": "large bottle/can"
+                                            },
+                                            "name": {
+                                                "S": "pineapple juice"
+                                            },
+                                            "notes": {
+                                                "S": "or 1 can concentrate (mixed according to directions)"
+                                            },
+                                            "full_string": {
+                                                "S": "1 large bottle/can pineapple juice - or 1 can concentrate (mixed according to directions)"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "instructions": {
+                        "M": {
+                            "type": {
+                                "S": "steps"
+                            },
+                            "steps": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "details": {
+                                                "S": "Mix all ingredients, adding pop just before serving. Serves 35 cups. Add more or less of ingredients to suit your tastes."
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#146"
+                    },
+                    "SK": {
+                        "S": "RECIPE#146"
+                    },
+                    "name": {
+                        "S": "Fruit Salsa With Cinnamon Chips"
+                    },
+                    "slug": {
+                        "S": "fruit-salsa-with-cinnamon-chips"
+                    },
+                    "author": {
+                        "M": {
+                            "name": {
+                                "S": "Kathy Klotz"
+                            }
+                        }
+                    },
+                    "description": {
+                        "S": ""
+                    },
+                    "original_category": {
+                        "S": "Appetizers And Beverages-"
+                    },
+                    "ingredients": {
+                        "M": {
+                            "type": {
+                                "S": "split_ingredients"
+                            },
+                            "split_ingredients": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "title": {
+                                                "S": "Cinnamon Chips"
+                                            },
+                                            "items": {
+                                                "L": [
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "4"
+                                                            },
+                                                            "unit": {
+                                                                "S": "(7-inch)"
+                                                            },
+                                                            "name": {
+                                                                "S": "flour tortillas"
+                                                            },
+                                                            "notes": {
+                                                                "S": "I usually make more, they keep well"
+                                                            },
+                                                            "full_string": {
+                                                                "S": "4 (7-inch) flour tortillas - I usually make more, they keep well"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "1"
+                                                            },
+                                                            "unit": {
+                                                                "S": "tbsp"
+                                                            },
+                                                            "name": {
+                                                                "S": "sugar"
+                                                            },
+                                                            "notes": {
+                                                                "S": ""
+                                                            },
+                                                            "full_string": {
+                                                                "S": "1 tbsp sugar"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "\u00bd"
+                                                            },
+                                                            "unit": {
+                                                                "S": "tbsp"
+                                                            },
+                                                            "name": {
+                                                                "S": "ground cinnamon"
+                                                            },
+                                                            "notes": {
+                                                                "S": "or your own cinnamon and sugar mixture"
+                                                            },
+                                                            "full_string": {
+                                                                "S": "\u00bd tbsp ground cinnamon - or your own cinnamon and sugar mixture"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "title": {
+                                                "S": "Salsa"
+                                            },
+                                            "items": {
+                                                "L": [
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "2"
+                                                            },
+                                                            "unit": {
+                                                                "S": ""
+                                                            },
+                                                            "name": {
+                                                                "S": "medium Granny Smith apples"
+                                                            },
+                                                            "notes": {
+                                                                "S": ""
+                                                            },
+                                                            "full_string": {
+                                                                "S": "2 medium Granny Smith apples"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "1\u00bd"
+                                                            },
+                                                            "unit": {
+                                                                "S": "cup"
+                                                            },
+                                                            "name": {
+                                                                "S": "strawberries"
+                                                            },
+                                                            "notes": {
+                                                                "S": "chopped, I used quick frozen"
+                                                            },
+                                                            "full_string": {
+                                                                "S": "1\u00bd cup strawberries - chopped, I used quick frozen"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "2"
+                                                            },
+                                                            "unit": {
+                                                                "S": ""
+                                                            },
+                                                            "name": {
+                                                                "S": "kiwi fruit"
+                                                            },
+                                                            "notes": {
+                                                                "S": "peeled, chopped"
+                                                            },
+                                                            "full_string": {
+                                                                "S": "2 kiwi fruit - peeled, chopped"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "1"
+                                                            },
+                                                            "unit": {
+                                                                "S": ""
+                                                            },
+                                                            "name": {
+                                                                "S": "small orange"
+                                                            },
+                                                            "notes": {
+                                                                "S": ""
+                                                            },
+                                                            "full_string": {
+                                                                "S": "1 small orange"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "2"
+                                                            },
+                                                            "unit": {
+                                                                "S": "tbsp"
+                                                            },
+                                                            "name": {
+                                                                "S": "brown sugar"
+                                                            },
+                                                            "notes": {
+                                                                "S": "packed"
+                                                            },
+                                                            "full_string": {
+                                                                "S": "2 tbsp brown sugar - packed"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "2"
+                                                            },
+                                                            "unit": {
+                                                                "S": "tbsp"
+                                                            },
+                                                            "name": {
+                                                                "S": "orange marmalade"
+                                                            },
+                                                            "notes": {
+                                                                "S": "apricot preserves, or apple jelly"
+                                                            },
+                                                            "full_string": {
+                                                                "S": "2 tbsp orange marmalade - apricot preserves, or apple jelly"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "instructions": {
+                        "M": {
+                            "type": {
+                                "S": "split_steps"
+                            },
+                            "split_steps": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "title": {
+                                                "S": "Cinnamon Chips"
+                                            },
+                                            "steps": {
+                                                "L": [
+                                                    {
+                                                        "M": {
+                                                            "details": {
+                                                                "S": "Preheat the oven to 400\u00b0 degrees. For cinnamon chips, lightly spray tortillas with water or Pam spray. Combine sugar and cinnamon in flour/sugar shaker; sprinkle over tortillas. Cut each tortilla into 8 wedges; place in a single layer on round baking stone."
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "details": {
+                                                                "S": "Bake for 8-10 minutes or until lightly browned and crisp. Remove to cooling rack; cool completely."
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "title": {
+                                                "S": "Salsa"
+                                            },
+                                            "steps": {
+                                                "L": [
+                                                    {
+                                                        "M": {
+                                                            "details": {
+                                                                "S": "For salsa, peel, core, and slice apples. Cut apples into quarters; chop with a food chopper. Slice or dice strawberries and chop kiwi. Place fruit in a 1-quart bowl."
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "details": {
+                                                                "S": "Zest orange and juice until you have about 2 (tbsp) of juice. Add orange zest, orange juice, brown sugar and jelly to the fruit mixture; mix gently."
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "details": {
+                                                                "S": "Refrigerate until ready to serve. Serve with cinnamon chips."
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#153"
+                    },
+                    "SK": {
+                        "S": "RECIPE#153"
+                    },
+                    "name": {
+                        "S": "Blueberry Breakfast Bread"
+                    },
+                    "slug": {
+                        "S": "blueberry-breakfast-bread"
+                    },
+                    "author": {
+                        "M": {
+                            "name": {
+                                "S": "Ann and Phil Brunkhorst"
+                            }
+                        }
+                    },
+                    "description": {
+                        "S": "Coffeecake may be assembled the night before to bake in the morning. Lightly cover assembled bread with plastic wrap. Place in the refrigerator to rise overnight. Bake in the morning. Be careful, the risen coffeecake is very fragile and will fall if bumped."
+                    },
+                    "original_category": {
+                        "S": "Breads And Rolls-"
+                    },
+                    "ingredients": {
+                        "M": {
+                            "type": {
+                                "S": "split_ingredients"
+                            },
+                            "split_ingredients": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "title": {
+                                                "S": "Bread"
+                                            },
+                                            "items": {
+                                                "L": [
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "1"
+                                                            },
+                                                            "unit": {
+                                                                "S": "(1 lb loaf)"
+                                                            },
+                                                            "name": {
+                                                                "S": "frozen bread dough"
+                                                            },
+                                                            "notes": {
+                                                                "S": "white or wheat, thawed"
+                                                            },
+                                                            "full_string": {
+                                                                "S": "1 (1 lb loaf) frozen bread dough - white or wheat, thawed"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "1"
+                                                            },
+                                                            "unit": {
+                                                                "S": "(8 oz package)"
+                                                            },
+                                                            "name": {
+                                                                "S": "cream cheese"
+                                                            },
+                                                            "notes": {
+                                                                "S": ""
+                                                            },
+                                                            "full_string": {
+                                                                "S": "1 (8 oz package) cream cheese"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "1"
+                                                            },
+                                                            "unit": {
+                                                                "S": ""
+                                                            },
+                                                            "name": {
+                                                                "S": "egg"
+                                                            },
+                                                            "notes": {
+                                                                "S": "beaten"
+                                                            },
+                                                            "full_string": {
+                                                                "S": "1 egg - beaten"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "1"
+                                                            },
+                                                            "unit": {
+                                                                "S": "tsp"
+                                                            },
+                                                            "name": {
+                                                                "S": "vanilla"
+                                                            },
+                                                            "notes": {
+                                                                "S": ""
+                                                            },
+                                                            "full_string": {
+                                                                "S": "1 tsp vanilla"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "\u00bd"
+                                                            },
+                                                            "unit": {
+                                                                "S": "cup"
+                                                            },
+                                                            "name": {
+                                                                "S": "granulated sugar"
+                                                            },
+                                                            "notes": {
+                                                                "S": ""
+                                                            },
+                                                            "full_string": {
+                                                                "S": "\u00bd cup granulated sugar"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "title": {
+                                                "S": "Glaze"
+                                            },
+                                            "items": {
+                                                "L": [
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "2"
+                                                            },
+                                                            "unit": {
+                                                                "S": "cups"
+                                                            },
+                                                            "name": {
+                                                                "S": "powdered sugar"
+                                                            },
+                                                            "notes": {
+                                                                "S": ""
+                                                            },
+                                                            "full_string": {
+                                                                "S": "2 cups powdered sugar"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "1"
+                                                            },
+                                                            "unit": {
+                                                                "S": "tbsp"
+                                                            },
+                                                            "name": {
+                                                                "S": "milk or cream"
+                                                            },
+                                                            "notes": {
+                                                                "S": ""
+                                                            },
+                                                            "full_string": {
+                                                                "S": "1 tbsp milk or cream"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "2"
+                                                            },
+                                                            "unit": {
+                                                                "S": "cups"
+                                                            },
+                                                            "name": {
+                                                                "S": "fresh or frozen blueberries"
+                                                            },
+                                                            "notes": {
+                                                                "S": ""
+                                                            },
+                                                            "full_string": {
+                                                                "S": "2 cups fresh or frozen blueberries"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "1"
+                                                            },
+                                                            "unit": {
+                                                                "S": "cup"
+                                                            },
+                                                            "name": {
+                                                                "S": "flour"
+                                                            },
+                                                            "notes": {
+                                                                "S": ""
+                                                            },
+                                                            "full_string": {
+                                                                "S": "1 cup flour"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "\u00bd"
+                                                            },
+                                                            "unit": {
+                                                                "S": "cup"
+                                                            },
+                                                            "name": {
+                                                                "S": "sugar"
+                                                            },
+                                                            "notes": {
+                                                                "S": ""
+                                                            },
+                                                            "full_string": {
+                                                                "S": "\u00bd cup sugar"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "\u00bd"
+                                                            },
+                                                            "unit": {
+                                                                "S": "cup"
+                                                            },
+                                                            "name": {
+                                                                "S": "butter or margarine"
+                                                            },
+                                                            "notes": {
+                                                                "S": ""
+                                                            },
+                                                            "full_string": {
+                                                                "S": "\u00bd cup butter or margarine"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "M": {
+                                                            "amount": {
+                                                                "S": "1"
+                                                            },
+                                                            "unit": {
+                                                                "S": "tsp"
+                                                            },
+                                                            "name": {
+                                                                "S": "vanilla"
+                                                            },
+                                                            "notes": {
+                                                                "S": ""
+                                                            },
+                                                            "full_string": {
+                                                                "S": "1 tsp vanilla"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "instructions": {
+                        "M": {
+                            "type": {
+                                "S": "steps"
+                            },
+                            "steps": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "details": {
+                                                "S": "On a lightly floured surface, roll thawed dough out to fit a 10x15-inch jelly roll pan."
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "details": {
+                                                "S": "Beat cream cheese with \u00bd cup sugar in a mixing bowl until light and fluffy."
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "details": {
+                                                "S": "Beat in egg and 1 tsp vanilla. Spread over bread dough. Sprinkle with blueberries."
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "details": {
+                                                "S": "Combine flour and \u00bd cup sugar in a small bowl. Cut in margarine or butter until crumbly. Sprinkle over blueberries. Let rise in a warm area for 30-40 minutes or until golden brown."
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "details": {
+                                                "S": "Remove from the oven and let cool."
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "details": {
+                                                "S": "For glaze, combine all ingredients and mix well. Drizzle bread with glaze."
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
