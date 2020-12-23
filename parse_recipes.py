@@ -37,7 +37,7 @@ id = 100
 
 for r, category in recipe_list:
 	recipe = Recipe(r, f"RECIPE#{id}", category)
-	if recipe is not None: 
+	if recipe is not None:
 		recipe_dictionary["Recipe"].append(recipe.dynamo_dictionary())
 		id += 1
 
