@@ -1,7 +1,7 @@
 import unittest
-import parse_recipes
+from recipe_parser.ingredients import format_ingredient
 
-class TestParseRecipes(unittest.TestCase):
+class TestIngredient(unittest.TestCase):
 
     def test_parse_ingredients_no_unit(self):
         line = "1 large onion, sliced"
@@ -12,7 +12,7 @@ class TestParseRecipes(unittest.TestCase):
             "notes": "sliced",
             "type": "ingredient"
         }
-        self.assertEqual(parse_recipes.format_ingredient(line), formatted)
+        self.assertEqual(format_ingredient(line), formatted)
 
     def test_parse_ingredients_fraction(self):
         line = "⅛ (tsp) pepper"
@@ -23,7 +23,7 @@ class TestParseRecipes(unittest.TestCase):
             "notes": "",
             "type": "ingredient"
         }
-        self.assertEqual(parse_recipes.format_ingredient(line), formatted)
+        self.assertEqual(format_ingredient(line), formatted)
 
     def test_parse_ingredients_compound_fraction(self):
         line = "1 ½ (stalks) celery, sliced or diced"
@@ -34,7 +34,7 @@ class TestParseRecipes(unittest.TestCase):
             "notes": "sliced or diced",
             "type": "ingredient"
         }
-        self.assertEqual(parse_recipes.format_ingredient(line), formatted)
+        self.assertEqual(format_ingredient(line), formatted)
 
     def test_parse_ingredients_range(self):
         line = "4-5 (lb) beef, rump, chuck, or brisket"
@@ -45,7 +45,7 @@ class TestParseRecipes(unittest.TestCase):
             "notes": "rump, chuck, or brisket",
             "type": "ingredient"
         }
-        self.assertEqual(parse_recipes.format_ingredient(line), formatted)
+        self.assertEqual(format_ingredient(line), formatted)
 
     def test_parse_ingredients_parentheses_after_comma(self):
         line = "6 medium potatoes, peeled, thinly sliced, about 2 (lb)"
@@ -56,7 +56,7 @@ class TestParseRecipes(unittest.TestCase):
             "notes": "peeled, thinly sliced, about 2 (lb)",
             "type": "ingredient"
         }
-        self.assertEqual(parse_recipes.format_ingredient(line), formatted)
+        self.assertEqual(format_ingredient(line), formatted)
 
     def test_parse_ingredients_numeric_unit(self):
         line = "1 (8 oz package) cream cheese"
@@ -67,7 +67,7 @@ class TestParseRecipes(unittest.TestCase):
             "notes": "",
             "type": "ingredient"
         }
-        self.assertEqual(parse_recipes.format_ingredient(line), formatted)
+        self.assertEqual(format_ingredient(line), formatted)
 
 if __name__ == '__main__':
     unittest.main()
