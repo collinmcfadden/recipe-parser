@@ -5533,7 +5533,7 @@ You can substitute any pizza ingredients such as sausage for ground beef.
 
 
 @@@@
--Main Dish - Turkey
+-Main Dishes - Turkey
 APRICOT GLAZED TURKEY BREAST
 
 * 1 turkey breast with bone, approx. 2.75 lb        
@@ -5552,7 +5552,7 @@ APRICOT GLAZED TURKEY BREAST
 
 
 @@@@
--Main Dish - Ham
+-Main Dishes - Ham
 HAM BALLS        
 Katie Weigel
 
@@ -5650,7 +5650,7 @@ Mary Lisa Goetschel
 
 
 @@@
--Main Dish- Seafood
+-Main Dishes - Seafood
 LOBSTER PIZZA
 Ann and Phil Brunkhorst
 

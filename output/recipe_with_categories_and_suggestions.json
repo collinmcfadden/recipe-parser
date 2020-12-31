@@ -1,0 +1,614 @@
+{
+    "Recipe": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "COLLECTION#100"
+                    },
+                    "SK": {
+                        "S": "COLLECTION#100"
+                    },
+                    "id": {
+                        "N": 100
+                    },
+                    "name": {
+                        "S": "Drinks"
+                    },
+                    "slug": {
+                        "S": "drinks"
+                    },
+                    "description": {
+                        "S": "This is a default description of what the collection contains!"
+                    }
+                }
+            } 
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#100"
+                    },
+                    "SK": {
+                        "S": "RECIPE#100"
+                    },
+                    "id": {
+                        "N": 100
+                    },
+                    "name": {
+                        "S": "Perfect Lemonade"
+                    },
+                    "slug": {
+                        "S": "perfect-lemonade"
+                    },
+                    "author": {
+                        "M": {
+                            "name": {
+                                "S": "Angie Brunkhorst"
+                            }
+                        }
+                    },
+                    "description": {
+                        "S": ""
+                    },
+                    "ingredients": {
+                        "M": {
+                            "type": {
+                                "S": "ingredients"
+                            },
+                            "items": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "1"
+                                            },
+                                            "unit": {
+                                                "S": "cup"
+                                            },
+                                            "name": {
+                                                "S": "sugar"
+                                            },
+                                            "notes": {
+                                                "S": ""
+                                            },
+                                            "full_string": {
+                                                "S": "1 cup sugar"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "1"
+                                            },
+                                            "unit": {
+                                                "S": "cup"
+                                            },
+                                            "name": {
+                                                "S": "water"
+                                            },
+                                            "notes": {
+                                                "S": ""
+                                            },
+                                            "full_string": {
+                                                "S": "1 cup water"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "amount": {
+                                                "S": "1"
+                                            },
+                                            "unit": {
+                                                "S": "cup"
+                                            },
+                                            "name": {
+                                                "S": "lemon juice"
+                                            },
+                                            "notes": {
+                                                "S": "4-6 lemons"
+                                            },
+                                            "full_string": {
+                                                "S": "1 cup lemon juice - 4-6 lemons"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "instructions": {
+                        "M": {
+                            "type": {
+                                "S": "steps"
+                            },
+                            "steps": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "details": {
+                                                "S": "In a small saucepan, heat the sugar and water until the sugar is dissolved completely. Cool slightly."
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "details": {
+                                                "S": "Pour into a pitcher. Add the lemon juice. Add about 4 cups of water, more or less to the desired strength. Refrigerate 30-40 minutes. Serve over ice."
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "COLLECTION#100"
+                    },
+                    "SK": {
+                        "S": "RECIPE#100"
+                    },
+                    "id": {
+                        "N": 100
+                    },
+                    "name": {
+                        "S": "Perfect Lemonade"
+                    },
+                    "slug": {
+                        "S": "perfect-lemonade"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#100"
+                    },
+                    "SK": {
+                        "S": "COLLECTION#100"
+                    },
+                    "id": {
+                        "N": 100
+                    },
+                    "name": {
+                        "S": "Drinks"
+                    },
+                    "slug": {
+                        "S": "drinks"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#100"
+                    },
+                    "SK": {
+                        "S": "SUGGESTS_RECIPE#107"
+                    },
+                    "id": {
+                        "N": 107
+                    },
+                    "name": {
+                        "S": "White Striped Juice"
+                    },
+                    "slug": {
+                        "S": "white-striped-juice"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#107"
+                    },
+                    "SK": {
+                        "S": "SUGGESTED_BY_RECIPE#100"
+                    },
+                    "id": {
+                        "N": 100
+                    },
+                    "name": {
+                        "S": "Perfect Lemonade"
+                    },
+                    "slug": {
+                        "S": "perfect-lemonade"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#100"
+                    },
+                    "SK": {
+                        "S": "SUGGESTS_RECIPE#104"
+                    },
+                    "id": {
+                        "N": 104
+                    },
+                    "name": {
+                        "S": "Dandelion Wine"
+                    },
+                    "slug": {
+                        "S": "dandelion-wine"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#104"
+                    },
+                    "SK": {
+                        "S": "SUGGESTED_BY_RECIPE#100"
+                    },
+                    "id": {
+                        "N": 100
+                    },
+                    "name": {
+                        "S": "Perfect Lemonade"
+                    },
+                    "slug": {
+                        "S": "perfect-lemonade"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#100"
+                    },
+                    "SK": {
+                        "S": "SUGGESTS_RECIPE#106"
+                    },
+                    "id": {
+                        "N": 106
+                    },
+                    "name": {
+                        "S": "Red Striped Juice"
+                    },
+                    "slug": {
+                        "S": "red-striped-juice"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#106"
+                    },
+                    "SK": {
+                        "S": "SUGGESTED_BY_RECIPE#100"
+                    },
+                    "id": {
+                        "N": 100
+                    },
+                    "name": {
+                        "S": "Perfect Lemonade"
+                    },
+                    "slug": {
+                        "S": "perfect-lemonade"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#100"
+                    },
+                    "SK": {
+                        "S": "SUGGESTS_RECIPE#101"
+                    },
+                    "id": {
+                        "N": 101
+                    },
+                    "name": {
+                        "S": "Easy Punch"
+                    },
+                    "slug": {
+                        "S": "easy-punch"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#101"
+                    },
+                    "SK": {
+                        "S": "SUGGESTED_BY_RECIPE#100"
+                    },
+                    "id": {
+                        "N": 100
+                    },
+                    "name": {
+                        "S": "Perfect Lemonade"
+                    },
+                    "slug": {
+                        "S": "perfect-lemonade"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#100"
+                    },
+                    "SK": {
+                        "S": "SUGGESTS_RECIPE#102"
+                    },
+                    "id": {
+                        "N": 102
+                    },
+                    "name": {
+                        "S": "Punch"
+                    },
+                    "slug": {
+                        "S": "punch"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#102"
+                    },
+                    "SK": {
+                        "S": "SUGGESTED_BY_RECIPE#100"
+                    },
+                    "id": {
+                        "N": 100
+                    },
+                    "name": {
+                        "S": "Perfect Lemonade"
+                    },
+                    "slug": {
+                        "S": "perfect-lemonade"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#100"
+                    },
+                    "SK": {
+                        "S": "SUGGESTS_RECIPE#103"
+                    },
+                    "id": {
+                        "N": 103
+                    },
+                    "name": {
+                        "S": "Hot Chocolate"
+                    },
+                    "slug": {
+                        "S": "hot-chocolate"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#103"
+                    },
+                    "SK": {
+                        "S": "SUGGESTED_BY_RECIPE#100"
+                    },
+                    "id": {
+                        "N": 100
+                    },
+                    "name": {
+                        "S": "Perfect Lemonade"
+                    },
+                    "slug": {
+                        "S": "perfect-lemonade"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#100"
+                    },
+                    "SK": {
+                        "S": "SUGGESTS_RECIPE#105"
+                    },
+                    "id": {
+                        "N": 105
+                    },
+                    "name": {
+                        "S": "Coffee Soup"
+                    },
+                    "slug": {
+                        "S": "coffee-soup"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#105"
+                    },
+                    "SK": {
+                        "S": "SUGGESTED_BY_RECIPE#100"
+                    },
+                    "id": {
+                        "N": 100
+                    },
+                    "name": {
+                        "S": "Perfect Lemonade"
+                    },
+                    "slug": {
+                        "S": "perfect-lemonade"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#100"
+                    },
+                    "SK": {
+                        "S": "SUGGESTS_RECIPE#411"
+                    },
+                    "id": {
+                        "N": 411
+                    },
+                    "name": {
+                        "S": "Creamy Fruit Salad"
+                    },
+                    "slug": {
+                        "S": "creamy-fruit-salad"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#411"
+                    },
+                    "SK": {
+                        "S": "SUGGESTED_BY_RECIPE#100"
+                    },
+                    "id": {
+                        "N": 100
+                    },
+                    "name": {
+                        "S": "Perfect Lemonade"
+                    },
+                    "slug": {
+                        "S": "perfect-lemonade"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#100"
+                    },
+                    "SK": {
+                        "S": "SUGGESTS_RECIPE#409"
+                    },
+                    "id": {
+                        "N": 409
+                    },
+                    "name": {
+                        "S": "Fruit Salad"
+                    },
+                    "slug": {
+                        "S": "fruit-salad"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#409"
+                    },
+                    "SK": {
+                        "S": "SUGGESTED_BY_RECIPE#100"
+                    },
+                    "id": {
+                        "N": 100
+                    },
+                    "name": {
+                        "S": "Perfect Lemonade"
+                    },
+                    "slug": {
+                        "S": "perfect-lemonade"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#100"
+                    },
+                    "SK": {
+                        "S": "SUGGESTS_RECIPE#407"
+                    },
+                    "id": {
+                        "N": 407
+                    },
+                    "name": {
+                        "S": "Cherry Supreme"
+                    },
+                    "slug": {
+                        "S": "cherry-supreme"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "PK": {
+                        "S": "RECIPE#407"
+                    },
+                    "SK": {
+                        "S": "SUGGESTED_BY_RECIPE#100"
+                    },
+                    "id": {
+                        "N": 100
+                    },
+                    "name": {
+                        "S": "Perfect Lemonade"
+                    },
+                    "slug": {
+                        "S": "perfect-lemonade"
+                    }
+                }
+            }
+        }
+    ]
+}
